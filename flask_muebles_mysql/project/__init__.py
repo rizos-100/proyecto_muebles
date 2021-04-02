@@ -34,6 +34,7 @@ def create_app():
         security = Security(app, userDataStore)
 
         ######################################################################
+        '''
         userDataStore.find_or_create_role(name='admin', description='Administrator')
         userDataStore.find_or_create_role(name='end-user', description='End user')
 
@@ -47,7 +48,7 @@ def create_app():
         userDataStore.add_role_to_user('enduser@example.com', 'end-user')
         userDataStore.add_role_to_user('admin@example.com', 'admin')
         db.session.commit()
-    
+        '''
     #####################################################################3
     #Configurando el login_manager
     #login_manager = LoginManager()

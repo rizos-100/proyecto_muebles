@@ -12,15 +12,32 @@ users_roles = db.Table('users_roles',
     db.Column('userId', db.Integer, db.ForeignKey('user.id')),
     db.Column('roleId', db.Integer, db.ForeignKey('role.id')))
 
+class persona (db.Model):
+    __tablename__='persona'
+    id=db.Column(db.Integer,primary_key=True)
+    nombre = db.Column(db.String(255), nullable=False)
+    apellidoP = db.Column(db.String(255), nullable=False)
+    apellidoM = db.Column(db.String(255), nullable=False)
+    numero_fijo = db.Column(db.String(10), nullable=False)
+    celular = db.Column(db.String(10), nullable=False)
+    estatus = db.Column(db.String(100), nullable=False)
+    domicilio = db.Column(db.Integer,db.ForeignKey('domicilio.id'))
+    rfc = db.Column(db.String(255), nullable=False)
+
+
 class User(UserMixin, db.Model):
     """User account model"""
 
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(100), nullable=False)
-    email = db.Column(db.String(100), unique=True)
+    numero_empleado = db.Column(db.String(255), nullable=False)
+    correo = db.Column(db.String(255), unique=True)
     password = db.Column(db.String(255), nullable=False)
-    active = db.Column(db.Boolean)
+    nivel_escolar = db.Column(db.String(255), nullable=False)
+    profesion = db.Column(db.String(255), nullable=False)
+    observaciones = db.Column(db.String(255), nullable=True)
+    idPersona = db.Column(db.Integer,db.ForeignKey('persona.id'))
+    estatus = db.Column(db.Boolean)
     confirmed_at = db.Column(db.Date,default=datetime.datetime.now)
     roles = db.relationship('Role',
         secondary=users_roles,
@@ -87,6 +104,124 @@ class RoleAdmin(sqla.ModelView):
     def is_accessible(self):
         return current_user.has_role('admin')
 
+class proveedor(db.Model):
+    __tablename__='proveedor'
+    id=db.Column(db.Integer,primary_key=True)
+    nombre = db.Column(db.String(255), nullable=False)
+    rfc = db.Column(db.String(255), nullable=False)
+    calle = db.Column(db.String(255), nullable=False)
+    colonia = db.Column(db.String(255), nullable=False)
+    numero_interior = db.Column(db.String(10), nullable=True)
+    numero_exterior = db.Column(db.String(10), nullable=True)
+    cp = db.Column(db.String(10), nullable=True)
+    nombre_contacto = db.Column(db.String(255), nullable=False)
+    puesto_contacto = db.Column(db.String(255), nullable=False)
+    telefono_contacto = db.Column(db.String(10), nullable=False)
+    correo_contacto = db.Column(db.String(255), nullable=False)
+    estatus = db.Column(db.String(100), nullable=False)
 
-    
+class domicilio (db.Model):
+    __tablename__='domicilio'
+    id=db.Column(db.Integer,primary_key=True)
+    calle = db.Column(db.String(255), nullable=False)
+    colonia = db.Column(db.String(255), nullable=False)
+    numero_interior = db.Column(db.String(10), nullable=True)
+    numero_exterior = db.Column(db.String(10), nullable=True)
+    estado = db.Column(db.String(255), nullable=False)
+    municipio = db.Column(db.String(255), nullable=False)
+    cp = db.Column(db.String(10), nullable=True)
+    referencias = db.Column(db.String(255), nullable=False)
+    estatus = db.Column(db.String(100), nullable=False)
 
+class cliente (db.Model):
+    __tablename__='cliente'
+    id=db.Column(db.Integer,primary_key=True)
+    idPersona = db.Column(db.Integer,db.ForeignKey('persona.id'))
+
+class orden_compra (db.Model):
+    __tablename__='orden_compra'
+    id=db.Column(db.Integer,primary_key=True)
+    fecha_orden = db.Column(db.Date,default=datetime.datetime.now)
+    total=db.Column(db.Float,nullable=False)
+    estatus = db.Column(db.String(100), nullable=False)
+    proveedor = db.Column(db.Integer,db.ForeignKey('proveedor.id'))
+    user = db.Column(db.Integer,db.ForeignKey('user.id'))
+
+class material(db.Model):
+    __tablename__='material'
+    id=db.Column(db.Integer,primary_key=True)
+    tipo = db.Column(db.String(255), nullable=False)
+    nombre = db.Column(db.String(255), nullable=False)
+    descripcion = db.Column(db.String(255), nullable=False)
+    cantidad = db.Column(db.Integer,nullable=False)
+    alto = db.Column(db.Integer,nullable=False)
+    ancho = db.Column(db.Integer,nullable=False)
+    grosor = db.Column(db.Integer,nullable=False)
+    color = db.Column(db.String(100), nullable=False)
+    estatus = db.Column(db.String(100), nullable=False)
+
+
+class detalle_orden_compra (db.Model):
+    __tablename__='detalle_orden_compra'
+    id=db.Column(db.Integer,primary_key=True)
+    cantidad=db.Column(db.Integer,nullable=False)
+    subtotal=db.Column(db.Float,nullable=False)
+    material = db.Column(db.Integer,db.ForeignKey('material.id'))
+
+class sobrante_material (db.Model):
+    __tablename__='sobrante_material'
+    id=db.Column(db.Integer,primary_key=True)
+    alto = db.Column(db.Integer,nullable=False)
+    ancho = db.Column(db.Integer,nullable=False)
+    comentario = db.Column(db.String(255), nullable=True)
+    estatus = db.Column(db.String(100), nullable=False)
+    material = db.Column(db.Integer,db.ForeignKey('material.id'))
+
+
+class categoria (db.Model):
+    __tablename__='categoria'
+    id=db.Column(db.Integer,primary_key=True)
+    nombre = db.Column(db.String(255), nullable=False)
+    descripcion = db.Column(db.String(255), nullable=False)
+    estatus = db.Column(db.String(100), nullable=False)
+
+class producto (db.Model):
+    __tablename__='producto'
+    id=db.Column(db.Integer,primary_key=True)
+    modelo = db.Column(db.String(255), nullable=False)
+    descripcion = db.Column(db.String(255), nullable=False)
+    img = db.Column(db.Text, nullable=False)
+    peso = db.Column(db.Float,nullable=False)
+    color = db.Column(db.String(100), nullable=False)
+    alto = db.Column(db.Integer,nullable=False)
+    ancho = db.Column(db.Integer,nullable=False)
+    largo = db.Column(db.Integer,nullable=False)
+    cantidad = db.Column(db.Integer,nullable=False)
+    precio = db.Column(db.Float,nullable=False)
+    estatus = db.Column(db.String(100), nullable=False)
+    categoria = db.Column(db.Integer,db.ForeignKey('categoria.id'))
+
+class detalle_producto_material (db.Model):
+    __tablename__='detalle_producto_material'
+    id=db.Column(db.Integer,primary_key=True)
+    alto = db.Column(db.Integer,nullable=False)
+    ancho = db.Column(db.Integer,nullable=False)
+    cantidad = db.Column(db.Integer,nullable=False)
+    producto = db.Column(db.Integer,db.ForeignKey('producto.id'))
+    material = db.Column(db.Integer,db.ForeignKey('material.id'))
+
+class venta (db.Model):
+    __tablename__='venta'
+    id=db.Column(db.Integer,primary_key=True)
+    fecha_venta = db.Column(db.Date,default=datetime.datetime.now)
+    total = db.Column(db.Float,nullable=False)
+    cliente = db.Column(db.Integer,db.ForeignKey('cliente.id'))
+    user = db.Column(db.Integer,db.ForeignKey('user.id'))
+
+class detalle_venta (db.Model):
+    __tablename__='detalle_venta'
+    id=db.Column(db.Integer,primary_key=True)
+    cantidad = db.Column(db.Integer,nullable=False)
+    subtotal = db.Column(db.Float,nullable=False)
+    venta = db.Column(db.Integer,db.ForeignKey('venta.id'))
+    producto = db.Column(db.Integer,db.ForeignKey('producto.id'))
