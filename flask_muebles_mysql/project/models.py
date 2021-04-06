@@ -1,11 +1,15 @@
-from . import db
+#from . import db
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
+from flask_marshmallow import Marshmallow
 from flask_security import UserMixin, RoleMixin, current_user, utils
 from flask_admin import Admin
 from flask_admin.contrib  import sqla
 import datetime
 from wtforms.fields import PasswordField
+
+db = SQLAlchemy()
+ma = Marshmallow()
 
 #Definiendo la tabla relacional
 users_roles = db.Table('users_roles',
@@ -154,11 +158,15 @@ class material(db.Model):
     nombre = db.Column(db.String(255), nullable=False)
     descripcion = db.Column(db.String(255), nullable=False)
     cantidad = db.Column(db.Integer,nullable=False)
-    alto = db.Column(db.Float,nullable=False)
-    ancho = db.Column(db.Float,nullable=False)
-    grosor = db.Column(db.Float,nullable=False)
+    alto = db.Column(db.Integer,nullable=False)
+    ancho = db.Column(db.Integer,nullable=False)
+    grosor = db.Column(db.Integer,nullable=False)
     color = db.Column(db.String(100), nullable=False)
     estatus = db.Column(db.String(100), nullable=False)
+    
+class MaterialSchema(ma.Schema):
+    class Meta:
+        fields = ('id', 'tipo', 'nombre', 'descripcion', 'cantidad', 'alto', 'ancho', 'grosor', 'color', 'estatus')
 
 
 class detalle_orden_compra (db.Model):
@@ -171,11 +179,16 @@ class detalle_orden_compra (db.Model):
 class sobrante_material (db.Model):
     __tablename__='sobrante_material'
     id=db.Column(db.Integer,primary_key=True)
-    alto = db.Column(db.Float,nullable=False)
-    ancho = db.Column(db.Float,nullable=False)
+    alto = db.Column(db.Integer,nullable=False)
+    ancho = db.Column(db.Integer,nullable=False)
     comentario = db.Column(db.String(255), nullable=True)
     estatus = db.Column(db.String(100), nullable=False)
     material = db.Column(db.Integer,db.ForeignKey('material.id'))
+    
+class SobranteMaterialSchema(ma.Schema):
+    class Meta:
+        fields = ('id', 'alto', 'ancho', 'comentario', 'estatus', 'material')
+
 
 
 class categoria (db.Model):
