@@ -197,6 +197,10 @@ class categoria (db.Model):
     nombre = db.Column(db.String(255), nullable=False)
     descripcion = db.Column(db.String(255), nullable=False)
     estatus = db.Column(db.String(100), nullable=False)
+    
+class CategoriaSchema(ma.Schema):
+    class Meta:
+        fields = ('id', 'nombre', 'descripcion', 'estatus')
 
 class producto (db.Model):
     __tablename__='producto'

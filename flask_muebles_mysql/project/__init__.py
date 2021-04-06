@@ -71,6 +71,9 @@ def create_app():
     
     from .materialRutas import materialRutas as materialRutas_blueprint
     app.register_blueprint(materialRutas_blueprint)
+    
+    from .categoriasRutas import categoriasRutas as categoriasRutas_blueprint
+    app.register_blueprint(categoriasRutas_blueprint)
         
     # Initialize Flask-Admin
     admin = Admin(app)
