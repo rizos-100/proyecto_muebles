@@ -28,6 +28,7 @@ class persona (db.Model):
     domicilio = db.Column(db.Integer,db.ForeignKey('domicilio.id'))
     rfc = db.Column(db.String(255), nullable=False)
 
+    domicil = db.relationship('domicilio')
 
 class User(UserMixin, db.Model):
     """User account model"""
@@ -150,6 +151,10 @@ class cliente (db.Model):
     __tablename__='cliente'
     id=db.Column(db.Integer,primary_key=True)
     idPersona = db.Column(db.Integer,db.ForeignKey('persona.id'))
+    
+    persona = db.relationship('persona')
+
+
 
 class orden_compra (db.Model):
     __tablename__='orden_compra'

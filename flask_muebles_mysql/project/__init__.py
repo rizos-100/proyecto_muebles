@@ -59,6 +59,8 @@ def create_app():
     app.register_blueprint(categoriasRutas_blueprint)
     from .proveedorRutas import proveedorRutas as proveedorRutas_blueprint
     app.register_blueprint(proveedorRutas_blueprint)
+    from .clienteRutas import clienteRutas as clienteRutas_blueprint
+    app.register_blueprint(clienteRutas_blueprint)
         
     # Initialize Flask-Admin
     admin = Admin(app)
