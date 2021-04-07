@@ -6,3 +6,4 @@ email-validator
 mysqlclient
 flask-marshmallow
 bcrypt
+marshmallow-sqlalchemy

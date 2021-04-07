@@ -32,23 +32,6 @@ def create_app():
 
         #Conectando los modelos a flask-security.
         security = Security(app, userDataStore)
-
-        ######################################################################
-        '''
-        userDataStore.find_or_create_role(name='admin', description='Administrator')
-        userDataStore.find_or_create_role(name='end-user', description='End user')
-
-        if not userDataStore.get_user('enduser@example.com'):
-            userDataStore.create_user(name ='User-End',email='enduser@example.com', password=generate_password_hash('password', method='sha256'))
-        if not userDataStore.get_user('admin@example.com'):
-            userDataStore.create_user(name= 'Admin', email='admin@example.com', password=generate_password_hash('password', method='sha256'))
-
-        db.session.commit()
-
-        userDataStore.add_role_to_user('enduser@example.com', 'end-user')
-        userDataStore.add_role_to_user('admin@example.com', 'admin')
-        db.session.commit()
-        '''
     #####################################################################3
     #Configurando el login_manager
     #login_manager = LoginManager()
@@ -74,6 +57,8 @@ def create_app():
     
     from .categoriasRutas import categoriasRutas as categoriasRutas_blueprint
     app.register_blueprint(categoriasRutas_blueprint)
+    from .proveedorRutas import proveedorRutas as proveedorRutas_blueprint
+    app.register_blueprint(proveedorRutas_blueprint)
         
     # Initialize Flask-Admin
     admin = Admin(app)

@@ -123,6 +123,15 @@ class proveedor(db.Model):
     telefono_contacto = db.Column(db.String(10), nullable=False)
     correo_contacto = db.Column(db.String(255), nullable=False)
     estatus = db.Column(db.String(100), nullable=False)
+    estado = db.Column(db.String(255), nullable=False)
+    municipio = db.Column(db.String(255), nullable=False)
+
+class ProveedorSchema(ma.Schema):
+    class Meta:
+        fields = ('id', 'nombre','rfc','calle','colonia','numero_interior','numero_exterior','cp',
+                    'nombre_contacto','puesto_contacto','telefono_contacto','correo_contacto','estatus',
+                    'estado','municipio')
+    
 
 class domicilio (db.Model):
     __tablename__='domicilio'
