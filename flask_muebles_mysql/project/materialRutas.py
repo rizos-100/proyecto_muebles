@@ -133,6 +133,30 @@ def updateMaterial():
           
           return jsonify(result)
      
+@materialRutas.route('/restarCantidadMaterial', methods=['GET', 'POST'])
+def updateCantidadMaterial():
+     if request.method == 'POST':
+          id_ = request.form['id']
+          cantidad_ = int(request.form['cantidad'])
+          alto_ = int(request.form['alto'])
+          ancho_ = int(request.form['ancho'])
+
+          materia = db.session.query(material).filter(material.id == id_).first()
+
+          if materia.cantidad >= cantidad_ and materia.alto >= alto_ and materia.ancho >= ancho_:
+               materia.cantidad = materia.cantidad - cantidad_
+               materia.alto =  materia.alto - alto_
+               materia.ancho = materia.ancho - ancho_
+               db.session.commit()
+               
+               result = {"id": materia.id}
+          
+               return jsonify(result)
+          else:
+               result = {"id": "El material con id: " + str(materia.id) + " no es suficiente"}
+          
+               return jsonify(result)     
+
 @materialRutas.route('/updateSobrante', methods=['GET', 'POST'])
 def updateSobrante():
      if request.method == 'POST':

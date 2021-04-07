@@ -231,7 +231,14 @@ class producto (db.Model):
     cantidad_minima = db.Column(db.Integer,nullable=False)
     precio = db.Column(db.Float,nullable=False)
     estatus = db.Column(db.String(100), nullable=False)
-    categoria = db.Column(db.Integer,db.ForeignKey('categoria.id'))
+    idCategoria = db.Column(db.Integer,db.ForeignKey('categoria.id'))
+    
+    categoria = db.relationship('categoria')
+    
+    
+class ProductoSchema(ma.Schema):
+    class Meta:
+        fields = ('id','modelo','descripcion','img','peso','color','alto','ancho','largo','cantidad','cantidad_minima','precio', 'estatus', 'categoria')
 
 class detalle_producto_material (db.Model):
     __tablename__='detalle_producto_material'
@@ -241,6 +248,10 @@ class detalle_producto_material (db.Model):
     cantidad = db.Column(db.Integer,nullable=False)
     producto = db.Column(db.Integer,db.ForeignKey('producto.id'))
     material = db.Column(db.Integer,db.ForeignKey('material.id'))
+
+class Detalle_produco_material_Schema(ma.Schema):
+    class Meta:
+        fields = ('id','alto','ancho','cantidad','producto','material')
 
 class venta (db.Model):
     __tablename__='venta'
