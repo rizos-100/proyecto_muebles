@@ -164,6 +164,10 @@ class orden_compra (db.Model):
     estatus = db.Column(db.String(100), nullable=False)
     proveedor = db.Column(db.Integer,db.ForeignKey('proveedor.id'))
     user = db.Column(db.Integer,db.ForeignKey('user.id'))
+    
+class OrdenSchema(ma.Schema):
+    class Meta:
+        fields = ('id','fecha_orden','total','estatus','proveedor','user')
 
 class material(db.Model):
     __tablename__='material'
@@ -189,6 +193,11 @@ class detalle_orden_compra (db.Model):
     cantidad=db.Column(db.Integer,nullable=False)
     subtotal=db.Column(db.Float,nullable=False)
     material = db.Column(db.Integer,db.ForeignKey('material.id'))
+    idOrden = db.Column(db.Integer,db.ForeignKey('orden_compra.id'))
+class detalleOrdenSchema(ma.Schema):
+    class Meta:
+        fields = ('id','cantidad','subtotal','material','idOrden')
+
 
 class sobrante_material (db.Model):
     __tablename__='sobrante_material'
