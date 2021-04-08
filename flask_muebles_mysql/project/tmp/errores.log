@@ -1,0 +1,92 @@
+INFO:root:Incio de la aplicacion [2021-04-08 13:26:58.992920]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:27:40] "[37mPOST /getAllClientesById HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.BadRequestKeyError'>
+ Tipo de error: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.[2021-04-08 13:27:45.225885]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:27:45] "[35m[1mPOST /getAllClientesById HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\main.py', reloading
+INFO:root:Incio de la aplicacion [2021-04-08 13:30:40.874494]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
+INFO:root:Incio de la aplicacion [2021-04-08 13:30:53.456331]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
+INFO:root:Incio de la aplicacion [2021-04-08 13:31:07.867631]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
+INFO:root:Incio de la aplicacion [2021-04-08 13:35:41.685738]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'UnboundLocalError'>
+ Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:36:04.467452]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:36:04] "[37mPOST /getAllClientesInactivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'UnboundLocalError'>
+ Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:37:15.933348]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:37:16] "[35m[1mPOST /getAllClientesInactivos HTTP/1.1[0m" 500 -
+ERROR:root:<class 'UnboundLocalError'>
+ Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:37:51.702275]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:37:51] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'UnboundLocalError'>
+ Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:39:33.401432]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:39:33] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'UnboundLocalError'>
+ Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:40:49.323210]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:40:49] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'UnboundLocalError'>
+ Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:41:17.152141]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:41:17] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'UnboundLocalError'>
+ Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:41:23.689883]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:41:23] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'UnboundLocalError'>
+ Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:41:30.524374]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:41:30] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'UnboundLocalError'>
+ Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:41:36.737326]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:41:36] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
+INFO:root:Incio de la aplicacion [2021-04-08 13:45:46.780997]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'jinja2.exceptions.TemplateNotFound'>
+ Tipo de error: [2021-04-08 13:45:51.364761]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:45:51] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:46:33] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
+INFO:root:Incio de la aplicacion [2021-04-08 13:46:54.967230]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
+INFO:root:Incio de la aplicacion [2021-04-08 13:47:27.691091]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
+INFO:root:Incio de la aplicacion [2021-04-08 13:48:04.534890]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
+INFO:root:Incio de la aplicacion [2021-04-08 13:49:58.745203]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
+INFO:root:Incio de la aplicacion [2021-04-08 13:50:16.640370]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'jinja2.exceptions.TemplateNotFound'>
+ Tipo de error: [2021-04-08 13:50:20.360582]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:50:20] "[37mPOST /getAllClientesInactivos HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading

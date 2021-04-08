@@ -11,13 +11,12 @@ main = Blueprint('main', __name__)
 @main.route('/')
 def index():
     logging.debug(' Fecha y Hora: {} - Arranque de la aplicacion '.format(datetime.now()))
-        
     #print(cuerpo)
     return render_template('index.html')
 
 #Definimos la ruta a la página de perfil
 @main.route('/profile')
 @login_required
-@roles_accepted('admin','end-user')#autorización para el rol admin
+@roles_accepted('admin')#autorización para el rol admin
 def profile():
     return render_template('profile.html', name=current_user.name)

@@ -7,6 +7,9 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from flask_admin.contrib  import sqla
 from wtforms.fields import PasswordField
 
+import logging
+from datetime import datetime
+
 #Creamos una instancia de SQLAlchemy
 db = SQLAlchemy()
 #Creamos el objeto SQLalchemyUserDaaStore
@@ -14,9 +17,12 @@ from .models import User, Role, RoleAdmin, UserAdmin
 
 userDataStore = SQLAlchemyUserDatastore(db, User, Role)
 
+UPLOAD_TMP = os.path.abspath('project/tmp/')
+LOG_FILENAME = UPLOAD_TMP+'/errores.log'
 
 def create_app():
     #Creamos una instancia del flask
+    logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
     app = Flask(__name__)
 
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -76,6 +82,8 @@ def create_app():
     # Add Flask-Admin views for Users and Roles
     admin.add_view(UserAdmin(User, db.session))
     admin.add_view(RoleAdmin(Role, db.session))
+    
+    logging.info('Incio de la aplicacion ['+str(datetime.now())+']')
     
     return app
 

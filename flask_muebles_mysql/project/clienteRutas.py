@@ -1,17 +1,45 @@
-from flask import Blueprint, render_template, jsonify, request
+from flask import Blueprint, render_template, jsonify, request,make_response
 from .models import db
 from .models import cliente,persona,domicilio
-import json
+
+import logging
+from datetime import datetime
 
 clienteRutas = Blueprint('clienteRutas', __name__)
 
-@clienteRutas.route('/getAllClientes',methods=['GET','POST'])
-def getAllClientes():
-    arrayClientes = list()
-    clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Activo').all()
-    
-    for i in clientes:
-        clienObj ={
+@clienteRutas.route('/getAllClientesActivos',methods=['GET','POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
+def getAllClientesActivos():
+    try:
+        clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Activo').all()
+        return render_template('', clientes=clientes, activos = True)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+
+@clienteRutas.route('/getAllClientesInactivos',methods=['GET','POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
+def getAllClientesInactivos():
+    try:
+        clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Inactivo').all()
+        return render_template('', clientes=clientes, activos = False)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+
+@clienteRutas.route('/getAllClientesById',methods=['GET','POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
+def getAllClientesById():
+    try:
+        if request.method == 'POST':
+          idClien = request.form['idCliente']
+          i = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(cliente.id ==idClien).first()
+          clienObj ={
             'idCliente': i.cliente.id,
             'persona':{
                 'id':i.persona.id,
@@ -32,12 +60,19 @@ def getAllClientes():
                 'referencias':i.domicilio.referencias
             }
         }
-        arrayClientes.append(clienObj) 
-    return jsonify(arrayClientes)
+          return make_response(jsonify(clienObj), 200)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return make_response(jsonify(message), 400)
+
 
 @clienteRutas.route('/addCliente', methods=['GET', 'POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
 def addCliente():
-     if request.method == 'POST':
+    try:
+        if request.method == 'POST':
           nombre_ = request.form['nombre']
           apellidoP_ = request.form['apellidoP']
           apellidoM_ = request.form['apellidoM']
@@ -89,10 +124,17 @@ def addCliente():
           
           return jsonify(result)
       
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return make_response(jsonify(message), 400)
+      
 @clienteRutas.route('/updateCliente', methods=['GET', 'POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
 def updateCliente():
-    
-     if request.method == 'POST':
+    try:
+        if request.method == 'POST':
          
           idPers = request.form['idP']
           nombre_ = request.form['nombre']
@@ -137,11 +179,18 @@ def updateCliente():
           result = {"id": persona_upd.id}
           
           return jsonify(result)
-
-@clienteRutas.route('/deleteCliente', methods=['GET', 'POST'])
-def deleteCliente():
+      
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return make_response(jsonify(message), 400)
     
-     if request.method == 'POST':
+@clienteRutas.route('/deleteCliente', methods=['GET', 'POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
+def deleteCliente():
+    try:
+        if request.method == 'POST':
          
           idPers = request.form['idP']
           
@@ -153,3 +202,8 @@ def deleteCliente():
           result = {"id": persona_upd.id}
           
           return jsonify(result)
+      
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return make_response(jsonify(message), 400)
