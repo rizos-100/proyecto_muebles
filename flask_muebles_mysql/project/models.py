@@ -246,8 +246,11 @@ class detalle_producto_material (db.Model):
     alto = db.Column(db.Float,nullable=False)
     ancho = db.Column(db.Float,nullable=False)
     cantidad = db.Column(db.Integer,nullable=False)
-    producto = db.Column(db.Integer,db.ForeignKey('producto.id'))
-    material = db.Column(db.Integer,db.ForeignKey('material.id'))
+    idProducto = db.Column(db.Integer,db.ForeignKey('producto.id'))
+    idMaterial = db.Column(db.Integer,db.ForeignKey('material.id'))
+    
+    producto = db.relationship('producto')
+    material = db.relationship('material')
 
 class Detalle_produco_material_Schema(ma.Schema):
     class Meta:
