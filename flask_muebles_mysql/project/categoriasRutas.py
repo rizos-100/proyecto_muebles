@@ -7,22 +7,18 @@ categoriasRutas = Blueprint('categoriasRutas', __name__)
 @categoriasRutas.route('/getAllCategoriasActivas', methods=['GET', 'POST'])
 def getAllMaterialActivos():
      categoria_ = db.session.query(categoria).filter(categoria.estatus == "Activo").all()
-     categoria_schema = CategoriaSchema(many=True)
-     result = categoria_schema.dump(categoria_)
-     return jsonify(result)
+     return render_template('categoria.html', categorias=categoria_, activos = True)
  
 @categoriasRutas.route('/getAllCategoriasInactivas', methods=['GET', 'POST'])
 def getAllCategoriasInactivas():
      categoria_ = db.session.query(categoria).filter(categoria.estatus == "Inactivo").all()
-     categoria_schema = CategoriaSchema(many=True)
-     result = categoria_schema.dump(categoria_)
-     return jsonify(result)
+     return render_template('categoria.html', categorias=categoria_, activos = False)
  
-@categoriasRutas.route('/getCategoriasPorNombre', methods=['GET', 'POST'])
-def getCategoriasPorNombre():
+@categoriasRutas.route('/getCategoriasPorId', methods=['GET', 'POST'])
+def getCategoriasPorId():
      if request.method == 'GET':
-          nombre = request.args.get("nombre", "No contiene el nombre")
-          categoria_ = db.session.query(categoria).filter(categoria.nombre == nombre, categoria.estatus == "Activo").first()
+          idC = request.args.get("idCat", "No contiene el nombre")
+          categoria_ = db.session.query(categoria).filter(categoria.id == idC, categoria.estatus == "Activo").first()
           categoria_schema = CategoriaSchema(many=False)
           result = categoria_schema.dump(categoria_)
           return jsonify(result)
