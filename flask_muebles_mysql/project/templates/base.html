@@ -10,11 +10,15 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet"
+        type="text/css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
     <link href="../static/plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Chosen CSS Core -->
+    <link type="text/css" href="../static/plugins/chosen/chosen.css" rel="stylesheet" />
 
     <!-- Waves Effect Css -->
     <link href="../static/plugins/node-waves/waves.css" rel="stylesheet" />
@@ -30,7 +34,8 @@
     <!-- Custom Css -->
     <link href="../static/css/style.css" rel="stylesheet">
 
-    <link href="../static/sweetalert/sweetalert2.min.css" rel="stylesheet">
+    <!-- Sweetalert Css -->
+    <link href="../static/plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="../static/css/themes/all-themes.css" rel="stylesheet" />
@@ -61,7 +66,8 @@
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
-                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
                 <a class="navbar-brand" href="index.html">Muebleria del valle</a>
             </div>
@@ -77,7 +83,8 @@
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
                     <div class="email">john.doe@example.com</div>
                     <div class="btn-group user-helper-dropdown">
-                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
+                            aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
                             <li><a href="javascript:void(0);"><i class="material-icons">person</i>Perfil</a></li>
                             <li role="separator" class="divider"></li>
@@ -151,9 +158,6 @@
                             <li>
                                 <a href="/getAllCategoriasInactivas">Inactivas</a>
                             </li>
-                            <li>
-                                <a href="#"  data-toggle="modal" data-target="#modalCategoria">Agregar Categoria</a>
-                            </li>
                         </ul>
                     </li>
                 </ul>
@@ -180,33 +184,53 @@
         </div>
     </section>
 
-    <div class="modal fade" id="modalCategoria" data-backdrop="static" tabindex="-1" role="dialog" style="display: none;">
-        <div class="modal-dialog" role="document">
+    <div class="modal fade" id="modalCategoria" data-backdrop="static" tabindex="-1" role="dialog"
+        style="display: none;">
+        <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h4 class="modal-title" id="defaultModalLabel">Categoria</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="defaultModalLabel">Muebleria del valle</h4>
+                    <p class="modal-description">Formulario para el control de categorías. </p>
                 </div>
                 <div class="modal-body">
-                    <div class="row clearfix">
-                        <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <div class="form-line">
-                                    <input type="hidden" id="txtIdCategoria" class="form-control" placeholder="Id">
-                                    <input type="text" id="txtNombreCategoria" class="form-control" placeholder="Nombre de la categoria">
+                                <b>Nombre</b>
+                                <font color="red"><b>*</b></font>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="hidden" id="txtIdCategoria" class="form-control" placeholder="Id">
+                                        <input type="text" id="txtNombreCategoria" class="form-control"
+                                            placeholder="Nombre de la categoría" />
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12">
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                             <div class="form-group">
-                                <div class="form-line">
-                                    <textarea rows="4" id="txtDescCategoria" class="form-control no-resize" placeholder="Descripción de la categoria..."></textarea>
+                                <b>Descripción <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <textArea type="text" id="txtDescCategoria" class="form-control"
+                                            placeholder="Descripción de la categoria..."></textArea>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-info waves-effect" onclick="decidirCategoria()">Guardar</button>
+                    <button type="button" class="btn btn-info waves-effect"
+                        onclick="decidirCategoria()">Guardar</button>
                     <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
@@ -260,11 +284,16 @@
     <!-- Sparkline Chart Plugin Js -->
     <script src="../static/plugins/jquery-sparkline/jquery.sparkline.js"></script>
 
+    <!-- Bootstrap Notify Plugin Js -->
+    <script src="../static/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
     <!-- Custom Js -->
     <script src="../static/js/admin.js"></script>
     <script src="../static/js/pages/index.js"></script>
+    <script src="../static/js/pages/ui/notifications.js"></script>
 
-    <script src="../static/sweetalert/sweetalert2.all.min.js"></script>
+    <!-- SweetAlert Plugin Js -->
+    <script src="../static/plugins/sweetalert/sweetalert.min.js"></script>
 
     <!-- Demo Js -->
     <script src="../static/js/demo.js"></script>
