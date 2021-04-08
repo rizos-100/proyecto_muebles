@@ -30,7 +30,7 @@ def getAllDetalleProductosMaterial():
                       }
                   }
               arrayDPM.append(dtmpObj) 
-    return jsonify(arrayDPM)
+    return render_template("", dtmp = arrayDPM)
 
 
 @detalleProductoMaterialRutas.route('/addDetalleProductosMaterial', methods=['GET','POST'])

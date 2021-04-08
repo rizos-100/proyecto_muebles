@@ -31,70 +31,7 @@ def getAllProductosActivos():
             }
         }
         arrayProductos.append(productoObj) 
-    return jsonify(arrayProductos)
-
-@productoRutas.route('/getAllProductosPorModelo', methods=['GET','POST'])
-def getAllProductosPorModelo():
-    arrayProductos = list()
-    modelo_ = request.args.get("modelo", "No contiene el nombre")
-    productos = db.session.query(producto, categoria).join(producto.categoria).filter(producto.modelo == modelo_, producto.estatus == 'Activo').all()
-    
-    for i in productos:
-        productoObj ={
-            'idProducto': i.producto.id,
-            'modelo': i.producto.modelo,
-            'descripcion': i.producto.descripcion,
-            'img': i.producto.img,
-            'peso': i.producto.peso,
-            'color': i.producto.color,
-            'alto': i.producto.alto,
-            'ancho': i.producto.ancho,
-            'largo': i.producto.largo,
-            'cantidad': i.producto.cantidad,
-            'cantidad_minima': i.producto.cantidad_minima,
-            'precio': i.producto.precio,
-            'estatus': i.producto.estatus,
-            'categoria':{
-                'id':i.categoria.id,
-                'nombre':i.categoria.nombre,
-                'descripcion':i.categoria.descripcion,
-                'estatus':i.categoria.estatus,
-            }
-        }
-        arrayProductos.append(productoObj) 
-    return jsonify(arrayProductos)
-
-@productoRutas.route('/getAllProductosPorCategoria', methods=['GET','POST'])
-def getAllProductosPorCategoria():
-    arrayProductos = list()
-    nombre = request.args.get("nombre", "No contiene el nombre")
-    productos = db.session.query(producto, categoria).join(producto.categoria).filter(categoria.nombre == nombre, producto.estatus == 'Activo').all()
-    
-    for i in productos:
-        productoObj ={
-            'idProducto': i.producto.id,
-            'modelo': i.producto.modelo,
-            'descripcion': i.producto.descripcion,
-            'img': i.producto.img,
-            'peso': i.producto.peso,
-            'color': i.producto.color,
-            'alto': i.producto.alto,
-            'ancho': i.producto.ancho,
-            'largo': i.producto.largo,
-            'cantidad': i.producto.cantidad,
-            'cantidad_minima': i.producto.cantidad_minima,
-            'precio': i.producto.precio,
-            'estatus': i.producto.estatus,
-            'categoria':{
-                'id':i.categoria.id,
-                'nombre':i.categoria.nombre,
-                'descripcion':i.categoria.descripcion,
-                'estatus':i.categoria.estatus,
-            }
-        }
-        arrayProductos.append(productoObj) 
-    return jsonify(arrayProductos)
-
+    return render_template("", productos = arrayProductos, activos = True)
 
 
 @productoRutas.route('/getAllProductosInactivos', methods=['GET','POST'])
@@ -125,7 +62,38 @@ def getAllProductosInactivos():
             }
         }
         arrayProductos.append(productoObj) 
-    return jsonify(arrayProductos)
+    return render_template("", productos = arrayProductos, activos = True)
+
+@productoRutas.route('/getAllProductosPorId', methods=['GET','POST'])
+def getAllProductosPorId():
+    arrayProductos = list()
+    id_ = request.args.get("id", "No contiene el nombre")
+    productos = db.session.query(producto, categoria).join(producto.categoria).filter(producto.id == id_, producto.estatus == 'Inactivo').all()
+    
+    for i in productos:
+        productoObj ={
+            'idProducto': i.producto.id,
+            'modelo': i.producto.modelo,
+            'descripcion': i.producto.descripcion,
+            'img': i.producto.img,
+            'peso': i.producto.peso,
+            'color': i.producto.color,
+            'alto': i.producto.alto,
+            'ancho': i.producto.ancho,
+            'largo': i.producto.largo,
+            'cantidad': i.producto.cantidad,
+            'cantidad_minima': i.producto.cantidad_minima,
+            'precio': i.producto.precio,
+            'estatus': i.producto.estatus,
+            'categoria':{
+                'id':i.categoria.id,
+                'nombre':i.categoria.nombre,
+                'descripcion':i.categoria.descripcion,
+                'estatus':i.categoria.estatus,
+            }
+        }
+        arrayProductos.append(productoObj) 
+    return render_template("", productos = arrayProductos, activos = True)
 
 @productoRutas.route('/addProducto', methods=['GET','POST'])
 def addProducto():
@@ -234,3 +202,66 @@ def deleteProducto():
         result = {"id": p.id}
           
         return jsonify(result)
+    
+    
+    """@productoRutas.route('/getAllProductosPorModelo', methods=['GET','POST'])
+def getAllProductosPorModelo():
+    arrayProductos = list()
+    modelo_ = request.args.get("modelo", "No contiene el nombre")
+    productos = db.session.query(producto, categoria).join(producto.categoria).filter(producto.modelo == modelo_, producto.estatus == 'Activo').all()
+    
+    for i in productos:
+        productoObj ={
+            'idProducto': i.producto.id,
+            'modelo': i.producto.modelo,
+            'descripcion': i.producto.descripcion,
+            'img': i.producto.img,
+            'peso': i.producto.peso,
+            'color': i.producto.color,
+            'alto': i.producto.alto,
+            'ancho': i.producto.ancho,
+            'largo': i.producto.largo,
+            'cantidad': i.producto.cantidad,
+            'cantidad_minima': i.producto.cantidad_minima,
+            'precio': i.producto.precio,
+            'estatus': i.producto.estatus,
+            'categoria':{
+                'id':i.categoria.id,
+                'nombre':i.categoria.nombre,
+                'descripcion':i.categoria.descripcion,
+                'estatus':i.categoria.estatus,
+            }
+        }
+        arrayProductos.append(productoObj) 
+    return jsonify(arrayProductos)"""
+
+"""@productoRutas.route('/getAllProductosPorCategoria', methods=['GET','POST'])
+def getAllProductosPorCategoria():
+    arrayProductos = list()
+    nombre = request.args.get("nombre", "No contiene el nombre")
+    productos = db.session.query(producto, categoria).join(producto.categoria).filter(categoria.nombre == nombre, producto.estatus == 'Activo').all()
+    
+    for i in productos:
+        productoObj ={
+            'idProducto': i.producto.id,
+            'modelo': i.producto.modelo,
+            'descripcion': i.producto.descripcion,
+            'img': i.producto.img,
+            'peso': i.producto.peso,
+            'color': i.producto.color,
+            'alto': i.producto.alto,
+            'ancho': i.producto.ancho,
+            'largo': i.producto.largo,
+            'cantidad': i.producto.cantidad,
+            'cantidad_minima': i.producto.cantidad_minima,
+            'precio': i.producto.precio,
+            'estatus': i.producto.estatus,
+            'categoria':{
+                'id':i.categoria.id,
+                'nombre':i.categoria.nombre,
+                'descripcion':i.categoria.descripcion,
+                'estatus':i.categoria.estatus,
+            }
+        }
+        arrayProductos.append(productoObj) 
+    return jsonify(arrayProductos)"""

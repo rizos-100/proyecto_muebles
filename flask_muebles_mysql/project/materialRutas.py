@@ -8,49 +8,29 @@ materialRutas = Blueprint('materialRutas', __name__)
 @materialRutas.route('/getAllMaterialDisponible', methods=['GET', 'POST'])
 def getAllMaterialActivos():
      materiales = db.session.query(material).filter(material.estatus == "Disponible").all()
-     material_schema = MaterialSchema(many=True)
-     result = material_schema.dump(materiales)
-     return jsonify(result)
-
+     return render_template("", materiales = materiales, activos = True)
+     
 @materialRutas.route('/getAllMaterialInutilizable', methods=['GET', 'POST'])
 def getAllMaterialInactivos():
      materiales = db.session.query(material).filter(material.estatus == "Inutilizable").all()
-     material_schema = MaterialSchema(many=True)
-     result = material_schema.dump(materiales)
-     return jsonify(result)
+     return render_template("", materiales = materiales, activos = False)
 
-@materialRutas.route('/getMaterialPorNombre', methods=['GET', 'POST'])
-def getMaterialPorNombre():
+@materialRutas.route('/getMaterialPorId', methods=['GET', 'POST'])
+def getMaterialPorId():
      if request.method == 'GET':
-          nombre = request.args.get("nombre", "No contiene el nombre")
-          materia = db.session.query(material).filter(material.nombre == nombre, material.estatus == "Disponible").first()
-          material_schema = MaterialSchema(many=False)
-          result = material_schema.dump(materia)
-          return jsonify(result)
-     
-@materialRutas.route('/getMaterialPorTipo', methods=['GET', 'POST'])
-def getMaterialPorTipo():
-     if request.method == 'GET':
-          tipoMaterial = request.args.get("tipoMaterial", "No contiene el nombre")
-          materia = db.session.query(material).filter(material.tipo == tipoMaterial,  material.estatus == "Disponible").all()
-          material_schema = MaterialSchema(many=True)
-          result = material_schema.dump(materia)
-          return jsonify(result)
-     
-
+          id_ = request.args.get("id", "No contiene el nombre")
+          materia = db.session.query(material).filter(material.id == id_,  material.estatus == "Disponible").all()
+          return render_template("", material = materia, activos = True)
+          
 @materialRutas.route('/getAllSobranteDisponible', methods=['GET', 'POST'])
 def getAllSobranteDisponible():
      sobrantes = db.session.query(sobrante_material).filter(sobrante_material.estatus == "Disponible").all()
-     sobrante_schema = SobranteMaterialSchema(many=True)
-     result = sobrante_schema.dump(sobrantes)
-     return jsonify(result)
+     return render_template("", sobrantes = sobrantes, activos = True)
 
 @materialRutas.route('/getAllSobranteInutilizable', methods=['GET', 'POST'])
 def getAllSobranteInutilizable():
      sobrantes = db.session.query(sobrante_material).filter(sobrante_material.estatus == "Inutilizable").all()
-     sobrante_schema = SobranteMaterialSchema(many=True)
-     result = sobrante_schema.dump(sobrantes)
-     return jsonify(result)
+     return render_template("", sobrantes = sobrantes, activos = False)
 
 
 @materialRutas.route('/addMaterial', methods=['GET', 'POST'])
