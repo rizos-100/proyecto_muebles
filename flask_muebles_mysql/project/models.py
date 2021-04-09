@@ -278,7 +278,8 @@ class venta (db.Model):
     total = db.Column(db.Float,nullable=False)
     cliente = db.Column(db.Integer,db.ForeignKey('cliente.id'))
     user = db.Column(db.Integer,db.ForeignKey('user.id'))
-    
+    estatus = db.Column( db.String(100), nullable=False)
+        
     userForeign = db.relationship('User')
     clienteForeign = db.relationship('cliente')
 

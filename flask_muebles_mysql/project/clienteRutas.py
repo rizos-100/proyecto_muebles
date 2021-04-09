@@ -87,12 +87,12 @@ def addCliente():
           
           calle_ = Validator.sanitizarNombre(request.form['calle'])
           colonian_ = Validator.sanitizarNombre(request.form['colonia'])
-          numero_interior_ = request.form['numero_interior']
-          numero_exterior_ = request.form['numero_exterior']
-          estado_ = request.form['estado']
-          municipio_ = request.form['municipio']
-          cp_ = request.form['cp']
-          referencias_ = request.form['referencias']
+          numero_interior_ = str(request.form['numero_interior'])
+          numero_exterior_ = str(request.form['numero_exterior'])
+          estado_ = Validator.sanitizarNombre(request.form['estado'])
+          municipio_ = Validator.sanitizarNombre(request.form['municipio'])
+          cp_ = int(request.form['cp'])
+          referencias_ = Validator.sanitizarNombre(request.form['referencias'])
           
           objDomicilio = domicilio(calle=calle_,
                                     colonia=colonian_,
@@ -141,23 +141,23 @@ def updateCliente():
     try:
         if request.method == 'POST':
          
-          idPers = request.form['idP']
-          nombre_ = request.form['nombre']
-          apellidoP_ = request.form['apellidoP']
-          apellidoM_ = request.form['apellidoM']
-          numero_fijo_ = request.form['numero_fijo']
-          celular_ = request.form['celular']
-          rfc_ = request.form['rfc']
+          idPers = int(request.form['idP'])
+          nombre_ = Validator.sanitizarNombre(request.form['nombre'])
+          apellidoP_ = Validator.sanitizarNombre(request.form['apellidoP'])
+          apellidoM_ = Validator.sanitizarNombre(request.form['apellidoM'])
+          numero_fijo_ = int(request.form['numero_fijo'])
+          celular_ = int(request.form['celular'])
+          rfc_ = Validator.validarRFC(request.form['rfc'])
           
-          idDom = request.form['idD']
-          calle_ = request.form['calle']
-          colonian_ = request.form['colonia']
-          numero_interior_ = request.form['numero_interior']
-          numero_exterior_ = request.form['numero_exterior']
-          estado_ = request.form['estado']
-          municipio_ = request.form['municipio']
-          cp_ = request.form['cp']
-          referencias_ = request.form['referencias']
+          idDom = int(request.form['idD'])
+          calle_ = Validator.sanitizarNombre(request.form['calle'])
+          colonian_ = Validator.sanitizarNombre(request.form['colonia'])
+          numero_interior_ = str(request.form['numero_interior'])
+          numero_exterior_ = str(request.form['numero_exterior'])
+          estado_ = Validator.sanitizarNombre(request.form['estado'])
+          municipio_ = Validator.sanitizarNombre(request.form['municipio'])
+          cp_ = int(request.form['cp'])
+          referencias_ = Validator.sanitizarNombre(request.form['referencias'])
           
           domicilio_upd = db.session.query(domicilio).filter(domicilio.id == idDom).first()
           domicilio_upd.calle=calle_
@@ -197,7 +197,7 @@ def deleteCliente():
     try:
         if request.method == 'POST':
          
-          idPers = request.form['idP']
+          idPers = int(request.form['idP'])
           
           persona_upd = db.session.query(persona).filter(persona.id == idPers).first()
           persona_upd.estatus='Inactivo'
