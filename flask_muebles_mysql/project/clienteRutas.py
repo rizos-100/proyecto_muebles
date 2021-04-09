@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template, jsonify, request,make_response
 from .models import db
 from .models import cliente,persona,domicilio
+from project.validateInputs import validate as Validator
 
 import logging
 from datetime import datetime
@@ -37,7 +38,8 @@ def getAllClientesInactivos():
 def getAllClientesById():
     try:
         if request.method == 'GET':
-          idClien = request.args.get("idCliente", "No contiene el nombre")
+          idClien = int(request.args.get("idCliente", "0"))
+          print(idClien)
           i = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(cliente.id ==idClien).first()
           clienObj ={
             'idCliente': i.cliente.id,
@@ -54,7 +56,7 @@ def getAllClientesById():
                 'id':i.domicilio.id,
                 'calle':i.domicilio.calle,
                 'colonia':i.domicilio.colonia,
-                'numero_exterior':i.domicilio.numero_exteriors,
+                'numero_exterior':i.domicilio.numero_exterior,
                 'numero_interior':i.domicilio.numero_interior,
                 'estado':i.domicilio.estado,
                 'municipio':i.domicilio.municipio,
@@ -76,15 +78,15 @@ def getAllClientesById():
 def addCliente():
     try:
         if request.method == 'POST':
-          nombre_ = request.form['nombre']
-          apellidoP_ = request.form['apellidoP']
-          apellidoM_ = request.form['apellidoM']
-          numero_fijo_ = request.form['numero_fijo']
-          celular_ = request.form['celular']
-          rfc_ = request.form['rfc']
+          nombre_ = Validator.sanitizarNombre(request.form['nombre'])
+          apellidoP_ = Validator.sanitizarNombre(request.form['apellidoP'])
+          apellidoM_ = Validator.sanitizarNombre(request.form['apellidoM'])
+          numero_fijo_ = Validator.sanitizarNombre(request.form['numero_fijo'])
+          celular_ = int(request.form['celular'])
+          rfc_ = Validator.validarRFC(request.form['rfc'])
           
-          calle_ = request.form['calle']
-          colonian_ = request.form['colonia']
+          calle_ = Validator.sanitizarNombre(request.form['calle'])
+          colonian_ = Validator.sanitizarNombre(request.form['colonia'])
           numero_interior_ = request.form['numero_interior']
           numero_exterior_ = request.form['numero_exterior']
           estado_ = request.form['estado']
