@@ -65,7 +65,7 @@ def getAllClientesById():
             }
         }
         
-        return jsonify(clienObj)
+        return clienObj
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')

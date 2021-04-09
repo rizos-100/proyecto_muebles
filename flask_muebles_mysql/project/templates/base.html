@@ -205,9 +205,8 @@
         <div class="modal-dialog modal-md">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" id="defaultModalLabel">Muebleria del valle</h4>
-                    <p class="modal-description">Formulario para el control de categorías. </p>
+                    <button type="button" class="close" data-dismiss="modal" onclick="limpiarCategoria()">&times;</button>
+                    <h4 class="modal-title" id="defaultModalLabel">Formulario para la gestión de categorías. </h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -217,7 +216,7 @@
                                 <font color="red"><b>*</b></font>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
                                     <div class="form-line">
                                         <input type="hidden" id="txtIdCategoria" class="form-control" placeholder="Id">
@@ -233,7 +232,7 @@
                                 <b>Descripción <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
                                     <div class="form-line">
                                         <textArea type="text" id="txtDescCategoria" class="form-control"
@@ -247,7 +246,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info waves-effect"
                         onclick="decidirCategoria()">Guardar</button>
-                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal" onclick="limpiarCategoria()">Cancelar</button>
                 </div>
             </div>
         </div>
@@ -258,9 +257,8 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" id="defaultModalLabel">Muebleria del valle</h4>
-                    <p class="modal-description">Formulario para el control de clientes. </p>
+                    <button type="button" class="close" data-dismiss="modal" onclick="limpiarCliente()">&times;</button>
+                    <h4 class="modal-title" id="defaultModalLabel">Formulario para el control de clientes. </h4>
                 </div>
                 <div class="modal-body">
                     <div class="row">
@@ -269,7 +267,7 @@
                                 <b>Nombre <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
 
                                     <div class="form-line">
@@ -284,7 +282,7 @@
                                 <b>Apellido paterno <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
                                     <div class="form-line">
                                         <input type="text" id="txtApellidoPaterno" class="form-control" placeholder="Apellido paterno" maxlength="100" data-length="100"/>
@@ -298,7 +296,7 @@
                                 <b>Apellido materno <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
                                     <div class="form-line">
                                         <input type="text" id="txtApellidoMaterno" class="form-control" placeholder="Apellido materno" maxlength="100" data-length="100"/>
@@ -313,7 +311,7 @@
                                 <b>RFC <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
                                     <div class="form-line">
                                         <input type="text" id="txtRFC" class="form-control" placeholder="RFC" maxlength="100" data-length="100"/>
@@ -326,7 +324,7 @@
                                 <b>Número fijo <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
 
                                     <div class="form-line">
@@ -340,7 +338,7 @@
                                 <b>Número celular <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
                                     <div class="form-line">
                                         <input type="text" id="txtNumeroCelular" class="form-control" placeholder="Número celular" maxlength="100" data-length="100"/>
@@ -351,7 +349,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                            <h3>Domicilio</h3>
+                            <h4>Domicilio</h4>
                             <hr/>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -359,7 +357,7 @@
                                 <b>Calle <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
                                     <div class="form-line">
                                         <input type="text" id="txtCalle" class="form-control" placeholder="Calle" maxlength="100" data-length="100"/>
@@ -372,7 +370,7 @@
                                 <b>Número exterior <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
 
                                     <div class="form-line">
@@ -386,7 +384,7 @@
                                 <b>Número interior <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
                                     <div class="form-line">
                                         <input type="text" id="txtNumeroInterior" class="form-control" placeholder="Número interior" maxlength="100" data-length="100"/>
@@ -401,7 +399,7 @@
                                 <b>Colonia <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
                                     <div class="form-line">
                                         <input type="text" id="txtColonia" class="form-control" placeholder="Colonia" maxlength="100" data-length="100"/>
@@ -414,7 +412,7 @@
                                 <b>Código postal <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
 
                                     <div class="form-line">
@@ -428,7 +426,7 @@
                                 <b>Municipio <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
                                     <div class="form-line">
                                         <input type="text" id="txtMunicipio" class="form-control" placeholder="Municipio" maxlength="100" data-length="100"/>
@@ -443,7 +441,7 @@
                                 <b>Estado <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
                                     <div class="form-line">
                                         <input type="text" id="txtEstado" class="form-control" placeholder="Estado" maxlength="100" data-length="100"/>
@@ -456,7 +454,7 @@
                                 <b>Referencias <font color="red">*</font></b>
                                 <div class="input-group">
                                     <span class="input-group-addon">
-                                        <i class="material-icons">comment</i>
+                                        <i class="material-icons">rate_review</i>
                                     </span>
 
                                     <div class="form-line">
@@ -474,7 +472,7 @@
                 <div class="modal-footer">
                     <button type="button" class="btn btn-info waves-effect"
                         onclick="decidirCliente()">Guardar</button>
-                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal" onclick="limpiarCliente()">Cancelar</button>
                 </div>
             </div>
         </div>
