@@ -1,15 +1,14 @@
-function decidirCategoria(){
-    if($('#txtIdCategoria').val() == ""){
+function decidirCategoria() {
+    if ($('#txtIdCategoria').val() == "") {
         agregarCategoria();
-    }else{
+    } else {
         modificarCategoria();
     }
 }
 
-function agregarCategoria(){
+function agregarCategoria() {
     var err = validarCategoria();
-    if(err == "ok"){
-        alert("Aqui");
+    if (err == "ok") {
         var data = {
             nombre: $('#txtNombreCategoria').val(),
             descripcion: $('#txtDescCategoria').val()
@@ -34,22 +33,22 @@ function agregarCategoria(){
                     data: data
                 })
                 .done(
-                        function (data) {
-                            swal("Correcto", "Categoría guardada con exíto. ", "success");
-                            setTimeout(function(){location.href ="/getAllCategoriasActivas";;},2000)
-                        }
+                    function (data) {
+                        swal("Correcto", "Categoría guardada con exíto. ", "success");
+                        setTimeout(function () { location.href = "/getAllCategoriasActivas";; }, 2000)
+                    }
                 );
         });
-    }else{
+    } else {
         //Swal.fire('Ha ocurrido un error', 'No debes dejar campos de la categoria vacios', 'error');
-        showNotification("bg-black", err, "bottom", "left", "", "");
+        showNotification("bg-red", err, "bottom", "right", "", "");
     }
-    
+
 }
 
-function modificarCategoria(){
+function modificarCategoria() {
     var err = validarCategoria();
-    if(err == "ok"){
+    if (err == "ok") {
         var data = {
             id: $('#txtIdCategoria').val(),
             nombre: $('#txtNombreCategoria').val(),
@@ -74,43 +73,43 @@ function modificarCategoria(){
                     data: data
                 })
                 .done(
-                        function (data) {
-                            swal('Movimiento realizado', 'Categoría modificada con exíto', 'success');
-                            setTimeout(function(){location.href ="/getAllCategoriasActivas";;},2000)
-                        }
+                    function (data) {
+                        swal('Movimiento realizado', 'Categoría modificada con exíto', 'success');
+                        setTimeout(function () { location.href = "/getAllCategoriasActivas";; }, 2000)
+                    }
                 );
         });
-    }else{
+    } else {
         //Swal.fire('Ha ocurrido un error', 'No debes dejar campos de la categoria vacios', 'error');
-        showNotification("bg-black", err, "bottom", "left", "", "");
+        showNotification("bg-red", err, "bottom", "right", "", "");
     }
-    
+
 }
 
-function detalleCategoria(idC){
+function detalleCategoria(idC) {
     var data = {
         idCat: idC
     };
     $.ajax(
-            {
-                type: "Get",
-                url: "/getCategoriasPorId",
-                async: true,
-                data: data
-            })
-            .done(
-                    function (data) {
-                        categoria = data;
-                        $('#txtIdCategoria').val(categoria.id);
-                        $('#txtNombreCategoria').val(categoria.nombre);
-                        $('#txtDescCategoria').val(categoria.descripcion);
-                        $('#modalCategoria').modal('show');
-                    }
-            );
-    
+        {
+            type: "Get",
+            url: "/getCategoriasPorId",
+            async: true,
+            data: data
+        })
+        .done(
+            function (data) {
+                categoria = data;
+                $('#txtIdCategoria').val(categoria.id);
+                $('#txtNombreCategoria').val(categoria.nombre);
+                $('#txtDescCategoria').val(categoria.descripcion);
+                $('#modalCategoria').modal('show');
+            }
+        );
+
 }
 
-function eliminarCategoria(idC){
+function eliminarCategoria(idC) {
     var data = {
         id: idC
     };
@@ -133,25 +132,31 @@ function eliminarCategoria(idC){
                 data: data
             })
             .done(
-                    function (data) {
-                        swal('Movimiento realizado', 'Categoría eliminada con exíto.', 'success');
-                        setTimeout(function(){location.href ="/getAllCategoriasInactivas";},2000)
-                    }
+                function (data) {
+                    swal('Movimiento realizado', 'Categoría eliminada con exíto.', 'success');
+                    setTimeout(function () { location.href = "/getAllCategoriasInactivas"; }, 2000)
+                }
             );
     });
-    
+
 }
 
-function validarCategoria(){
-    if($('#txtNombreCategoria').val() == ""){
+function validarCategoria() {
+    if ($('#txtNombreCategoria').val() == "") {
         return "Por favor, indica el nombre. ";
     }
 
-    if($('#txtDescCategoria').val() == ""){
+    if ($('#txtDescCategoria').val() == "") {
         return "Por favor, indica la descripción";;
     }
 
     return "ok";
+}
+
+function limpiarCategoria() {
+    $('#txtIdCategoria').val('');
+    $('#txtNombreCategoria').val('');
+    $('#txtDescCategoria').val('');
 }
 
 
@@ -176,28 +181,28 @@ function showNotification(colorName, text, placementFrom, placementAlign, animat
     $.notify({
         message: text
     },
-            {
-                type: colorName,
-                allow_dismiss: allowDismiss,
-                newest_on_top: true,
-                timer: 1000,
-                placement: {
-                    from: placementFrom,
-                    align: placementAlign
-                },
-                animate: {
-                    enter: animateEnter,
-                    exit: animateExit
-                },
-                template: '<div data-notify="container" class="bootstrap-notify-container alert alert-dismissible {0} ' + (allowDismiss ? "p-r-35" : "") + '" role="alert">' +
-                        '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
-                        '<span data-notify="icon"></span> ' +
-                        '<span data-notify="title">{1}</span> ' +
-                        '<span data-notify="message">{2}</span>' +
-                        '<div class="progress" data-notify="progressbar">' +
-                        '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
-                        '</div>' +
-                        '<a href="{3}" target="{4}" data-notify="url"></a>' +
-                        '</div>'
-            });
+        {
+            type: colorName,
+            allow_dismiss: allowDismiss,
+            newest_on_top: true,
+            timer: 1000,
+            placement: {
+                from: placementFrom,
+                align: placementAlign
+            },
+            animate: {
+                enter: animateEnter,
+                exit: animateExit
+            },
+            template: '<div data-notify="container" class="bootstrap-notify-container alert alert-dismissible {0} ' + (allowDismiss ? "p-r-35" : "") + '" role="alert">' +
+                '<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+                '<span data-notify="icon"></span> ' +
+                '<span data-notify="title">{1}</span> ' +
+                '<span data-notify="message">{2}</span>' +
+                '<div class="progress" data-notify="progressbar">' +
+                '<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+                '</div>' +
+                '<a href="{3}" target="{4}" data-notify="url"></a>' +
+                '</div>'
+        });
 }

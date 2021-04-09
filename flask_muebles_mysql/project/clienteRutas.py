@@ -54,7 +54,7 @@ def getAllClientesById():
                 'id':i.domicilio.id,
                 'calle':i.domicilio.calle,
                 'colonia':i.domicilio.colonia,
-                'numero_exterior':i.domicilio.numero_exteriors,
+                'numero_exterior':i.domicilio.numero_exterior,
                 'numero_interior':i.domicilio.numero_interior,
                 'estado':i.domicilio.estado,
                 'municipio':i.domicilio.municipio,
@@ -63,7 +63,7 @@ def getAllClientesById():
             }
         }
         
-        return jsonify(clienObj)
+        return clienObj
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
