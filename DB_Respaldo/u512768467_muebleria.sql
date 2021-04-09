@@ -407,16 +407,17 @@ CREATE TABLE `venta` (
   `fecha_venta` date DEFAULT NULL,
   `total` float NOT NULL,
   `cliente` int(11) DEFAULT NULL,
-  `user` int(11) DEFAULT NULL
+  `user` int(11) DEFAULT NULL,
+  `estatus` varchar(100)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Volcado de datos para la tabla `venta`
 --
 
-INSERT INTO `venta` (`id`, `fecha_venta`, `total`, `cliente`, `user`) VALUES
-(1, '2021-04-08', 390, 2, 1),
-(2, '2021-04-08', 400, 2, 1);
+INSERT INTO `venta` (`id`, `fecha_venta`, `total`, `cliente`, `user`, `estatus`) VALUES
+(1, '2021-04-08', 390, 2, 1,'Activo'),
+(2, '2021-04-08', 400, 2, 1,'Activo');
 
 --
 -- Índices para tablas volcadas

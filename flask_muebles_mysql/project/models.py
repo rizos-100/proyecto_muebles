@@ -54,6 +54,10 @@ class User(UserMixin, db.Model):
     
     personaForeign = db.relationship('persona')
     
+class UserSchema(ma.Schema):
+    class Meta:
+        fields = ('id','numero_empleado','nivel_escolar','profesion','observaciones','idPersona')
+    
 class Role(RoleMixin, db.Model):
     """Role model"""
 
@@ -158,6 +162,10 @@ class cliente (db.Model):
     idPersona = db.Column(db.Integer,db.ForeignKey('persona.id'))
     
     persona = db.relationship('persona')
+
+class ClienteSchema(ma.Schema):
+    class Meta:
+        fields = ('id','idPersona')
 
 
 
