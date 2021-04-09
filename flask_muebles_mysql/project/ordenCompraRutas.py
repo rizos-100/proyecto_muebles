@@ -7,6 +7,8 @@ from datetime import datetime
 
 ordenCompraRutas = Blueprint('ordenCompraRutas',__name__)
 
+#@login_required
+#@roles_accepted('admin','almacenista')
 @ordenCompraRutas.route('/getAllOrdenCompra',methods=['GET','POST'])
 def getAllOrdenCompra():
     ordenes=db.session.query(orden_compra).all()
@@ -29,6 +31,8 @@ def getAllOrdenCompra():
         arrayOrdenes.append(ordenObj)
     return jsonify(arrayOrdenes)
 
+#@login_required
+#@roles_accepted('admin','almacenista')
 @ordenCompraRutas.route('/addOrdenCompra',methods=['GET','POST'])
 def addOrdenCompra():
     if request.method=='POST':
@@ -62,7 +66,9 @@ def addOrdenCompra():
             db.session.commit()
         result = {"id":orden.id}
         return jsonify(result)
-    
+
+#@login_required
+#@roles_accepted('admin','almacenista')
 @ordenCompraRutas.route('/updateOrdenCompra',methods=['GET','POST'])
 def updateOrdenCompra():
     if request.method=='POST':

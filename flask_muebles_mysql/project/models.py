@@ -120,24 +120,18 @@ class proveedor(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     nombre = db.Column(db.String(255), nullable=False)
     rfc = db.Column(db.String(255), nullable=False)
-    calle = db.Column(db.String(255), nullable=False)
-    colonia = db.Column(db.String(255), nullable=False)
-    numero_interior = db.Column(db.String(10), nullable=True)
-    numero_exterior = db.Column(db.String(10), nullable=True)
-    cp = db.Column(db.String(10), nullable=True)
     nombre_contacto = db.Column(db.String(255), nullable=False)
     puesto_contacto = db.Column(db.String(255), nullable=False)
     telefono_contacto = db.Column(db.String(10), nullable=False)
     correo_contacto = db.Column(db.String(255), nullable=False)
     estatus = db.Column(db.String(100), nullable=False)
-    estado = db.Column(db.String(255), nullable=False)
-    municipio = db.Column(db.String(255), nullable=False)
+    idDomicilio = db.Column(db.Integer,db.ForeignKey('domicilio.id'))
+    #domicil = db.relationship('domicilio')
 
 class ProveedorSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'nombre','rfc','calle','colonia','numero_interior','numero_exterior','cp',
-                    'nombre_contacto','puesto_contacto','telefono_contacto','correo_contacto','estatus',
-                    'estado','municipio')
+        fields = ('id', 'nombre','rfc','nombre_contacto','puesto_contacto','telefono_contacto',
+                  'correo_contacto','estatus','idDomicilio')
     
 
 class domicilio (db.Model):
@@ -152,6 +146,11 @@ class domicilio (db.Model):
     cp = db.Column(db.String(10), nullable=True)
     referencias = db.Column(db.String(255), nullable=False)
     estatus = db.Column(db.String(100), nullable=False)
+class DomicilioSchema(ma.Schema):
+    class Meta:
+        fields = ('id','calle','colonia','numero_interior','numero_exterior','estado','municipio','cp','referencias','estatus')
+    
+
 
 class cliente (db.Model):
     __tablename__='cliente'
