@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, jsonify, request,make_response
 from .models import db
 from .models import proveedor,ProveedorSchema,domicilio,DomicilioSchema
 import json
-from .validateInputs import validate
+from project.validateInputs import validate as Validator
 import logging
 from datetime import datetime
 proveedorRutas = Blueprint('proveedorRutas', __name__)
@@ -10,7 +10,7 @@ proveedorRutas = Blueprint('proveedorRutas', __name__)
 #@login_required
 #@roles_accepted('admin','almacenista','vendedor')
 @proveedorRutas.route('/getAllProveedorActivos',methods=['GET','POST'])
-def getAllProveedor():
+def getAllProveedorActivos():
     try:
         proveedores = db.session.query(proveedor).filter(proveedor.estatus == 'Activo').all()
         arrayProveedores=list()
@@ -23,7 +23,7 @@ def getAllProveedor():
                 'nombre':prov.nombre,
                 'rfc':prov.rfc,
                 'nombre_contacto':prov.nombre_contacto,
-                'puesto_contacto':prov.nombre_contacto,
+                'puesto_contacto':prov.puesto_contacto,
                 'telefono_contacto':prov.telefono_contacto,
                 'correo_contacto':prov.correo_contacto,
                 'estatus':prov.estatus,
@@ -40,7 +40,7 @@ def getAllProveedor():
             }
             arrayProveedores.append(provObj)
         #return jsonify(arrayProveedores)
-        render_template("",proveedores=arrayProveedores,activos=True)
+        return render_template("proveedor.html",proveedores=arrayProveedores,activos=True)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
@@ -49,7 +49,7 @@ def getAllProveedor():
 #@login_required
 #@roles_accepted('admin','almacenista','vendedor')
 @proveedorRutas.route('/getAllProveedorInactivos',methods=['GET','POST'])
-def getAllProveedorIn():
+def getAllProveedorInactivos():
     try:
         proveedores = db.session.query(proveedor).filter(proveedor.estatus == 'Inactivo').all()
         arrayProveedores=list()
@@ -79,7 +79,7 @@ def getAllProveedorIn():
             }
             arrayProveedores.append(provObj)
         #return jsonify(arrayProveedores)
-        render_template("",proveedores=arrayProveedores,activos=False)
+        return render_template("proveedor.html",proveedores=arrayProveedores,activos=False)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
@@ -91,21 +91,21 @@ def getAllProveedorIn():
 def addProveedor():
     try:
         if request.method=='POST':
-            nombre_=validate.sanitizarNombre(request.form['nombre'])
-            rfc_=validate.validarRFC(request.form['rfc'])
-            calle_=validate.sanitizarNombre(request.form['calle'])
-            colonia_=validate.sanitizarNombre(request.form['colonia'])
+            nombre_=Validator.sanitizarNombre(request.form['nombre'])
+            rfc_= Validator.validarRFC(request.form['rfc'])
+            calle_=Validator.sanitizarNombre(request.form['calle'])
+            colonia_=Validator.sanitizarNombre(request.form['colonia'])
             num_int=request.form['num_int']
             num_ext=request.form['num_ext']
             cp_=request.form['cp']
-            nombreC=validate.sanitizarNombre(request.form['nombre_contacto'])
-            puestoC=validate.sanitizarNombre(request.form['puesto_contacto'])
+            nombreC=Validator.sanitizarNombre(request.form['nombre_contacto'])
+            puestoC=Validator.sanitizarNombre(request.form['puesto_contacto'])
             telefonoC=request.form['telefono_contacto']
-            correoC=validate.sanitizarCorreo(request.form['correo_contacto'])
+            correoC=Validator.sanitizarCorreo(request.form['correo_contacto'])
             estatus_='Activo'
-            estado_=validate.sanitizarNombre(request.form['estado'])
-            municipio_=validate.sanitizarNombre(request.form['municipio'])
-            referencias_=validate.sanitizarNombre(request.form['referencias'])
+            estado_=Validator.sanitizarNombre(request.form['estado'])
+            municipio_=Validator.sanitizarNombre(request.form['municipio'])
+            referencias_=Validator.sanitizarNombre(request.form['referencias'])
         
             dom=domicilio(
                 calle=calle_,
@@ -121,6 +121,7 @@ def addProveedor():
             )
             db.session.add(dom)
             db.session.commit()
+            idD = dom.id
         
             prov=proveedor(nombre=nombre_,
                         rfc=rfc_,
@@ -129,13 +130,13 @@ def addProveedor():
                         telefono_contacto=telefonoC,
                         correo_contacto=correoC,
                         estatus=estatus_,
-                        idDomicilio=dom.id
+                        idDomicilio=idD
                         )
         
             db.session.add(prov)
             db.session.commit()
         
-            result = {"id":prov.id}
+            result = {"id": prov.id}
         
             return jsonify(result)
     except Exception as inst:
@@ -151,18 +152,18 @@ def updateProveedor():
         if request.method == 'POST':
             id=request.form['id']
             idDomicilio=request.form['idDomicilio']
-            nombre_=validate.sanitizarNombre(request.form['nombre'])
-            rfc_=validate.validarRFC(request.form['rfc'])
-            calle_=validate.sanitizarNombre(request.form['calle'])
-            colonia_=validate.sanitizarNombre(request.form['colonia'])
+            nombre_=Validator.sanitizarNombre(request.form['nombre'])
+            rfc_= Validator.validarRFC(request.form['rfc'])
+            calle_=Validator.sanitizarNombre(request.form['calle'])
+            colonia_=Validator.sanitizarNombre(request.form['colonia'])
             cp_=request.form['cp']
-            nombreC=validate.sanitizarNombre(request.form['nombre_contacto'])
-            puestoC=validate.sanitizarNombre(request.form['puesto_contacto'])
+            nombreC=Validator.sanitizarNombre(request.form['nombre_contacto'])
+            puestoC=Validator.sanitizarNombre(request.form['puesto_contacto'])
             telefonoC=request.form['telefono_contacto']
-            correoC=validate.sanitizarCorreo(request.form['correo_contacto'])
-            estado_=validate.sanitizarNombre(request.form['estado'])
-            municipio_=validate.sanitizarNombre(request.form['municipio'])
-            referencias_=validate.sanitizarNombre(request.form['referencias'])
+            correoC= Validator.sanitizarCorreo(request.form['correo_contacto'])
+            estado_=Validator.sanitizarNombre(request.form['estado'])
+            municipio_=Validator.sanitizarNombre(request.form['municipio'])
+            referencias_=Validator.sanitizarNombre(request.form['referencias'])
             num_int=request.form['num_int']
             num_ext=request.form['num_ext']
 
@@ -237,6 +238,7 @@ def getAllProveedorbyId():
                 'correo_contacto':prov.correo_contacto,
                 'estatus':prov.estatus,
                 'domicilio':{
+                    'idD':dom.id,
                     'calle':dom.calle,
                     'num_ext':dom.numero_exterior,
                     'num_int':dom.numero_interior,
@@ -248,8 +250,9 @@ def getAllProveedorbyId():
                 }
             }
         #return jsonify(provObj)
-        render_template("",proveedor=provObj,activos=True)
+        return provObj
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
+    
