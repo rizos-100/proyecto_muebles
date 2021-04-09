@@ -7,6 +7,8 @@ from datetime import datetime
 
 main = Blueprint('main', __name__)
 
+
+
 #Definimos la ruta a la página principal
 @main.route('/')
 def index():

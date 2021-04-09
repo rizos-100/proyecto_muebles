@@ -28,7 +28,6 @@ def getAllVentas():
         detalleVentaArray = list()
         for j in detalleVent:
             objDetalle = detVenJson.dump(j.detalle_venta)
-            print(j.producto.id)
             objDetalle['producto']=produJson.dump(j.producto)
             
             detalleVentaArray.append(objDetalle)
