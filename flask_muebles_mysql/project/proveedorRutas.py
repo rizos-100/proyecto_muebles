@@ -253,4 +253,3 @@ def getAllProveedorbyId():
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
-    
