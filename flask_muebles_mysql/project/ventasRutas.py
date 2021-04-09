@@ -1,36 +1,43 @@
-from flask import Blueprint, render_template, jsonify, request
+from flask import Blueprint, render_template, jsonify, request,make_response
 from .models import db
-from .models import cliente,persona,domicilio
+from .models import cliente,persona,personaSchema,User,venta,VentaSchema,detalle_venta,Detalle_ventaSchema,producto,ProductoSchema
 import json
 
 ventasRutas = Blueprint('ventasRutas', __name__)
 
 @ventasRutas.route('/getAllVentas',methods=['GET','POST'])
 def getAllVentas():
-    arrayClientes = list()
-    clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Activo').all()
+    ventasArray = list()
+    ventas = db.session.query(venta).all()
     
-    for i in clientes:
-        clienObj ={
-            'idCliente': i.cliente.id,
-            'persona':{
-                'id':i.persona.id,
-                'nombre':i.persona.nombre,
-                'apellidoP':i.persona.apellidoP,
-                'apellidoM':i.persona.apellidoM,
-                'numFijo':i.persona.numero_fijo,
-                'celular':i.persona.celular,
-                'rfc':i.persona.rfc
-            },
-            'domicilio':{
-                'id':i.domicilio.id,
-                'calle':i.domicilio.calle,
-                'colonia':i.domicilio.colonia,
-                'numero_interior':i.domicilio.numero_interior,
-                'municipio':i.domicilio.municipio,
-                'cp':i.domicilio.cp,
-                'referencias':i.domicilio.referencias
-            }
-        }
-        arrayClientes.append(clienObj) 
-    return jsonify(arrayClientes)
+    for i in ventas:
+        persJson=personaSchema(many=False)
+        produJson=personaSchema(many=False)
+        detVenJson=Detalle_ventaSchema(many=False)
+        ventJson=VentaSchema(many=False)
+        
+        personCliente = db.session.query(persona).filter(persona.id==i.cliente).first()
+        resCliente=persJson.dump(personCliente)
+        
+        userSea = db.session.query(User).filter(User.id==i.user).first()
+        personUser = db.session.query(persona).filter(persona.id==userSea.idPersona).first()
+        resUser=persJson.dump(personUser)
+        
+        detalleVent = db.session.query(detalle_venta,producto).join(
+                        detalle_venta.productoForegin).filter(detalle_venta.venta==i.id).all()
+        detalleVentaArray = list()
+        for j in detalleVent:
+            objDetalle ={
+                "producto":produJson.dump(j.producto),
+                "detalleVenta":detVenJson.dump(j.detalle_venta)
+                }   
+            detalleVentaArray.append(objDetalle)
+        
+        objVenta= ventJson.dump(i)
+        objVenta['user']=resUser
+        objVenta['cliente']=resCliente
+        objVenta['detalleVenta']=detalleVentaArray
+
+        ventasArray.append(objVenta)        
+
+    return make_response(jsonify(ventasArray), 200)

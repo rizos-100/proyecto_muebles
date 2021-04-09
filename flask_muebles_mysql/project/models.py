@@ -29,6 +29,10 @@ class persona (db.Model):
     rfc = db.Column(db.String(255), nullable=False)
 
     domicil = db.relationship('domicilio')
+    
+class personaSchema(ma.Schema):
+    class Meta:
+        fields = ('id','nombre','apellidoP','apellidoM','numero_fijo','celular','estatus','rfc','domicilio')
 
 class User(UserMixin, db.Model):
     """User account model"""
@@ -47,6 +51,8 @@ class User(UserMixin, db.Model):
     roles = db.relationship('Role',
         secondary=users_roles,
         backref= db.backref('users', lazy='dynamic'))
+    
+    personaForeign = db.relationship('persona')
     
 class Role(RoleMixin, db.Model):
     """Role model"""
@@ -194,6 +200,7 @@ class detalle_orden_compra (db.Model):
     subtotal=db.Column(db.Float,nullable=False)
     material = db.Column(db.Integer,db.ForeignKey('material.id'))
     idOrden = db.Column(db.Integer,db.ForeignKey('orden_compra.id'))
+    
 class detalleOrdenSchema(ma.Schema):
     class Meta:
         fields = ('id','cantidad','subtotal','material','idOrden')
@@ -272,6 +279,13 @@ class venta (db.Model):
     total = db.Column(db.Float,nullable=False)
     cliente = db.Column(db.Integer,db.ForeignKey('cliente.id'))
     user = db.Column(db.Integer,db.ForeignKey('user.id'))
+    
+    userForeign = db.relationship('User')
+    clienteForeign = db.relationship('cliente')
+
+class VentaSchema(ma.Schema):
+    class Meta:
+        fields = ('id','fecha_venta','total','cliente','user')
 
 class detalle_venta (db.Model):
     __tablename__='detalle_venta'
@@ -280,3 +294,12 @@ class detalle_venta (db.Model):
     subtotal = db.Column(db.Float,nullable=False)
     venta = db.Column(db.Integer,db.ForeignKey('venta.id'))
     producto = db.Column(db.Integer,db.ForeignKey('producto.id'))
+    
+    ventaForeign = db.relationship('venta')
+    productoForegin = db.relationship('producto')
+    
+
+
+class Detalle_ventaSchema(ma.Schema):
+    class Meta:
+        fields = ('id','cantidad','subtotal','venta','producto')
