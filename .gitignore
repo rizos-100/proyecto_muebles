@@ -1,0 +1,13 @@
+/flask_muebles_mysql/project/__pycache__
+flask_muebles_mysql/project/__pycache__/__init__.cpython-38.pyc
+flask_muebles_mysql/project/__pycache__/categoriasRutas.cpython-38.pyc
+flask_muebles_mysql/project/__pycache__/clienteRutas.cpython-38.pyc
+flask_muebles_mysql/project/__pycache__/main.cpython-38.pyc
+flask_muebles_mysql/project/__pycache__/materialRutas.cpython-38.pyc
+flask_muebles_mysql/project/__pycache__/models.cpython-38.pyc
+flask_muebles_mysql/project/__pycache__/ordenCompraRutas.cpython-38.pyc
+flask_muebles_mysql/project/__pycache__/productoRutas.cpython-38.pyc
+flask_muebles_mysql/project/__pycache__/proveedorRutas.cpython-38.pyc
+flask_muebles_mysql/project/__pycache__/ventasRutas.cpython-38.pyc
+flask_muebles_mysql/project/__pycache__/detalleProductoMaterialRutas.cpython-38.pyc
+flask_muebles_mysql/project/__pycache__/auth.cpython-38.pyc

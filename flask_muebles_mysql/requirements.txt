@@ -7,3 +7,4 @@ mysqlclient
 flask-marshmallow
 bcrypt
 marshmallow-sqlalchemy
+datetime

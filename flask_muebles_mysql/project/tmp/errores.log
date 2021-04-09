@@ -1,0 +1,907 @@
+INFO:root:Incio de la aplicacion [2021-04-09 13:42:07.608389]
+INFO:root:Incio de la aplicacion [2021-04-09 13:42:07.625344]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+DEBUG:root: Fecha y Hora: 2021-04-09 13:42:35.144743 - Arranque de la aplicacion 
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/chosen/chosen.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/node-waves/waves.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/animate-css/animate.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/morrisjs/morris.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/css/themes/all-themes.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/node-waves/waves.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/morrisjs/morris.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[37mGET /static/MyJS/proveedor.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-datatable/extensions/export/vfs_fonts.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/css/materialize.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-datatable/extensions/export/buttons.html5.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/js/pages/tables/jquery-datatable.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-datatable/extensions/export/buttons.print.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/jquery-sparkline/jquery.sparkline.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/js/admin.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/bootstrap-notify/bootstrap-notify.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/js/pages/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/js/pages/ui/notifications.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/plugins/sweetalert/sweetalert.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[37mGET /static/MyJS/categoria.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[37mGET /static/MyJS/cliente.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/js/demo.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[37mGET /static/js/script.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:35] "[36mGET /static/images/user-img-background.jpg HTTP/1.1[0m" 304 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 13:42:46.270042]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:46] "[37mGET /pages/helper-classes.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 13:42:46.901757]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:42:46] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 13:43:04.463725]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:43:04] "[37mGET /pages/index.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 13:43:08.860157]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:43:08] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 13:50:05.998445]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:52:20] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:52:21] "[36mGET /static/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:54:01] "[37mPOST /addVenta HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 13:54:24.977849]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:54:27] "[35m[1mPOST /addVenta HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:54:53] "[37mPOST /addVenta HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:55:10] "[37mPOST /addVenta HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 13:55:24.570705]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:55:33] "[37mPOST /addVenta HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 13:56:31.057937]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:56:33] "[37mPOST /addVenta HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 13:56:55.288126]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:57:00] "[37mPOST /addVenta HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 13:57:43.972789]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:57:48] "[37mPOST /addVenta HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 13:58:03.855204]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 13:58:34.704320]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'NoneType' object has no attribute 'idPersona'[2021-04-09 13:59:04.627002]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:59:04] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 13:59:17.962658]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'NoneType' object has no attribute 'idPersona'[2021-04-09 13:59:20.752631]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:59:20] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'NoneType' object has no attribute 'idPersona'[2021-04-09 13:59:24.076859]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 13:59:24] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'NoneType' object has no attribute 'idPersona'[2021-04-09 14:00:01.441941]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:00:01] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:00:54.827599]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'NoneType' object has no attribute 'idPersona'[2021-04-09 14:00:57.837059]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:00:57] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:02:22] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:03:18.264936]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:03:23] "[37mPOST /addVenta HTTP/1.1[0m" 200 -
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'NoneType' object has no attribute 'idPersona'[2021-04-09 14:03:28.526709]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:03:28] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:05:17.327958]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:05:24] "[37mPOST /addVenta HTTP/1.1[0m" 200 -
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'NoneType' object has no attribute 'idPersona'[2021-04-09 14:05:29.751726]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:05:29] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:07:20.012216]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:07:28] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:11:29] "[37mPOST /addVenta HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:11:38] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:15:51.771445]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 11:28:27.856032]
+INFO:root:Incio de la aplicacion [2021-04-09 11:28:27.861930]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+DEBUG:root: Fecha y Hora: 2021-04-09 11:28:29.930627 - Arranque de la aplicacion 
+DEBUG:root: Fecha y Hora: 2021-04-09 11:28:30.010408 - Arranque de la aplicacion 
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:30] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:30] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:30] "[37mGET /static/plugins/chosen/chosen.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:30] "[37mGET /static/plugins/node-waves/waves.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:30] "[37mGET /static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:30] "[37mGET /static/plugins/animate-css/animate.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:30] "[37mGET /static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:30] "[37mGET /static/plugins/morrisjs/morris.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:30] "[37mGET /static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/css/themes/all-themes.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/css/materialize.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/node-waves/waves.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/morrisjs/morris.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:31] "[37mGET /static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/plugins/jquery-datatable/extensions/export/buttons.print.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/plugins/jquery-datatable/extensions/export/buttons.html5.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/js/pages/tables/jquery-datatable.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/plugins/jquery-datatable/extensions/export/vfs_fonts.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/plugins/jquery-sparkline/jquery.sparkline.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/js/admin.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/plugins/bootstrap-notify/bootstrap-notify.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:32] "[37mGET /static/js/pages/index.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:33] "[37mGET /static/js/pages/ui/notifications.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:33] "[37mGET /static/plugins/sweetalert/sweetalert.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:33] "[37mGET /static/js/demo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:33] "[37mGET /static/MyJS/categoria.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:33] "[37mGET /static/MyJS/cliente.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:33] "[37mGET /static/MyJS/proveedor.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:33] "[37mGET /static/js/script.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:33] "[37mGET /static/images/user-img-background.jpg HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:28:34.172614]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:34] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:41] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:42] "[37mGET /static/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:28:42.140059]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:28:42] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:29:52] "[37mGET /getAllProveedorActivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:29:52.501334]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:29:52] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:29:56] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:29:57.622062]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:29:57] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:00.124842]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:00] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:00.532738]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:00] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:02.532266]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:02] "[37mGET /pages/pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:02.613181]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:02] "[37mGET /pages/static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:02.785589]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:02] "[37mGET /pages/static/plugins/chosen/chosen.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:02.927210]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:02.929949]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:02.931199]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:02.936187]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:02] "[37mGET /pages/static/plugins/node-waves/waves.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:02.942173]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:02] "[37mGET /pages/static/plugins/animate-css/animate.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:02] "[37mGET /pages/static/plugins/morrisjs/morris.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:02] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:02] "[37mGET /pages/static/css/style.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.108726]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.264310]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.269303]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/css/themes/all-themes.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.277444]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.287248]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.295231]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.431964]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/node-waves/waves.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.590947]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.596991]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.637810]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.640807]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.649777]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/morrisjs/morris.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.760050]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.919803]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.928419]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.966679]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.982726]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:03.987619]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:03] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.073439]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.255051]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.261043]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.290957]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/pdfmake.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.302924]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/vfs_fonts.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.310903]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.html5.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.394678]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.print.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.579186]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/js/pages/tables/jquery-datatable.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.586167]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/plugins/jquery-sparkline/jquery.sparkline.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.612097]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/plugins/bootstrap-notify/bootstrap-notify.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.619080]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/js/admin.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.632251]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/js/pages/index.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.716377]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/js/pages/ui/notifications.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.903044]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.907030]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/plugins/sweetalert/sweetalert.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/js/demo.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.935952]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.939941]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/MyJS/categoria.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/MyJS/cliente.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:04.947922]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:04] "[37mGET /pages/static/MyJS/proveedor.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:05.288012]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:05] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:07.547022]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:07] "[37mGET /pages/pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:07.655800]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:07] "[37mGET /pages/static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:07.790176]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:07] "[37mGET /pages/static/plugins/chosen/chosen.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:07.978812]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:07.981803]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:07.983798]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:07.989781]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:07] "[37mGET /pages/static/plugins/node-waves/waves.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:07] "[37mGET /pages/static/plugins/animate-css/animate.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:07] "[37mGET /pages/static/plugins/morrisjs/morris.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:07.998918]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:07] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/css/style.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.102514]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.316948]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.323929]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/css/themes/all-themes.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.335891]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.342872]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.352847]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.441610]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/node-waves/waves.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.657070]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.661026]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.675981]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/morrisjs/morris.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.692944]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.701917]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.764746]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.985211]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:08.988203]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:08] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:09.000333]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:09] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:09.025107]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:09.034087]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:09] "[37mGET /pages/static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:09] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:09.089137]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:09] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:09.310552]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:09.315534]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:09] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:09] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:09.325539]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:09] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/pdfmake.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:09.351477]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:09.358459]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:09] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/vfs_fonts.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:09] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.html5.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:09.405332]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:09] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.print.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:09.734519]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:09] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:11.786339]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:11] "[37mGET /pages/index.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:12.132418]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:12] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:13.810931]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:13] "[37mGET /pages/index.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:14.126149]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:14] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.012127]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.099099]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.272743]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/chosen/chosen.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.413259]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.415254]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/node-waves/waves.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.421239]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/animate-css/animate.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.429220]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/morrisjs/morris.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.443182]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/css/style.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.583802]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.747974]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.750014]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/css/themes/all-themes.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.763929]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.769914]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.778889]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:22.899566]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:22] "[37mGET /pages/static/plugins/node-waves/waves.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.086115]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.091054]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.097040]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/morrisjs/morris.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.106016]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.133907]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.212643]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.428568]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.434626]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.446325]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.452312]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.458296]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.538094]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.775904]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.780845]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.790821]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.802760]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/pdfmake.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/vfs_fonts.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.816722]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.html5.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:23.867410]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:23] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.print.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:24.114743]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:24.121270]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:24] "[37mGET /pages/static/js/pages/tables/jquery-datatable.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:24.134238]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:24] "[37mGET /pages/static/plugins/jquery-sparkline/jquery.sparkline.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:24.148319]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:24] "[37mGET /pages/static/plugins/bootstrap-notify/bootstrap-notify.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:24.160276]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:24] "[37mGET /pages/static/js/admin.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:24] "[37mGET /pages/static/js/pages/index.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:24.195073]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:24] "[37mGET /pages/static/js/pages/ui/notifications.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:24.572550]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:24] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:25.348597]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:25] "[37mGET /pages/pages/helper-classes.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:25.413747]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:25.416948]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:25.424750]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:25.429700]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:25] "[37mGET /pages/static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:25] "[37mGET /pages/static/plugins/chosen/chosen.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:25] "[37mGET /pages/static/plugins/node-waves/waves.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:25] "[37mGET /pages/static/plugins/animate-css/animate.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:25.731861]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:25.734613]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:25] "[37mGET /pages/static/plugins/morrisjs/morris.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:25] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:25.761564]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:25.764593]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:25.766528]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:25] "[37mGET /pages/static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:25] "[37mGET /pages/static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:25] "[37mGET /pages/static/css/themes/all-themes.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:25.774510]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:25] "[37mGET /pages/static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.061743]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.078695]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.108618]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.122578]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.131614]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/node-waves/waves.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.140599]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.402897]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.410876]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/morrisjs/morris.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.450768]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.463739]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.483918]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.489665]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.745978]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.749968]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.788871]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.810809]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.816789]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:26.825880]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:26] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:27.320723]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:27] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:29] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 11:30:30.319430]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 11:30:30] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\detalleProductoMaterialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:01:26.035061]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\detalleProductoMaterialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:01:55.154374]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\productoRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:02:42.208974]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\productoRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:03:18.296117]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\productoRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:04:53.309876]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\productoRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:05:09.315924]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\productoRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:05:34.725980]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\productoRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:06:00.398154]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\productoRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:06:12.005401]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\productoRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:06:23.652627]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'jinja2.exceptions.TemplateNotFound'>
+ Tipo de error: [2021-04-09 14:06:31.396672]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:06:31] "[37mGET /getAllProductosActivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:06:31.810707]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:06:31] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'jinja2.exceptions.TemplateNotFound'>
+ Tipo de error: [2021-04-09 14:06:41.319075]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:06:41] "[37mGET /getAllProductosInactivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:06:41.679775]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:06:41] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\productoRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:06:51.627543]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:07:22.049305]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:07:34.840106]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:07:45.256044]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:07:57.378966]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:08:09.382968]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:08:23.506637]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:08:35.490373]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:08:46.415637]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:09:08.912998]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:09:19.433345]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:09:31.497986]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:09:40.970951]
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:09:46.934444]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'jinja2.exceptions.TemplateNotFound'>
+ Tipo de error: [2021-04-09 14:09:49.613865]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:09:49] "[37mGET /getAllMaterialDisponible HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:09:50.045937]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:09:50] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:09:54.148410]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:09:54] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:09:54.464567]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:09:54] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\productoRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 14:18:55.751318]

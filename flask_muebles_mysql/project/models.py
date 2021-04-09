@@ -29,6 +29,10 @@ class persona (db.Model):
     rfc = db.Column(db.String(255), nullable=False)
 
     domicil = db.relationship('domicilio')
+    
+class personaSchema(ma.Schema):
+    class Meta:
+        fields = ('id','nombre','apellidoP','apellidoM','numero_fijo','celular','estatus','rfc','domicilio')
 
 class User(UserMixin, db.Model):
     """User account model"""
@@ -47,6 +51,12 @@ class User(UserMixin, db.Model):
     roles = db.relationship('Role',
         secondary=users_roles,
         backref= db.backref('users', lazy='dynamic'))
+    
+    personaForeign = db.relationship('persona')
+    
+class UserSchema(ma.Schema):
+    class Meta:
+        fields = ('id','numero_empleado','nivel_escolar','profesion','observaciones','idPersona')
     
 class Role(RoleMixin, db.Model):
     """Role model"""
@@ -114,24 +124,18 @@ class proveedor(db.Model):
     id=db.Column(db.Integer,primary_key=True)
     nombre = db.Column(db.String(255), nullable=False)
     rfc = db.Column(db.String(255), nullable=False)
-    calle = db.Column(db.String(255), nullable=False)
-    colonia = db.Column(db.String(255), nullable=False)
-    numero_interior = db.Column(db.String(10), nullable=True)
-    numero_exterior = db.Column(db.String(10), nullable=True)
-    cp = db.Column(db.String(10), nullable=True)
     nombre_contacto = db.Column(db.String(255), nullable=False)
     puesto_contacto = db.Column(db.String(255), nullable=False)
     telefono_contacto = db.Column(db.String(10), nullable=False)
     correo_contacto = db.Column(db.String(255), nullable=False)
     estatus = db.Column(db.String(100), nullable=False)
-    estado = db.Column(db.String(255), nullable=False)
-    municipio = db.Column(db.String(255), nullable=False)
+    idDomicilio = db.Column(db.Integer,db.ForeignKey('domicilio.id'))
+    #domicil = db.relationship('domicilio')
 
 class ProveedorSchema(ma.Schema):
     class Meta:
-        fields = ('id', 'nombre','rfc','calle','colonia','numero_interior','numero_exterior','cp',
-                    'nombre_contacto','puesto_contacto','telefono_contacto','correo_contacto','estatus',
-                    'estado','municipio')
+        fields = ('id', 'nombre','rfc','nombre_contacto','puesto_contacto','telefono_contacto',
+                  'correo_contacto','estatus','idDomicilio')
     
 
 class domicilio (db.Model):
@@ -146,6 +150,11 @@ class domicilio (db.Model):
     cp = db.Column(db.String(10), nullable=True)
     referencias = db.Column(db.String(255), nullable=False)
     estatus = db.Column(db.String(100), nullable=False)
+class DomicilioSchema(ma.Schema):
+    class Meta:
+        fields = ('id','calle','colonia','numero_interior','numero_exterior','estado','municipio','cp','referencias','estatus')
+    
+
 
 class cliente (db.Model):
     __tablename__='cliente'
@@ -153,6 +162,10 @@ class cliente (db.Model):
     idPersona = db.Column(db.Integer,db.ForeignKey('persona.id'))
     
     persona = db.relationship('persona')
+
+class ClienteSchema(ma.Schema):
+    class Meta:
+        fields = ('id','idPersona')
 
 
 
@@ -164,6 +177,10 @@ class orden_compra (db.Model):
     estatus = db.Column(db.String(100), nullable=False)
     proveedor = db.Column(db.Integer,db.ForeignKey('proveedor.id'))
     user = db.Column(db.Integer,db.ForeignKey('user.id'))
+    
+class OrdenSchema(ma.Schema):
+    class Meta:
+        fields = ('id','fecha_orden','total','estatus','proveedor','user')
 
 class material(db.Model):
     __tablename__='material'
@@ -189,6 +206,12 @@ class detalle_orden_compra (db.Model):
     cantidad=db.Column(db.Integer,nullable=False)
     subtotal=db.Column(db.Float,nullable=False)
     material = db.Column(db.Integer,db.ForeignKey('material.id'))
+    idOrden = db.Column(db.Integer,db.ForeignKey('orden_compra.id'))
+    
+class detalleOrdenSchema(ma.Schema):
+    class Meta:
+        fields = ('id','cantidad','subtotal','material','idOrden')
+
 
 class sobrante_material (db.Model):
     __tablename__='sobrante_material'
@@ -231,7 +254,14 @@ class producto (db.Model):
     cantidad_minima = db.Column(db.Integer,nullable=False)
     precio = db.Column(db.Float,nullable=False)
     estatus = db.Column(db.String(100), nullable=False)
-    categoria = db.Column(db.Integer,db.ForeignKey('categoria.id'))
+    idCategoria = db.Column(db.Integer,db.ForeignKey('categoria.id'))
+    
+    categoria = db.relationship('categoria')
+    
+    
+class ProductoSchema(ma.Schema):
+    class Meta:
+        fields = ('id','modelo','descripcion','img','peso','color','alto','ancho','largo','cantidad','cantidad_minima','precio', 'estatus','idCategoria')
 
 class detalle_producto_material (db.Model):
     __tablename__='detalle_producto_material'
@@ -239,8 +269,15 @@ class detalle_producto_material (db.Model):
     alto = db.Column(db.Float,nullable=False)
     ancho = db.Column(db.Float,nullable=False)
     cantidad = db.Column(db.Integer,nullable=False)
-    producto = db.Column(db.Integer,db.ForeignKey('producto.id'))
-    material = db.Column(db.Integer,db.ForeignKey('material.id'))
+    idProducto = db.Column(db.Integer,db.ForeignKey('producto.id'))
+    idMaterial = db.Column(db.Integer,db.ForeignKey('material.id'))
+    
+    producto = db.relationship('producto')
+    material = db.relationship('material')
+
+class Detalle_produco_material_Schema(ma.Schema):
+    class Meta:
+        fields = ('id','alto','ancho','cantidad','producto','material')
 
 class venta (db.Model):
     __tablename__='venta'
@@ -249,6 +286,14 @@ class venta (db.Model):
     total = db.Column(db.Float,nullable=False)
     cliente = db.Column(db.Integer,db.ForeignKey('cliente.id'))
     user = db.Column(db.Integer,db.ForeignKey('user.id'))
+    estatus = db.Column( db.String(100), nullable=False)
+        
+    userForeign = db.relationship('User')
+    clienteForeign = db.relationship('cliente')
+
+class VentaSchema(ma.Schema):
+    class Meta:
+        fields = ('id','fecha_venta','total','cliente','user')
 
 class detalle_venta (db.Model):
     __tablename__='detalle_venta'
@@ -257,3 +302,10 @@ class detalle_venta (db.Model):
     subtotal = db.Column(db.Float,nullable=False)
     venta = db.Column(db.Integer,db.ForeignKey('venta.id'))
     producto = db.Column(db.Integer,db.ForeignKey('producto.id'))
+    
+    ventaForeign = db.relationship('venta')
+    productoForegin = db.relationship('producto')
+
+class Detalle_ventaSchema(ma.Schema):
+    class Meta:
+        fields = ('id','cantidad','subtotal','venta','producto')

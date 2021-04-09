@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3>
+                   Clientes {%if activos == True%} activos {%else%} inactivos {%endif%}
+                </h3>
+                {%if activos == True%} 
+                <p>¡Buen día! En esta pantalla podrás registrar los clientes de la empresa.</p> 
+                <ul class="header-dropdown m-r--5">
+                    <li>
+                        <button type="button" class="btn bg-brown waves-effect" data-toggle="modal" data-target="#modalCliente">
+                            <i class="material-icons">playlist_add</i>
+                            <span>Agregar Cliente</span>
+                        </button>
+                    </li>
+                </ul>
+                {%else%} <p>¡Buen día! En esta pantalla podrás visualizar los clientes inactivos.</p> 
+                {%endif%}
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Número celular</th>
+                                <th>Dirección</th>
+                                <th>Entidad federativa</th>
+                                <th>Referencias</th>
+                                {%if activos == True%}
+                                <th>Modificar</th>
+                                <th>Eliminar</th>
+                                {%endif%}
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Número celular</th>
+                                <th>Dirección</th>
+                                <th>Entidad federativa</th>
+                                <th>Referencias</th>
+                                {%if activos == True%}
+                                <th>Modificar</th>
+                                <th>Eliminar</th>
+                                {%endif%}
+                            </tr>
+                        </tfoot>
+                        <tbody id="tbCliente">
+                            {%for obj in clientes%}
+                            <tr>
+                                <td>{{obj.persona.nombre}} {{obj.persona.apellidoP}} {{obj.persona.apellidoM}}</td>
+                                <td>{{obj.persona.celular}}</td>
+                                <td><b>Calle: </b>{{obj.domicilio.calle}}, # {{obj.domicilio.numero_exterior}} Int. {{obj.domicilio.numero_interior}} <br> <b>Colonia: </b>{{obj.domicilio.colonia}}<br>  </td>
+                                <td>{{obj.domicilio.municipio}}, {{obj.domicilio.estado}} </td>
+                                <td>{{obj.domicilio.referencias}} </td>
+                                {%if activos == True%}
+                                <td class="text-center">
+                                <button type="button" class="btn btn-primary waves-effect" onclick="detalleCliente({{obj.cliente.id}})">
+                                <i class="material-icons">mode_edit</i>
+                                </button>
+                                </td>
+                                <td class="text-center">
+                                <button type="button" class="btn btn-danger waves-effect" onclick="eliminarCliente({{obj.persona.id}})">
+                                    <i class="material-icons">delete</i>
+                                </button>
+                                </td>
+                                {%endif%}
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

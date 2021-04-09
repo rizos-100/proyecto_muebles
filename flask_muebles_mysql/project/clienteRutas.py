@@ -1,17 +1,47 @@
-from flask import Blueprint, render_template, jsonify, request
+from flask import Blueprint, render_template, jsonify, request,make_response
 from .models import db
 from .models import cliente,persona,domicilio
-import json
+from project.validateInputs import validate as Validator
+
+import logging
+from datetime import datetime
 
 clienteRutas = Blueprint('clienteRutas', __name__)
 
-@clienteRutas.route('/getAllClientes',methods=['GET','POST'])
-def getAllClientes():
-    arrayClientes = list()
-    clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Activo').all()
-    
-    for i in clientes:
-        clienObj ={
+@clienteRutas.route('/getAllClientesActivos',methods=['GET','POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
+def getAllClientesActivos():
+    try:
+        clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Activo').all()
+        return render_template('cliente.html', clientes=clientes, activos = True)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+
+@clienteRutas.route('/getAllClientesInactivos',methods=['GET','POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
+def getAllClientesInactivos():
+    try:
+        clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Inactivo').all()
+        return render_template('cliente.html', clientes=clientes, activos = False)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+
+@clienteRutas.route('/getAllClientesById',methods=['GET','POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
+def getAllClientesById():
+    try:
+        if request.method == 'GET':
+          idClien = int(request.args.get("idCliente", "0"))
+          print(idClien)
+          i = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(cliente.id ==idClien).first()
+          clienObj ={
             'idCliente': i.cliente.id,
             'persona':{
                 'id':i.persona.id,
@@ -26,33 +56,43 @@ def getAllClientes():
                 'id':i.domicilio.id,
                 'calle':i.domicilio.calle,
                 'colonia':i.domicilio.colonia,
+                'numero_exterior':i.domicilio.numero_exterior,
                 'numero_interior':i.domicilio.numero_interior,
+                'estado':i.domicilio.estado,
                 'municipio':i.domicilio.municipio,
                 'cp':i.domicilio.cp,
                 'referencias':i.domicilio.referencias
             }
         }
-        arrayClientes.append(clienObj) 
-    return jsonify(arrayClientes)
+        
+        return clienObj
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return make_response(jsonify(message), 400)
+
 
 @clienteRutas.route('/addCliente', methods=['GET', 'POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
 def addCliente():
-     if request.method == 'POST':
-          nombre_ = request.form['nombre']
-          apellidoP_ = request.form['apellidoP']
-          apellidoM_ = request.form['apellidoM']
-          numero_fijo_ = request.form['numero_fijo']
-          celular_ = request.form['celular']
-          rfc_ = request.form['rfc']
+    try:
+        if request.method == 'POST':
+          nombre_ = Validator.sanitizarNombre(request.form['nombre'])
+          apellidoP_ = Validator.sanitizarNombre(request.form['apellidoP'])
+          apellidoM_ = Validator.sanitizarNombre(request.form['apellidoM'])
+          numero_fijo_ = Validator.sanitizarNombre(request.form['numero_fijo'])
+          celular_ = int(request.form['celular'])
+          rfc_ = Validator.validarRFC(request.form['rfc'])
           
-          calle_ = request.form['calle']
-          colonian_ = request.form['colonia']
-          numero_interior_ = request.form['numero_interior']
-          numero_exterior_ = request.form['numero_exterior']
-          estado_ = request.form['estado']
-          municipio_ = request.form['municipio']
-          cp_ = request.form['cp']
-          referencias_ = request.form['referencias']
+          calle_ = Validator.sanitizarNombre(request.form['calle'])
+          colonian_ = Validator.sanitizarNombre(request.form['colonia'])
+          numero_interior_ = str(request.form['numero_interior'])
+          numero_exterior_ = str(request.form['numero_exterior'])
+          estado_ = Validator.sanitizarNombre(request.form['estado'])
+          municipio_ = Validator.sanitizarNombre(request.form['municipio'])
+          cp_ = int(request.form['cp'])
+          referencias_ = Validator.sanitizarNombre(request.form['referencias'])
           
           objDomicilio = domicilio(calle=calle_,
                                     colonia=colonian_,
@@ -89,28 +129,35 @@ def addCliente():
           
           return jsonify(result)
       
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return make_response(jsonify(message), 400)
+      
 @clienteRutas.route('/updateCliente', methods=['GET', 'POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
 def updateCliente():
-    
-     if request.method == 'POST':
+    try:
+        if request.method == 'POST':
          
-          idPers = request.form['idP']
-          nombre_ = request.form['nombre']
-          apellidoP_ = request.form['apellidoP']
-          apellidoM_ = request.form['apellidoM']
-          numero_fijo_ = request.form['numero_fijo']
-          celular_ = request.form['celular']
-          rfc_ = request.form['rfc']
+          idPers = int(request.form['idP'])
+          nombre_ = Validator.sanitizarNombre(request.form['nombre'])
+          apellidoP_ = Validator.sanitizarNombre(request.form['apellidoP'])
+          apellidoM_ = Validator.sanitizarNombre(request.form['apellidoM'])
+          numero_fijo_ = int(request.form['numero_fijo'])
+          celular_ = int(request.form['celular'])
+          rfc_ = Validator.validarRFC(request.form['rfc'])
           
-          idDom = request.form['idD']
-          calle_ = request.form['calle']
-          colonian_ = request.form['colonia']
-          numero_interior_ = request.form['numero_interior']
-          numero_exterior_ = request.form['numero_exterior']
-          estado_ = request.form['estado']
-          municipio_ = request.form['municipio']
-          cp_ = request.form['cp']
-          referencias_ = request.form['referencias']
+          idDom = int(request.form['idD'])
+          calle_ = Validator.sanitizarNombre(request.form['calle'])
+          colonian_ = Validator.sanitizarNombre(request.form['colonia'])
+          numero_interior_ = str(request.form['numero_interior'])
+          numero_exterior_ = str(request.form['numero_exterior'])
+          estado_ = Validator.sanitizarNombre(request.form['estado'])
+          municipio_ = Validator.sanitizarNombre(request.form['municipio'])
+          cp_ = int(request.form['cp'])
+          referencias_ = Validator.sanitizarNombre(request.form['referencias'])
           
           domicilio_upd = db.session.query(domicilio).filter(domicilio.id == idDom).first()
           domicilio_upd.calle=calle_
@@ -137,13 +184,20 @@ def updateCliente():
           result = {"id": persona_upd.id}
           
           return jsonify(result)
-
-@clienteRutas.route('/deleteCliente', methods=['GET', 'POST'])
-def deleteCliente():
+      
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return make_response(jsonify(message), 400)
     
-     if request.method == 'POST':
+@clienteRutas.route('/deleteCliente', methods=['GET', 'POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
+def deleteCliente():
+    try:
+        if request.method == 'POST':
          
-          idPers = request.form['idP']
+          idPers = int(request.form['idP'])
           
           persona_upd = db.session.query(persona).filter(persona.id == idPers).first()
           persona_upd.estatus='Inactivo'
@@ -153,3 +207,8 @@ def deleteCliente():
           result = {"id": persona_upd.id}
           
           return jsonify(result)
+      
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return make_response(jsonify(message), 400)

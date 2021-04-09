@@ -1,11 +1,14 @@
 import os
-from flask import Flask
+from flask import Flask,render_template
 from flask_security import Security, SQLAlchemyUserDatastore, utils, current_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_admin.contrib  import sqla
 from wtforms.fields import PasswordField
+
+import logging
+from datetime import datetime
 
 #Creamos una instancia de SQLAlchemy
 db = SQLAlchemy()
@@ -14,14 +17,19 @@ from .models import User, Role, RoleAdmin, UserAdmin
 
 userDataStore = SQLAlchemyUserDatastore(db, User, Role)
 
+UPLOAD_TMP = os.path.abspath('project/tmp/')
+LOG_FILENAME = UPLOAD_TMP+'/errores.log'
 
 def create_app():
     #Creamos una instancia del flask
+    logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
     app = Flask(__name__)
 
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     #Generar la clave de sessión para crear una cookie con la inf. de la sessión
     app.config['SECRET_KEY'] = os.urandom(24)
+    #Usar en caso de que no se tenga algun acceso a la principal
+    #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u512768467_user_producci2:7=Vhafn^K9@31.170.161.1/u512768467_muebleria2'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u512768467_user_produccio:7=Vhafn^K9@31.170.161.1/u512768467_muebleria'
     app.config['SECURITY_PASSWORD_SALT'] = 'thisissecretsalt'
 
@@ -32,6 +40,11 @@ def create_app():
 
         #Conectando los modelos a flask-security.
         security = Security(app, userDataStore)
+    
+    @app.errorhandler(404)
+    def page_not_found(e):
+        logging.error(str(type(e))+'\n Tipo de error: '+str(e)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
     #####################################################################3
     #Configurando el login_manager
     #login_manager = LoginManager()
@@ -61,6 +74,14 @@ def create_app():
     app.register_blueprint(proveedorRutas_blueprint)
     from .clienteRutas import clienteRutas as clienteRutas_blueprint
     app.register_blueprint(clienteRutas_blueprint)
+    from .ventasRutas import ventasRutas as ventasRutas_blueprint
+    app.register_blueprint(ventasRutas_blueprint)
+    from .productoRutas import productoRutas as productoRutas_blueprint
+    app.register_blueprint(productoRutas_blueprint)
+    from .detalleProductoMaterialRutas import detalleProductoMaterialRutas as detalleProductoMaterialRutas_blueprint
+    app.register_blueprint(detalleProductoMaterialRutas_blueprint)
+    from .ordenCompraRutas import ordenCompraRutas as ordenCompraRutas_blueprint
+    app.register_blueprint(ordenCompraRutas_blueprint)
         
     # Initialize Flask-Admin
     admin = Admin(app)
@@ -68,6 +89,8 @@ def create_app():
     # Add Flask-Admin views for Users and Roles
     admin.add_view(UserAdmin(User, db.session))
     admin.add_view(RoleAdmin(Role, db.session))
+    
+    logging.info('Incio de la aplicacion ['+str(datetime.now())+']')
     
     return app
 
