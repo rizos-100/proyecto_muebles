@@ -905,3 +905,436 @@ INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:09:54] "[37mGET /pages/favicon.ico 
 INFO:werkzeug: * Detected change in 'C:\\Users\\peri_\\OneDrive\\Escritorio\\Proyecto Muebleria\\proyecto_muebles\\flask_muebles_mysql\\project\\productoRutas.py', reloading
 INFO:werkzeug: * Restarting with stat
 INFO:root:Incio de la aplicacion [2021-04-09 14:18:55.751318]
+INFO:root:Incio de la aplicacion [2021-04-09 14:57:42.066258]
+INFO:root:Incio de la aplicacion [2021-04-09 14:57:43.629320]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:57:47] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:11] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:16] "[37mGET /getAllProveedorActivos HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:35] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:41] "[37mGET /getCategoriasPorId?idCat=1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:45] "[37mGET /getAllCategoriasInactivas HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:56.946451]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:56] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:57.317437]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:57] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.476772]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/pages/helper-classes.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.551436]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.556424]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/chosen/chosen.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.568414]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/node-waves/waves.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.592800]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/animate-css/animate.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.606585]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/morrisjs/morris.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.616591]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.624455]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.626450]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.631441]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/css/themes/all-themes.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.643767]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.658656]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.673403]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.679522]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.694665]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/node-waves/waves.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.709625]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.726677]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.732617]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/morrisjs/morris.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.746776]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.755950]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.766620]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.777468]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.789962]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.798776]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.813796]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.816789]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.824910]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.848354]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.856384]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.876356]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.880539]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/pdfmake.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.885483]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/vfs_fonts.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.html5.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.899734]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.print.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.912504]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/js/pages/tables/jquery-datatable.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.924567]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/jquery-sparkline/jquery.sparkline.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.930586]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/bootstrap-notify/bootstrap-notify.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.946512]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/js/admin.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.954598]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/js/pages/index.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.959776]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/js/pages/ui/notifications.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.974341]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/plugins/sweetalert/sweetalert.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.983967]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/js/demo.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:58.994082]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:58] "[37mGET /pages/static/MyJS/categoria.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:59.005611]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:59] "[37mGET /pages/static/MyJS/cliente.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:59.013376]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:59.015372]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:59] "[37mGET /pages/static/MyJS/proveedor.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:59] "[37mGET /pages/static/js/script.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 14:58:59.068494]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:58:59] "[37mGET /pages/pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 14:59:00] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 15:00:22.932543]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 15:04:23.234868]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 15:04:33] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 15:05:37.861828]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:33:04.904954]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:33:46.005802]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:34:45.484335]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:36:15.499555]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'jinja2.exceptions.TemplateNotFound'>
+ Tipo de error: [2021-04-09 16:36:57.593402]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:36:57] "[37mGET /getAllVentasInactivas HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:37:28.410504]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:37:29] "[37mGET /getAllVentasInactivas HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:41:34.577794]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:41:44] "[35m[1mGET /deleteVenta HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:41:44] "[37mGET /deleteVenta?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:41:44] "[37mGET /deleteVenta?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:41:44] "[37mGET /deleteVenta?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:41:44] "[37mGET /deleteVenta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:41:44] "[37mGET /deleteVenta?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:41:44] "[37mGET /deleteVenta?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+ERROR:root:<class 'UnboundLocalError'>
+ Tipo de error: local variable 'venta' referenced before assignment[2021-04-09 16:43:03.658178]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:43:03] "[31m[1mPOST /deleteVenta HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:43:25.497172]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'BaseQuery' object has no attribute 'fist'[2021-04-09 16:43:30.588219]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:43:30] "[31m[1mPOST /deleteVenta HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:44:04.057131]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'BaseQuery' object has no attribute 'fist'[2021-04-09 16:44:21.610880]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:44:21] "[31m[1mPOST /deleteVenta HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:44:43.940577]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'TypeError'>
+ Tipo de error: Object of type InstrumentedAttribute is not JSON serializable[2021-04-09 16:44:46.554365]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:44:46] "[31m[1mPOST /deleteVenta HTTP/1.1[0m" 400 -
+ERROR:root:<class 'sqlalchemy.exc.OperationalError'>
+ Tipo de error: (MySQLdb._exceptions.OperationalError) (2006, 'MySQL server has gone away')
+[SQL: SELECT venta.id AS venta_id, venta.fecha_venta AS venta_fecha_venta, venta.total AS venta_total, venta.cliente AS venta_cliente, venta.user AS venta_user, venta.estatus AS venta_estatus 
+FROM venta 
+WHERE venta.id = %s 
+ LIMIT %s]
+[parameters: (15, 1)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)[2021-04-09 16:45:13.118707]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:45:13] "[31m[1mPOST /deleteVenta HTTP/1.1[0m" 400 -
+ERROR:root:<class 'TypeError'>
+ Tipo de error: Object of type InstrumentedAttribute is not JSON serializable[2021-04-09 16:45:57.467045]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:45:57] "[31m[1mPOST /deleteVenta HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:46:19.786514]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:46:26] "[37mPOST /deleteVenta HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:46:44.588356]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:46:44] "[37mGET /'/getAllVentasActivas HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:46:45.015186]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:46:45] "[37mGET /'/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:46:54.683796]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:46:54] "[37mGET /'/getAllVentasActivas HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:46:54.925380]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:46:54] "[37mGET /'/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:46:56.210069]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:46:56] "[37mGET /'/getAllVentasActivas HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:46:56.395849]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:46:56] "[37mGET /'/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:47:11] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:47:35] "[37mPOST /deleteVenta HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:47:38] "[37mGET /getAllVentasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:47:59] "[37mGET /getAllVentasInactivas HTTP/1.1[0m" 200 -
+ERROR:root:<class 'TypeError'>
+ Tipo de error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'[2021-04-09 16:48:41.867701]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:48:41] "[37mGET /getAllVentasById?idVenta=1 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:48:54.269233]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'TypeError'>
+ Tipo de error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'[2021-04-09 16:48:55.926931]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:48:55] "[37mGET /getAllVentasById?idVenta=1 HTTP/1.1[0m" 200 -
+ERROR:root:<class 'TypeError'>
+ Tipo de error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'[2021-04-09 16:48:57.702892]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:48:57] "[37mGET /getAllVentasById?idVenta=1 HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:49:07.603414]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:49:07] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:49:07.774521]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:49:07] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'TypeError'>
+ Tipo de error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'[2021-04-09 16:49:10.196304]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:49:10] "[37mGET /getAllVentasById?idVenta=1 HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:49:10.438564]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:49:10] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:49:10.606768]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:49:10] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'TypeError'>
+ Tipo de error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'[2021-04-09 16:49:19.401434]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:49:19] "[37mGET /getAllVentasById?idVenta=1 HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:49:19.746566]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:49:19] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:49:19.921393]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:49:19] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'TypeError'>
+ Tipo de error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'[2021-04-09 16:49:45.478927]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:49:45] "[37mGET /getAllVentasById?idVenta=2 HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:49:45.768071]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:49:45] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:49:45.951289]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:49:45] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:50:11.105145]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'TypeError'>
+ Tipo de error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'[2021-04-09 16:50:14.039551]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:50:14] "[37mGET /getAllVentasById?idVenta=2 HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:50:14.392323]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:50:14] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 16:50:14.562706]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:50:14] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'sqlalchemy.exc.OperationalError'>
+ Tipo de error: (MySQLdb._exceptions.OperationalError) (2006, 'MySQL server has gone away')
+[SQL: SELECT venta.id AS venta_id, venta.fecha_venta AS venta_fecha_venta, venta.total AS venta_total, venta.cliente AS venta_cliente, venta.user AS venta_user, venta.estatus AS venta_estatus 
+FROM venta 
+WHERE venta.id = %s]
+[parameters: (14,)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)[2021-04-09 16:50:43.143510]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:50:43] "[37mGET /getAllVentasById?idVenta=2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:51:00] "[37mGET /getAllVentasById?idVenta=2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:51:10] "[37mGET /getAllVentasById HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:51:40] "[37mGET /getAllVentasById?idVenta=2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:51:55] "[37mGET /getAllVentasById?idVenta=14 HTTP/1.1[0m" 200 -
+ERROR:root:<class 'TypeError'>
+ Tipo de error: int() argument must be a string, a bytes-like object or a number, not 'NoneType'[2021-04-09 16:52:25.646139]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:52:25] "[37mGET /getAllVentasById?idVenta=14 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:53:21.825491]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:53:31.342477]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:53:34] "[37mGET /getAllVentasById?idVenta=14 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:53:39] "[37mGET /getAllVentasById?idVenta=2 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
