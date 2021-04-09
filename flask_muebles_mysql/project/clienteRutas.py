@@ -13,7 +13,7 @@ clienteRutas = Blueprint('clienteRutas', __name__)
 def getAllClientesActivos():
     try:
         clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Activo').all()
-        return render_template('', clientes=clientes, activos = True)
+        return render_template('cliente.html', clientes=clientes, activos = True)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
@@ -25,7 +25,7 @@ def getAllClientesActivos():
 def getAllClientesInactivos():
     try:
         clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Inactivo').all()
-        return render_template('', clientes=clientes, activos = False)
+        return render_template('cliente.html', clientes=clientes, activos = False)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
@@ -36,8 +36,8 @@ def getAllClientesInactivos():
 #@roles_accepted('admin','vendedor')
 def getAllClientesById():
     try:
-        if request.method == 'POST':
-          idClien = request.form['idCliente']
+        if request.method == 'GET':
+          idClien = request.args.get("idCliente", "No contiene el nombre")
           i = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(cliente.id ==idClien).first()
           clienObj ={
             'idCliente': i.cliente.id,
@@ -54,13 +54,16 @@ def getAllClientesById():
                 'id':i.domicilio.id,
                 'calle':i.domicilio.calle,
                 'colonia':i.domicilio.colonia,
+                'numero_exterior':i.domicilio.numero_exteriors,
                 'numero_interior':i.domicilio.numero_interior,
+                'estado':i.domicilio.estado,
                 'municipio':i.domicilio.municipio,
                 'cp':i.domicilio.cp,
                 'referencias':i.domicilio.referencias
             }
         }
-          return make_response(jsonify(clienObj), 200)
+        
+        return jsonify(clienObj)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')

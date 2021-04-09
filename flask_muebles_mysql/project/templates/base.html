@@ -135,16 +135,32 @@
                         </a>
                     </li>
                     <li>
-                        <a href="pages/typography.html">
+                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">account_circle</i>
                             <span>Clientes</span>
                         </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="/getAllClientesActivos">Activos</a>
+                            </li>
+                            <li>
+                                <a href="/getAllClientesInactivos">Inactivos</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
-                        <a href="pages/typography.html">
+                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">domain</i>
                             <span>Proveedores</span>
                         </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="/getAllProveedor">Activos</a>
+                            </li>
+                            <li>
+                                <a href="/getAllProveedorInactivo">Inactivos</a>
+                            </li>
+                        </ul>
                     </li>
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
@@ -237,6 +253,233 @@
         </div>
     </div>
 
+    <div class="modal fade" id="modalCliente" data-backdrop="static" tabindex="-1" role="dialog"
+        style="display: none;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title" id="defaultModalLabel">Muebleria del valle</h4>
+                    <p class="modal-description">Formulario para el control de clientes. </p>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Nombre <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="text" id="txtNombre" class="form-control" placeholder="Nombre" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Apellido paterno <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" id="txtApellidoPaterno" class="form-control" placeholder="Apellido paterno" maxlength="100" data-length="100"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Apellido materno <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" id="txtApellidoMaterno" class="form-control" placeholder="Apellido materno" maxlength="100" data-length="100"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>RFC <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" id="txtRFC" class="form-control" placeholder="RFC" maxlength="100" data-length="100"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Número fijo <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="text" id="txtNumeroFijo" class="form-control" placeholder="Número fijo" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Número celular <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" id="txtNumeroCelular" class="form-control" placeholder="Número celular" maxlength="100" data-length="100"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h3>Domicilio</h3>
+                            <hr/>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Calle <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" id="txtCalle" class="form-control" placeholder="Calle" maxlength="100" data-length="100"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Número exterior <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="text" id="txtNumeroExterior" class="form-control" placeholder="Número exterior" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Número interior <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" id="txtNumeroInterior" class="form-control" placeholder="Número interior" maxlength="100" data-length="100"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Colonia <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" id="txtColonia" class="form-control" placeholder="Colonia" maxlength="100" data-length="100"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Código postal <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="text" id="txtCP" class="form-control" placeholder="Código Postal" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Municipio <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" id="txtMunicipio" class="form-control" placeholder="Municipio" maxlength="100" data-length="100"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Estado <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <input type="text" id="txtEstado" class="form-control" placeholder="Estado" maxlength="100" data-length="100"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Referencias <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">comment</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="text" id="txtReferencias" class="form-control" placeholder="Referencias" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" id="txtIdCliente" class="form-control" placeholder="id">
+                        <input type="hidden" id="txtIdPersona" class="form-control" placeholder="id">
+                        <input type="hidden" id="txtIdDomicilio" class="form-control" placeholder="id">
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info waves-effect"
+                        onclick="decidirCliente()">Guardar</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Jquery Core Js -->
     <script src="../static/plugins/jquery/jquery.min.js"></script>
 
@@ -300,6 +543,7 @@
 
     <!--Nuestros JS-->
     <script src="../static/MyJS/categoria.js"></script>
+    <script src="../static/MyJS/cliente.js"></script>
 </body>
 
 </html>
