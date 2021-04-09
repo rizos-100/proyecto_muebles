@@ -10,8 +10,8 @@ function agregarCategoria() {
     var err = validarCategoria();
     if (err == "ok") {
         var data = {
-            nombre: $('#txtNombreCategoria').val(),
-            descripcion: $('#txtDescCategoria').val()
+            nombre: validarCamposLetras($('#txtNombreCategoria').val()),
+            descripcion: validarCamposLetras($('#txtDescCategoria').val())
         };
 
         swal({
@@ -51,8 +51,8 @@ function modificarCategoria() {
     if (err == "ok") {
         var data = {
             id: $('#txtIdCategoria').val(),
-            nombre: $('#txtNombreCategoria').val(),
-            descripcion: $('#txtDescCategoria').val()
+            nombre: validarCamposLetras($('#txtNombreCategoria').val()),
+            descripcion: validarCamposLetras($('#txtDescCategoria').val())
         };
         swal({
             title: "¿Deseas continuar?",

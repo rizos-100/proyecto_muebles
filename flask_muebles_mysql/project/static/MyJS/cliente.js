@@ -10,20 +10,20 @@ function agregarCliente() {
     var err = validarCliente();
     if (err == "ok") {
         var data = {
-            nombre: $('#txtNombre').val(),
-            apellidoP: $('#txtApellidoPaterno').val(),
-            apellidoM: $('#txtApellidoMaterno').val(),
-            rfc: $('#txtRFC').val(),
-            numero_fijo: $('#txtNumeroFijo').val(), 
-            celular: $('#txtNumeroCelular').val(), 
-            calle: $('#txtCalle').val(),
-            numero_exterior: $('#txtNumeroExterior').val(),
-            numero_interior: $('#txtNumeroInterior').val(), 
-            colonia: $('#txtColonia').val(),
-            cp: $('#txtCP').val(),
-            municipio: $('#txtMunicipio').val(),
-            estado: $('#txtEstado').val(),
-            referencias: $('#txtReferencias').val()
+            nombre: validarCamposLetras($('#txtNombre').val()),
+            apellidoP: validarCamposLetras($('#txtApellidoPaterno').val()),
+            apellidoM: validarCamposLetras($('#txtApellidoMaterno').val()),
+            rfc: validarCamposLetras($('#txtRFC').val()),
+            numero_fijo: validarCamposLetras($('#txtNumeroFijo').val()), 
+            celular: validarCamposLetras($('#txtNumeroCelular').val()), 
+            calle: validarCamposLetras($('#txtCalle').val()),
+            numero_exterior: validarCamposLetras($('#txtNumeroExterior').val()),
+            numero_interior: validarCamposLetras($('#txtNumeroInterior').val()), 
+            colonia: validarCamposLetras($('#txtColonia').val()),
+            cp: validarCamposLetras($('#txtCP').val()),
+            municipio: validarCamposLetras($('#txtMunicipio').val()),
+            estado: validarCamposLetras($('#txtEstado').val()),
+            referencias: validarCamposLetras($('#txtReferencias').val())
         };
 
         swal({
@@ -65,20 +65,20 @@ function modificarCliente() {
             idP: $('#txtIdPersona').val(),
             idD: $('#txtIdDomicilio').val(),
             idC: $('#txtIdCliente').val(),
-            nombre: $('#txtNombre').val(),
-            apellidoP: $('#txtApellidoPaterno').val(),
-            apellidoM: $('#txtApellidoMaterno').val(),
-            rfc: $('#txtRFC').val(),
-            numero_fijo: $('#txtNumeroFijo').val(), 
-            celular: $('#txtNumeroCelular').val(), 
-            calle: $('#txtCalle').val(),
-            numero_exterior: $('#txtNumeroExterior').val(),
-            numero_interior: $('#txtNumeroInterior').val(), 
-            colonia: $('#txtColonia').val(),
-            cp: $('#txtCP').val(),
-            municipio: $('#txtMunicipio').val(),
-            estado: $('#txtEstado').val(),
-            referencias: $('#txtReferencias').val()
+            nombre: validarCamposLetras($('#txtNombre').val()),
+            apellidoP: validarCamposLetras($('#txtApellidoPaterno').val()),
+            apellidoM: validarCamposLetras($('#txtApellidoMaterno').val()),
+            rfc: validarCamposLetras($('#txtRFC').val()),
+            numero_fijo: validarCamposLetras($('#txtNumeroFijo').val()), 
+            celular: validarCamposLetras($('#txtNumeroCelular').val()), 
+            calle: validarCamposLetras($('#txtCalle').val()),
+            numero_exterior: validarCamposLetras($('#txtNumeroExterior').val()),
+            numero_interior: validarCamposLetras($('#txtNumeroInterior').val()), 
+            colonia: validarCamposLetras($('#txtColonia').val()),
+            cp: validarCamposLetras($('#txtCP').val()),
+            municipio: validarCamposLetras($('#txtMunicipio').val()),
+            estado: validarCamposLetras($('#txtEstado').val()),
+            referencias: validarCamposLetras($('#txtReferencias').val())
         };
         swal({
             title: "¿Deseas continuar?",
