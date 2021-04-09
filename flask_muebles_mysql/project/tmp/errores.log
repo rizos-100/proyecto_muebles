@@ -1,922 +1,34 @@
-INFO:root:Incio de la aplicacion [2021-04-08 13:26:58.992920]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:27:40] "[37mPOST /getAllClientesById HTTP/1.1[0m" 200 -
-ERROR:root:<class 'werkzeug.exceptions.BadRequestKeyError'>
- Tipo de error: 400 Bad Request: The browser (or proxy) sent a request that this server could not understand.[2021-04-08 13:27:45.225885]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:27:45] "[35m[1mPOST /getAllClientesById HTTP/1.1[0m" 500 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\main.py', reloading
-INFO:root:Incio de la aplicacion [2021-04-08 13:30:40.874494]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
-INFO:root:Incio de la aplicacion [2021-04-08 13:30:53.456331]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
-INFO:root:Incio de la aplicacion [2021-04-08 13:31:07.867631]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
-INFO:root:Incio de la aplicacion [2021-04-08 13:35:41.685738]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-ERROR:root:<class 'UnboundLocalError'>
- Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:36:04.467452]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:36:04] "[37mPOST /getAllClientesInactivos HTTP/1.1[0m" 200 -
-ERROR:root:<class 'UnboundLocalError'>
- Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:37:15.933348]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:37:16] "[35m[1mPOST /getAllClientesInactivos HTTP/1.1[0m" 500 -
-ERROR:root:<class 'UnboundLocalError'>
- Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:37:51.702275]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:37:51] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
-ERROR:root:<class 'UnboundLocalError'>
- Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:39:33.401432]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:39:33] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
-ERROR:root:<class 'UnboundLocalError'>
- Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:40:49.323210]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:40:49] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
-ERROR:root:<class 'UnboundLocalError'>
- Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:41:17.152141]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:41:17] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
-ERROR:root:<class 'UnboundLocalError'>
- Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:41:23.689883]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:41:23] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
-ERROR:root:<class 'UnboundLocalError'>
- Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:41:30.524374]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:41:30] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
-ERROR:root:<class 'UnboundLocalError'>
- Tipo de error: local variable 'clientes' referenced before assignment[2021-04-08 13:41:36.737326]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:41:36] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
-INFO:root:Incio de la aplicacion [2021-04-08 13:45:46.780997]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-ERROR:root:<class 'jinja2.exceptions.TemplateNotFound'>
- Tipo de error: [2021-04-08 13:45:51.364761]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:45:51] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:46:33] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
-INFO:root:Incio de la aplicacion [2021-04-08 13:46:54.967230]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
-INFO:root:Incio de la aplicacion [2021-04-08 13:47:27.691091]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
-INFO:root:Incio de la aplicacion [2021-04-08 13:48:04.534890]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
-INFO:root:Incio de la aplicacion [2021-04-08 13:49:58.745203]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
-INFO:root:Incio de la aplicacion [2021-04-08 13:50:16.640370]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-ERROR:root:<class 'jinja2.exceptions.TemplateNotFound'>
- Tipo de error: [2021-04-08 13:50:20.360582]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 13:50:20] "[37mPOST /getAllClientesInactivos HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\materialRutas.py', reloading
-INFO:root:Incio de la aplicacion [2021-04-08 13:51:29.487030]
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:34:17] "[35m[1mGET / HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:34:17] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:34:17] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:34:17] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:34:17] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:34:17] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:34:18] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:35:11.847794]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-DEBUG:root: Fecha y Hora: 2021-04-08 20:35:13.397045 - Arranque de la aplicacion 
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:35:13] "[37mGET / HTTP/1.1[0m" 200 -
-DEBUG:root: Fecha y Hora: 2021-04-08 20:35:13.671459 - Arranque de la aplicacion 
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:35:13] "[37mGET / HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:35:14] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:35:18] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:35:22] "[37mGET /getCategoriasPorId?idCat=4 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:35:28] "[37mPOST /deleteCategoria HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:35:30] "[37mGET /getAllCategoriasInactivas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:35:37] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:35:43] "[37mPOST /deleteCategoria HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:35:46] "[37mGET /getAllCategoriasInactivas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:36:18] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:36:22] "[37mGET /getAllCategoriasInactivas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:36:34] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:36:38] "[37mGET /getCategoriasPorId?idCat=4 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:36:46] "[37mGET /getCategoriasPorId?idCat=1 HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:36:50] "[37mPOST /updateCategoria HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:36:52] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:37:08.238844]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:37:13] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:38:17.221850]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:38:19] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:39:44.312833]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:39:57] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:42:22.580468]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:42:26.206443]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:42:30] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:42:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:42:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:42:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:42:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:42:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:42:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:43:04.424749]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:43:07.763272]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:43:13] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:43:13] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:43:13] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:43:13] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:43:13] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:43:13] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:43:13] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:45:46.725162]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:45:49] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:48:36.626790]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:51:01.643539]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:05] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:05] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:05] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:05] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:05] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:05] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:05] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:51:53.926158]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:56] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:51:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:52:38.941919]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:52:43] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:52:43] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:52:43] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:52:43] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:52:43] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:52:43] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:52:43] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:54:26.619637]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:54:30] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:55:04.126439]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:55:06] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:55:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:55:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:55:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:55:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:55:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:55:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:29] "[35m[1mGET //getAllOrdenCompra HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:29] "[37mGET //getAllOrdenCompra?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:29] "[37mGET //getAllOrdenCompra?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:29] "[37mGET //getAllOrdenCompra?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:29] "[37mGET //getAllOrdenCompra?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:29] "[37mGET //getAllOrdenCompra?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:29] "[37mGET //getAllOrdenCompra?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:36] "[35m[1mGET /getAllOrdenCompra HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:36] "[37mGET /getAllOrdenCompra?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:36] "[37mGET /getAllOrdenCompra?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:36] "[37mGET /getAllOrdenCompra?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:36] "[37mGET /getAllOrdenCompra?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:36] "[37mGET /getAllOrdenCompra?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:57:36] "[37mGET /getAllOrdenCompra?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:58:46.538536]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:58:58.985380]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:59:00] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 20:59:46.767210]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:59:51] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:59:51] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:59:51] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:59:51] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:59:51] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:59:51] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 20:59:51] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:00:31.060071]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:00:38] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:00:38] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:00:38] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:00:38] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:00:38] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:00:38] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:00:38] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:01:13.782335]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:01:17] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:03:12.689303]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:03:15] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:03:45] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:04:03] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:04:20] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:11:37.955153]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:11:39] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:11:40] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:11:40] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:11:40] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:11:40] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:11:40] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:11:40] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:12:10.844447]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:12:15] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:12:23.484267]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:12:26] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:12:26] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:12:26] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:12:26] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:12:26] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:12:26] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:12:26] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:12:47.959293]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:12:54] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:13:16.823743]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:22] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:45] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:45] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:45] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:45] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:45] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:45] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:45] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:root:Incio de la aplicacion [2021-04-08 21:13:54.659222]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:56] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:13:56] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:15:42.762214]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:46] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:15:53.950731]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:55] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:55] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:55] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:55] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:55] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:55] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:15:55] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:16:16.443560]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:16:20] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:16:20] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:16:20] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:16:20] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:16:20] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:16:20] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:16:20] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:17:11.820493]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:18] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:19] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:19] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:19] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:19] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:19] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:19] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:17:41.896777]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:46] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:17:46] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:20:07.791515]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:20:10] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:20:10] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:20:10] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:20:10] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:20:10] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:20:10] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:20:10] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:25:32.756583]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:26:16.122407]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:29:52] "[37mPOST /getAllClientesById?idCliente=2 HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:34:06.114973]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:37:27.699349]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:37:37.943944]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:42:52] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:42:52] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:42:52] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:42:52] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:42:52] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:42:52] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:42:52] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:root:Incio de la aplicacion [2021-04-08 21:43:21.598442]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:23] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:23] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:23] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:23] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:23] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:23] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:23] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:43:45.986950]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:47] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:47] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:47] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:47] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:47] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:47] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:43:47] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:44:28.492456]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:44:30] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:44:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:44:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:44:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:44:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:44:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:44:30] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:44:55.139986]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:06] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:06] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:36] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:36] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:36] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:36] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:36] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:36] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:36] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:46:46] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:47:18] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:47:49.728473]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:47:51] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:50:25.204788]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:50:29] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:53:30.966054]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:54:01] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 21:55:56] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:59:08.808780]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 21:59:50.769803]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:01:25.896361]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:02:06.902548]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:02:27.934576]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:02:31] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:02:55.764659]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:03:00] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:04:26.672426]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:04:28] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:11:26.776024]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:13:03.646474]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:13:11.187352]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:13:32.762382]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:14:05.896585]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:15:57.164546]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:16:22.668770]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:16:25] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:17:56.947958]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:17:58] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:17:58] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:17:58] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:17:58] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:17:59] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:17:59] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:17:59] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:21:04.130574]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:21:05] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:21:41.937960]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:21:45] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:22:41.673615]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:22:46.317896]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:22:49] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:24:55.708205]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:25:28] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
+
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:15:54] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:16:04] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:16:10] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:17:46] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:17:47] "[37mGET /static/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:17:51] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:18:02] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'domicilio' object has no attribute 'numero_exteriors'[2021-04-08 23:18:07.940631]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:18:07] "[31m[1mGET /getAllClientesById?idCliente=3 HTTP/1.1[0m" 400 -
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'domicilio' object has no attribute 'numero_exteriors'[2021-04-08 23:18:11.361785]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:18:11] "[31m[1mGET /getAllClientesById?idCliente=4 HTTP/1.1[0m" 400 -
+ERROR:root:<class 'sqlalchemy.exc.StatementError'>
+ Tipo de error: (sqlalchemy.exc.InvalidRequestError) Can't reconnect until invalid transaction is rolled back
+[SQL: SELECT cliente.id AS cliente_id, cliente.`idPersona` AS `cliente_idPersona`, persona.id AS persona_id, persona.nombre AS persona_nombre, persona.`apellidoP` AS `persona_apellidoP`, persona.`apellidoM` AS `persona_apellidoM`, persona.numero_fijo AS persona_numero_fijo, persona.celular AS persona_celular, persona.estatus AS persona_estatus, persona.domicilio AS persona_domicilio, persona.rfc AS persona_rfc, domicilio.id AS domicilio_id, domicilio.calle AS domicilio_calle, domicilio.colonia AS domicilio_colonia, domicilio.numero_interior AS domicilio_numero_interior, domicilio.numero_exterior AS domicilio_numero_exterior, domicilio.estado AS domicilio_estado, domicilio.municipio AS domicilio_municipio, domicilio.cp AS domicilio_cp, domicilio.referencias AS domicilio_referencias, domicilio.estatus AS domicilio_estatus 
+FROM cliente INNER JOIN persona ON persona.id = cliente.`idPersona` INNER JOIN domicilio ON domicilio.id = persona.domicilio 
+WHERE cliente.id = %s 
+ LIMIT %s]
+[parameters: [immutabledict({})]][2021-04-08 23:18:16.348049]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:18:16] "[31m[1mGET /getAllClientesById?idCliente=5 HTTP/1.1[0m" 400 -
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'domicilio' object has no attribute 'numero_exteriors'[2021-04-08 23:18:33.676885]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:18:33] "[31m[1mGET /getAllClientesById?idCliente=5 HTTP/1.1[0m" 400 -
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:19:53] "[37mPOST /deleteCliente HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:19:55] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:20:00] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
 INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
 INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:29:05.180429]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:32:16] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:32:16] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:32:16] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:32:16] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:32:16] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:32:16] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:32:16] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:32:51.333862]
+INFO:root:Incio de la aplicacion [2021-04-08 23:22:09.847731]
 DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
 DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
 DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
@@ -925,13 +37,12 @@ DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handle
 DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
 DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
 DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:32:53] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'domicilio' object has no attribute 'numero_exteriors'[2021-04-08 23:22:14.487983]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:22:14] "[31m[1mGET /getAllClientesById?idCliente=4 HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
 INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:33:38.779168]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:33:55.458313]
+INFO:root:Incio de la aplicacion [2021-04-08 23:22:37.025714]
 DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
 DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
 DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
@@ -940,19 +51,10 @@ DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handle
 DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
 DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
 DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:33:58] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:33:58] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:33:58] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:33:58] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:33:58] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:33:58] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:33:58] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:22:39] "[37mGET /getAllClientesById?idCliente=4 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
 INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:35:01.849898]
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:35:39.948363]
+INFO:root:Incio de la aplicacion [2021-04-08 23:22:53.750110]
 DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
 DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
 DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
@@ -961,10 +63,17 @@ DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handle
 DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
 DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
 DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:35:41] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:25:43] "[37mGET /getAllClientesById?idCliente=1 HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-08 23:26:25.899349]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:26:25] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-08 23:26:25.982811]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:26:25] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:26:54] "[37mGET /getAllClientesById?idCliente=1 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
 INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:35:56.472967]
+INFO:root:Incio de la aplicacion [2021-04-08 23:28:03.354681]
 DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
 DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
 DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
@@ -973,10 +82,15 @@ DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handle
 DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
 DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
 DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:35:59] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-08 23:28:28.626479]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:28:28] "[37mGET /getAllProveedor HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
 INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:36:08.582680]
+INFO:root:Incio de la aplicacion [2021-04-08 23:30:19.642018]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-08 23:30:55.528070]
 DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
 DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
 DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
@@ -985,10 +99,19 @@ DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handle
 DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
 DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
 DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:36:11] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:31:03] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'NoneType' object has no attribute 'cliente'[2021-04-08 23:31:06.502066]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:31:06] "[31m[1mGET /getAllClientesById?idCliente=4 HTTP/1.1[0m" 400 -
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'NoneType' object has no attribute 'cliente'[2021-04-08 23:31:11.856486]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:31:11] "[31m[1mGET /getAllClientesById?idCliente=5 HTTP/1.1[0m" 400 -
+ERROR:root:<class 'AttributeError'>
+ Tipo de error: 'NoneType' object has no attribute 'cliente'[2021-04-08 23:31:14.820651]
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:31:14] "[31m[1mGET /getAllClientesById?idCliente=5 HTTP/1.1[0m" 400 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
 INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:36:27.343573]
+INFO:root:Incio de la aplicacion [2021-04-08 23:31:24.956035]
 DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
 DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
 DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
@@ -997,24 +120,6 @@ DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handle
 DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
 DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
 DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:36:33] "[35m[1mGET /getAllVentas HTTP/1.1[0m" 500 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:36:33] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:36:33] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:36:33] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:36:33] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:36:33] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:36:33] "[37mGET /getAllVentas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
-INFO:werkzeug: * Restarting with stat
-INFO:root:Incio de la aplicacion [2021-04-08 22:37:35.788330]
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 22:37:37] "[37mGET /getAllVentas HTTP/1.1[0m" 200 -
-INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
+INFO:werkzeug:127.0.0.1 - - [08/Apr/2021 23:31:27] "[37mGET /getAllClientesById?idCliente=4 HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\clienteRutas.py', reloading
 INFO:werkzeug: * Restarting with stat

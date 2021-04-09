@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask,render_template
 from flask_security import Security, SQLAlchemyUserDatastore, utils, current_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin
@@ -28,6 +28,8 @@ def create_app():
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     #Generar la clave de sessión para crear una cookie con la inf. de la sessión
     app.config['SECRET_KEY'] = os.urandom(24)
+    #Usar en caso de que no se tenga algun acceso a la principal
+    #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u512768467_user_producci2:7=Vhafn^K9@31.170.161.1/u512768467_muebleria2'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u512768467_user_produccio:7=Vhafn^K9@31.170.161.1/u512768467_muebleria'
     app.config['SECURITY_PASSWORD_SALT'] = 'thisissecretsalt'
 
@@ -38,6 +40,11 @@ def create_app():
 
         #Conectando los modelos a flask-security.
         security = Security(app, userDataStore)
+    
+    @app.errorhandler(404)
+    def page_not_found(e):
+        logging.error(str(type(e))+'\n Tipo de error: '+str(e)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
     #####################################################################3
     #Configurando el login_manager
     #login_manager = LoginManager()
