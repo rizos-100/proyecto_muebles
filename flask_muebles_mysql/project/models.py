@@ -254,7 +254,7 @@ class producto (db.Model):
     
 class ProductoSchema(ma.Schema):
     class Meta:
-        fields = ('id','modelo','descripcion','img','peso','color','alto','ancho','largo','cantidad','cantidad_minima','precio', 'estatus', 'categoria')
+        fields = ('id','modelo','descripcion','img','peso','color','alto','ancho','largo','cantidad','cantidad_minima','precio', 'estatus','idCategoria')
 
 class detalle_producto_material (db.Model):
     __tablename__='detalle_producto_material'
@@ -297,8 +297,6 @@ class detalle_venta (db.Model):
     
     ventaForeign = db.relationship('venta')
     productoForegin = db.relationship('producto')
-    
-
 
 class Detalle_ventaSchema(ma.Schema):
     class Meta:

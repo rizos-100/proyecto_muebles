@@ -12,7 +12,7 @@ def getAllVentas():
     
     for i in ventas:
         persJson=personaSchema(many=False)
-        produJson=personaSchema(many=False)
+        produJson=ProductoSchema(many=False)
         detVenJson=Detalle_ventaSchema(many=False)
         ventJson=VentaSchema(many=False)
         
@@ -27,10 +27,10 @@ def getAllVentas():
                         detalle_venta.productoForegin).filter(detalle_venta.venta==i.id).all()
         detalleVentaArray = list()
         for j in detalleVent:
-            objDetalle ={
-                "producto":produJson.dump(j.producto),
-                "detalleVenta":detVenJson.dump(j.detalle_venta)
-                }   
+            objDetalle = detVenJson.dump(j.detalle_venta)
+            print(j.producto.id)
+            objDetalle['producto']=produJson.dump(j.producto)
+            
             detalleVentaArray.append(objDetalle)
         
         objVenta= ventJson.dump(i)
