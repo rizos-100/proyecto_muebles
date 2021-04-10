@@ -3584,3 +3584,5 @@ INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 12:39:29] "[37mGET /profile HTTP/1.1[
 ERROR:root:<class 'werkzeug.exceptions.NotFound'>
  Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-10 12:39:30.074527]
 INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 12:39:30] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
