@@ -45,12 +45,13 @@ def getAllOrdenCompra():
             'materiales':materiales
             }
             arrayOrdenes.append(ordenObj)
-        #return jsonify(arrayOrdenes)
-        return render_template("",ordenes=arrayOrdenes,activos=True)
+        return jsonify(arrayOrdenes)
+        #return render_template("",ordenes=arrayOrdenes,activos=True)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-        return render_template('error.html')
+        return render_template(message)
+        #return render_template('error.html')
 
 #@login_required
 #@roles_accepted('admin','almacenista')
@@ -143,4 +144,49 @@ def addOrdenCompra():
         return make_response(jsonify(message), 400)
         #return render_template(message)
 
-
+#@login_required
+#@roles_accepted('admin','almacenista')
+@ordenCompraRutas.route('/getAllOrdenCompraByDia',methods=['GET','POST'])
+def getAllOrdenCompraByDia():
+    try:
+        now = datetime.now()
+        fecha=now.strftime('%Y-%m-%d')
+        #fecha='2021-04-07'
+        ordenes=db.session.query(orden_compra).filter(orden_compra.fecha_orden==fecha).all()
+        arrayOrdenes = list()
+        for orden in ordenes:
+            prov=db.session.query(proveedor).filter(proveedor.id==orden.proveedor).first()
+            us=db.session.query(User).filter(User.id==orden.user).first()
+            materia=db.session.query(detalle_orden_compra).filter(detalle_orden_compra.idOrden==orden.id).all()
+            materiales=list()
+            for det in materia:
+                mat=db.session.query(material).filter(material.id==det.material).first()
+                objM={
+                    'id':det.id,
+                    'cantidad':det.cantidad,
+                    'subtotal':det.subtotal,
+                    'idMaterial':det.material,
+                    'material':mat.nombre
+                }
+                materiales.append(objM)
+            #matSch=detalleOrdenSchema(many=True)
+            #res=matSch.dump(materia)
+            ordenObj={
+            'id':orden.id,
+            'idProveedor':prov.id,
+            'proveedor':prov.nombre,
+            'idUsuario':us.id,
+            'usuario':us.email,
+            'fecha_orden':orden.fecha_orden,
+            'estatus':orden.estatus,
+            'total':orden.total,
+            'materiales':materiales
+            }
+            arrayOrdenes.append(ordenObj)
+        #return jsonify(arrayOrdenes)
+        return render_template("",ordenes=arrayOrdenes,activos=True)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+        #return render_template(message)

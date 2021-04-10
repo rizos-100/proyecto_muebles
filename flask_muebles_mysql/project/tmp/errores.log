@@ -4849,3 +4849,234 @@ INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 22:03:31] "[37mGET / HTTP/1.1[0m" 200
 ERROR:root:<class 'werkzeug.exceptions.NotFound'>
  Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 22:03:32.310950]
 INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 22:03:32] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:32:03.534702]
+INFO:root:Incio de la aplicacion [2021-04-10 11:32:03.534702]
+DEBUG:root: Fecha y Hora: 2021-04-10 11:32:19.657717 - Arranque de la aplicacion 
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:19] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:19] "[37mGET /static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:19] "[37mGET /static/plugins/chosen/chosen.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:19] "[36mGET /static/plugins/node-waves/waves.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:19] "[36mGET /static/plugins/animate-css/animate.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:19] "[36mGET /static/plugins/morrisjs/morris.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:19] "[36mGET /static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:19] "[36mGET /static/css/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:19] "[36mGET /static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/css/themes/all-themes.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[37mGET /static/js/script.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/node-waves/waves.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/morrisjs/morris.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-datatable/extensions/export/buttons.print.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-datatable/extensions/export/buttons.html5.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/js/pages/tables/jquery-datatable.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/js/admin.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-sparkline/jquery.sparkline.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/bootstrap-notify/bootstrap-notify.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/js/pages/ui/notifications.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/js/pages/index.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/jquery-datatable/extensions/export/vfs_fonts.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/plugins/sweetalert/sweetalert.min.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/js/demo.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/MyJS/categoria.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[37mGET /static/css/materialize.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/MyJS/cliente.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[36mGET /static/MyJS/proveedor.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:20] "[37mGET /static/images/user-img-background.jpg HTTP/1.1[0m" 200 -
+ERROR:root:<class 'jinja2.exceptions.TemplateNotFound'>
+ Tipo de error: [2021-04-10 11:32:34.067212]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:32:34] "[37mGET /getAllOrdenCompra HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:33:36.392012]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:33:47] "[37mGET /getAllOrdenCompra HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:34:54.686448]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:35:07] "[37mGET /getAllOrdenCompraByDia HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:36:36.850214]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:36:41] "[37mGET /getAllOrdenCompraByDia HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:38:40.786168]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:38:45] "[37mGET /getAllOrdenCompraByDia HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:39:14.154367]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:39:20] "[37mGET /getAllOrdenCompraByDia HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:40:21.570519]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:40:39] "[37mGET /getAllOrdenCompraByDia HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:41:22.209945]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:41:29] "[37mGET /getAllOrdenCompraByDia HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:46:42.846554]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:46:49] "[37mGET /getAllOrdenCompraByDia HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:47:29.462176]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 11:47:35] "[37mGET /getAllOrdenCompraByDia HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:48:56.003807]
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:49:08.331214]
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:49:14.685310]
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:49:21.228394]
+INFO:werkzeug: * Detected change in 'C:\\Users\\lolis\\OneDrive\\Documentos\\GitHub\\proyecto_muebles\\flask_muebles_mysql\\project\\ordenCompraRutas.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 11:49:35.984627]
