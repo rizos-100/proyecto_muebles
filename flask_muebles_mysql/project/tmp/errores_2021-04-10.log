@@ -1,0 +1,25 @@
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-10 13:42:52.440281]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:06] "[37mGET / HTTP/1.1[0m" 200 -
+DEBUG:root: Fecha y Hora: 2021-04-10 13:43:09.244034 - Usuario: admin@example.com y Contraseña: password correctos, inicio se sesion exitoso 
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:09] "[32mPOST /security/login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:10] "[37mGET /profile HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-10 13:43:12.389693]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:12] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-10 13:43:13.076772]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:13] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-10 13:43:18.469934]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:18] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-10 13:43:19.160874]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:19] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -

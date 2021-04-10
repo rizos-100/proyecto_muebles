@@ -17,8 +17,10 @@ from .models import User, Role, RoleAdmin, UserAdmin
 
 userDataStore = SQLAlchemyUserDatastore(db, User, Role)
 
+now = datetime.now()
+fechaHoy = now.strftime('%Y-%m-%d')
 UPLOAD_TMP = os.path.abspath('project/tmp/')
-LOG_FILENAME = UPLOAD_TMP+'/errores.log'
+LOG_FILENAME = UPLOAD_TMP+'/errores_'+fechaHoy+'.log'
 
 def create_app():
     #Creamos una instancia del flask
@@ -36,79 +38,107 @@ def create_app():
     db.init_app(app)
     @app.before_first_request
     def create_all():
-        db.create_all()
+        try:
+            db.create_all()
+        except Exception as inst:
+            message = {"result":"error"}
+            logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+            return render_template('error.html')
         
-        userDataStore.find_or_create_role(name='admin', description='Administrator')
-        userDataStore.find_or_create_role(name='vendedor', description='Vendedor')
-        userDataStore.find_or_create_role(name='almacenista', description='Almacenista')
+        try:
+            userDataStore.find_or_create_role(name='admin', description='Administrator')
+            userDataStore.find_or_create_role(name='vendedor', description='Vendedor')
+            userDataStore.find_or_create_role(name='almacenista', description='Almacenista')
 
-        encrypted_password = generate_password_hash('password', method='sha512') #utils.encrypt_password('password')
-        if not userDataStore.get_user('vendedor@example.com'):
-                userDataStore.create_user(email='vendedor@example.com', password=encrypted_password,
-                                        numero_empleado=232,nivel_escolar='Telesecundaria',profesion='Ama de casa',
-                                        observaciones='Es a toda madre',idPersona=7,estatus=1)
-        if not userDataStore.get_user('admin@example.com'):
-            userDataStore.create_user(email='admin@example.com', password=encrypted_password,
-                                        numero_empleado=32,nivel_escolar='Telesecundaria',profesion='Ama de casa',
-                                        observaciones='Es a toda madre',idPersona=5,estatus=1)
-        if not userDataStore.get_user('almacenista@example.com'):
-            userDataStore.create_user(email='almacenista@example.com', password=encrypted_password,
-                                        numero_empleado=2132,nivel_escolar='Telesecundaria',profesion='Ama de casa',
-                                        observaciones='Es a toda madre',idPersona=6,estatus=1)
+            encrypted_password = generate_password_hash('password', method='sha512') #utils.encrypt_password('password')
+            if not userDataStore.get_user('vendedor@example.com'):
+                    userDataStore.create_user(email='vendedor@example.com', password=encrypted_password,
+                                            numero_empleado=232,nivel_escolar='Telesecundaria',profesion='Ama de casa',
+                                            observaciones='Es a toda madre',idPersona=7,estatus=1)
+            if not userDataStore.get_user('admin@example.com'):
+                userDataStore.create_user(email='admin@example.com', password=encrypted_password,
+                                            numero_empleado=32,nivel_escolar='Telesecundaria',profesion='Ama de casa',
+                                            observaciones='Es a toda madre',idPersona=5,estatus=1)
+            if not userDataStore.get_user('almacenista@example.com'):
+                userDataStore.create_user(email='almacenista@example.com', password=encrypted_password,
+                                            numero_empleado=2132,nivel_escolar='Telesecundaria',profesion='Ama de casa',
+                                            observaciones='Es a toda madre',idPersona=6,estatus=1)
 
-        # Commit any database changes; the User and Roles must exist before we can add a Role to the User
-        db.session.commit()
-
-       
+            # Commit any database changes; the User and Roles must exist before we can add a Role to the User
+            db.session.commit()
+        except Exception as inst:
+            message = {"result":"error"}
+            logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+            return render_template('error.html')
+    
+    @app.route('/login')
+    def index_login_fail():
+        return render_template('security/login.html')
         
-        #Conectando los modelos a flask-security.
+    try:
+        security = Security(app, userDataStore)
+        # Initialize Flask-Admin
+        admin = Admin(app)
+
+        # Add Flask-Admin views for Users and Roles
+        admin.add_view(UserAdmin(User, db.session))
+        admin.add_view(RoleAdmin(Role, db.session))
         
+        from .auth import auth as auth_blueprint
+        app.register_blueprint(auth_blueprint)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+    
+    try:
+        #Registramos el blueprint para el resto de la aplicación
+        from .main import main as main_blueprint
+        app.register_blueprint(main_blueprint)
+        
+        from .materialRutas import materialRutas as materialRutas_blueprint
+        app.register_blueprint(materialRutas_blueprint)
+        
+        from .categoriasRutas import categoriasRutas as categoriasRutas_blueprint
+        app.register_blueprint(categoriasRutas_blueprint)
+        
+        from .proveedorRutas import proveedorRutas as proveedorRutas_blueprint
+        app.register_blueprint(proveedorRutas_blueprint)
+        
+        from .clienteRutas import clienteRutas as clienteRutas_blueprint
+        app.register_blueprint(clienteRutas_blueprint)
+        
+        from .ventasRutas import ventasRutas as ventasRutas_blueprint
+        app.register_blueprint(ventasRutas_blueprint)
+        from .productoRutas import productoRutas as productoRutas_blueprint
+        app.register_blueprint(productoRutas_blueprint)
+        
+        from .detalleProductoMaterialRutas import detalleProductoMaterialRutas as detalleProductoMaterialRutas_blueprint
+        app.register_blueprint(detalleProductoMaterialRutas_blueprint)
+        
+        from .ordenCompraRutas import ordenCompraRutas as ordenCompraRutas_blueprint
+        app.register_blueprint(ordenCompraRutas_blueprint)
+        
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+    
+    logging.info('Incio de la aplicacion ['+str(datetime.now())+']')
+    
+    register_error_handlers(app)
+    
+    return app
+
+def register_error_handlers(app):
     
     @app.errorhandler(404)
     def page_not_found(e):
         logging.error(str(type(e))+'\n Tipo de error: '+str(e)+ '['+str(datetime.now())+']')
         return render_template('error.html')
     
-        
-    security = Security(app, userDataStore)
-    # Initialize Flask-Admin
-    admin = Admin(app)
-
-    # Add Flask-Admin views for Users and Roles
-    admin.add_view(UserAdmin(User, db.session))
-    admin.add_view(RoleAdmin(Role, db.session))
-    
-    from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint)
-    
-    #Registramos el blueprint para el resto de la aplicación
-    from .main import main as main_blueprint
-    app.register_blueprint(main_blueprint)
-    
-    from .materialRutas import materialRutas as materialRutas_blueprint
-    app.register_blueprint(materialRutas_blueprint)
-    
-    from .categoriasRutas import categoriasRutas as categoriasRutas_blueprint
-    app.register_blueprint(categoriasRutas_blueprint)
-    
-    from .proveedorRutas import proveedorRutas as proveedorRutas_blueprint
-    app.register_blueprint(proveedorRutas_blueprint)
-    
-    from .clienteRutas import clienteRutas as clienteRutas_blueprint
-    app.register_blueprint(clienteRutas_blueprint)
-    
-    from .ventasRutas import ventasRutas as ventasRutas_blueprint
-    app.register_blueprint(ventasRutas_blueprint)
-    from .productoRutas import productoRutas as productoRutas_blueprint
-    app.register_blueprint(productoRutas_blueprint)
-    
-    from .detalleProductoMaterialRutas import detalleProductoMaterialRutas as detalleProductoMaterialRutas_blueprint
-    app.register_blueprint(detalleProductoMaterialRutas_blueprint)
-    
-    from .ordenCompraRutas import ordenCompraRutas as ordenCompraRutas_blueprint
-    app.register_blueprint(ordenCompraRutas_blueprint)
-    
-    logging.info('Incio de la aplicacion ['+str(datetime.now())+']')
-    
-    return app
+    @app.errorhandler(500)
+    def page_not_found(e):
+        logging.error(str(type(e))+'\n Tipo de error: '+str(e)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
 

@@ -12,8 +12,8 @@ from datetime import datetime
 clienteRutas = Blueprint('clienteRutas', __name__ )
 
 @clienteRutas.route('/getAllClientesActivos',methods=['GET','POST'])
-#@login_required
-#@roles_accepted('admin','vendedor')
+@login_required
+@roles_accepted('admin','vendedor')
 def getAllClientesActivos():
     try:
         clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Activo').all()

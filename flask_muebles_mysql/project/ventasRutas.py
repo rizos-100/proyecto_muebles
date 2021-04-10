@@ -237,3 +237,60 @@ def deleteVenta():
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return make_response(message, 400)
+
+
+@ventasRutas.route('/getAllVentasHoy',methods=['GET','POST'])
+#@login_required
+#@roles_accepted('admin','vendedor')
+def getAllVentasHoy():
+    try:
+        now = datetime.now()
+        fechaHoy = now.strftime('%Y-%m-%d')
+        ventasArray = list()
+        ventas = db.session.query(venta).filter(venta.fecha_venta==fechaHoy).all()
+        
+        for i in ventas:
+            persJson=personaSchema(many=False)
+            produJson=ProductoSchema(many=False)
+            detVenJson=Detalle_ventaSchema(many=False)
+            ventJson=VentaSchema(many=False)
+            clienJson=ClienteSchema(many=False)
+            
+            clientePers = db.session.query(cliente).filter(persona.id==i.cliente).first()
+            if clientePers:
+                resCliente=clienJson.dump(clientePers)
+                clientePers = db.session.query(persona).filter(persona.id==clientePers.idPersona).first()
+                resCliente['idPersona'] = persJson.dump(clientePers)
+            else:
+                resCliente={}
+                
+            userSea = db.session.query(User).filter(User.id==i.user).first()
+            if userSea:
+                personUser = db.session.query(persona).filter(persona.id==userSea.idPersona).first()
+                resUser=persJson.dump(personUser)
+            else:
+                resUser={}
+            
+            detalleVent = db.session.query(detalle_venta,producto).join(
+                            detalle_venta.productoForegin).filter(detalle_venta.venta==i.id).all()
+            detalleVentaArray = list()
+            for j in detalleVent:
+                objDetalle = detVenJson.dump(j.detalle_venta)
+                objDetalle['producto']=produJson.dump(j.producto)
+                
+                detalleVentaArray.append(objDetalle)
+            
+            objVenta= ventJson.dump(i)
+            objVenta['user']=resUser
+            objVenta['cliente']=resCliente
+            objVenta['detalleVenta']=detalleVentaArray
+
+            ventasArray.append(objVenta)        
+
+        #return render_template('', ventas=ventasArray, activos = False)
+        return make_response(jsonify(ventasArray), 200)
+    
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
