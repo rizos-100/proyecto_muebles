@@ -4,6 +4,7 @@ from .models import material, MaterialSchema, sobrante_material, SobranteMateria
 import json
 import logging
 from datetime import datetime
+from project.validateInputs import validate as Validator
 
 materialRutas = Blueprint('materialRutas', __name__)
 
@@ -64,14 +65,14 @@ def getAllSobranteInutilizable():
 def addMaterial():
      if request.method == 'POST':
           try:
-               nombre_ = request.form['nombre']
-               tipo_ = request.form['tipo']
-               descripcion_ = request.form['descripcion']
+               nombre_ = Validator.sanitizarNombre(request.form['nombre'])
+               tipo_ = Validator.sanitizarNombre(request.form['tipo'])
+               descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
                cantidad_ = request.form['cantidad']
                alto_ = request.form['alto']
                ancho_ = request.form['ancho']
                grosor_ = request.form['grosor']
-               color_ = request.form['color']
+               color_ = Validator.sanitizarNombre(request.form['color'])
                
                mat = material(tipo = tipo_,
                               nombre = nombre_,
@@ -100,7 +101,7 @@ def addSobrante():
           try:
                alto_ = request.form['alto']
                ancho_ = request.form['ancho']
-               comentario_ = request.form['comentario']
+               comentario_ = Validator.sanitizarNombre(request.form['comentario'])
                id_material = request.form['id_material']
                
                sobrante = sobrante_material(alto = alto_,
@@ -126,14 +127,14 @@ def updateMaterial():
      if request.method == 'POST':
           try:
                id_ = request.form['id']
-               nombre_ = request.form['nombre']
-               tipo_ = request.form['tipo']
-               descripcion_ = request.form['descripcion']
+               nombre_ = Validator.sanitizarNombre(request.form['nombre'])
+               tipo_ = Validator.sanitizarNombre(request.form['tipo'])
+               descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
                cantidad_ = request.form['cantidad']
                alto_ = request.form['alto']
                ancho_ = request.form['ancho']
                grosor_ = request.form['grosor']
-               color_ = request.form['color']
+               color_ = Validator.sanitizarNombre(request.form['color'])
                
                materia = db.session.query(material).filter(material.id == id_).first()
                materia.nombre = nombre_
@@ -189,7 +190,7 @@ def updateSobrante():
      if request.method == 'POST':
           try:
                id_ = request.form['id']
-               comentario_ = request.form['comentario']
+               comentario_ = Validator.sanitizarNombre(request.form['comentario'])
                alto_ = request.form['alto']
                ancho_ = request.form['ancho']
                

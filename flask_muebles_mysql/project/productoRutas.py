@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, jsonify, request
 from .models import db, producto, ProductoSchema, categoria
 import logging
 from datetime import datetime
+from project.validateInputs import validate as Validator
 
 productoRutas = Blueprint('productoRutas', __name__)
 
@@ -117,17 +118,17 @@ def getAllProductosPorId():
 def addProducto():
         if request.method == 'POST':
             try:
-                modelo_ = request.form['modelo']
-                descripcion_ = request.form['descripcion']
+                modelo_ = Validator.sanitizarNombre(request.form['modelo'])
+                descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
                 img_ = request.form['img']
-                peso_ = request.form['peso']
-                color_ = request.form['color']
-                alto_ = request.form['alto']
-                ancho_ = request.form['ancho']
-                largo_ = request.form['largo']
-                cantidad_ = request.form['cantidad']
-                cantidad_minima_ = request.form['cantidad_minima']
-                precio_ = request.form['precio']
+                peso_ = Validator.validarDecimal(request.form['peso'])
+                color_ = Validator.sanitizarNombre(request.form['color'])
+                alto_ = Validator.validarDecimal(request.form['alto'])
+                ancho_ = Validator.validarDecimal(request.form['ancho'])
+                largo_ = Validator.validarDecimal(request.form['largo'])
+                cantidad_ = Validator.validarDecimal(request.form['cantidad'])
+                cantidad_minima_ = Validator.validarDecimal(request.form['cantidad_minima'])
+                precio_ = Validator.validarDecimal(request.form['precio'])
                 
                 
                 idCategoria_ = request.form['idCategoria']
@@ -162,16 +163,16 @@ def updateProducto():
     if request.method == 'POST':
         try:
             idProducto_ = request.form['idProducto']
-            modelo_ = request.form['modelo']
-            descripcion_ = request.form['descripcion']
+            modelo_ = Validator.sanitizarNombre(request.form['modelo'])
+            descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
             img_ = request.form['img']
-            peso_ = request.form['peso']
-            color_ = request.form['color']
-            alto_ = request.form['alto']
-            ancho_ = request.form['ancho']
-            largo_ = request.form['largo']
-            cantidad_minima_ = request.form['cantidad_minima']
-            precio_ = request.form['precio']
+            peso_ =Validator.validarDecimal(request.form['peso'])
+            color_ = Validator.sanitizarNombre(request.form['color'])
+            alto_ = Validator.validarDecimal(request.form['alto'])
+            ancho_ = Validator.validarDecimal(request.form['ancho'])
+            largo_ = Validator.validarDecimal(request.form['largo'])
+            cantidad_minima_ = Validator.validarDecimal(request.form['cantidad_minima'])
+            precio_ = Validator.validarDecimal(request.form['precio'])
             idCategoria_ = request.form['idCategoria']
             
             p = db.session.query(producto).filter(producto.id == idProducto_).first()
@@ -207,7 +208,7 @@ def updateStockProducto():
     if request.method == 'POST':
         try:
             idProducto_ = request.form['idProducto']
-            cantidad_ = request.form['cantidad']
+            cantidad_ = Validator.validarDecimal(request.form['cantidad'])
 
             p = db.session.query(producto).filter(producto.id == idProducto_).first()
             p.cantidad = cantidad_

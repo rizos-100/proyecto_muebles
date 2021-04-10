@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template, jsonify, request
 from .models import db, categoria, CategoriaSchema
+from project.validateInputs import validate as Validator
 
 categoriasRutas = Blueprint('categoriasRutas', __name__)
 
@@ -26,8 +27,8 @@ def getCategoriasPorId():
 @categoriasRutas.route('/addCategoria', methods=['GET', 'POST'])
 def addCategoria():
      if request.method == 'POST':
-          nombre_ = request.form['nombre']
-          descripcion_ = request.form['descripcion']
+          nombre_ = Validator.sanitizarNombre(request.form['nombre'])
+          descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
           
           cat = categoria(
                          nombre = nombre_,
@@ -45,8 +46,8 @@ def addCategoria():
 def updateCategoria():
      if request.method == 'POST':
           id_ = request.form['id']
-          nombre_ = request.form['nombre']
-          descripcion_ = request.form['descripcion']
+          nombre_ = Validator.sanitizarNombre(request.form['nombre'])
+          descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
           
           categoria_ = db.session.query(categoria).filter(categoria.id == id_).first()
           categoria_.nombre = nombre_

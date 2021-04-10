@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, jsonify, request,make_response
 from .models import db
 from .models import cliente,persona,personaSchema,User,venta,VentaSchema,detalle_venta,Detalle_ventaSchema,producto,ProductoSchema,ClienteSchema
 import json
-
+from project.validateInputs import validate as Validator
 import logging
 from datetime import datetime
 
@@ -182,7 +182,7 @@ def addVenta():
         if request.method == 'POST':
             now = datetime.now()
             fechaVent_ = now.strftime('%Y-%m-%d')
-            total_ = float(request.form['total'])
+            total_ = Validator.validarDecimal(request.form['total'])
             idCli_ = int(request.form['cliente'])
             idUse_ = int(request.form['user'])
             
@@ -203,8 +203,8 @@ def addVenta():
                 
                 db.session.commit()
                 
-                objDetalleVen = detalle_venta(cantidad=int(i['cantidad']),
-                                            subtotal=float(i['subtotal']),
+                objDetalleVen = detalle_venta(cantidad=Validator.validarDecimal(i['cantidad']),
+                                            subtotal=Validator.validarDecimal(i['subtotal']),
                                             producto=idProd,
                                             venta=objVent.id)
                 db.session.add(objDetalleVen)

@@ -2,6 +2,7 @@ from flask import Blueprint, render_template, jsonify, request
 from .models import db, detalle_producto_material, producto, material, Detalle_produco_material_Schema
 import logging
 from datetime import datetime
+from project.validateInputs import validate as Validator
 
 detalleProductoMaterialRutas = Blueprint('detalleProductoMaterialRutas', __name__)
 
@@ -45,9 +46,9 @@ def getAllDetalleProductosMaterial():
 def addDetalleProductosMaterial():
     if request.method == 'POST':
         try:
-            alto_ = request.form['alto']
-            ancho_ = request.form['ancho']
-            cantidad_ = request.form['cantidad']
+            alto_ = Validator.validarDecimal(request.form['alto'])
+            ancho_ = Validator.validarDecimal(request.form['ancho'])
+            cantidad_ = Validator.validarDecimal(request.form['cantidad'])
             idProducto_ = request.form['idProducto']
             idMaterial_ = request.form['idMaterial']
           
