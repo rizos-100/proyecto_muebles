@@ -80,10 +80,11 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="info-container">
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                    {% if name %}
-                        <div class="email">{{name}}</div>
+                    {% if user %}
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{user.persona.nombre+' '+user.persona.apellidoP+' '+user.persona.apellidoM}}</div>
+                        <div class="email">{{user.User.email}}</div>
                     {% else %}
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
                         <div class="email">example@helpers.com</div>
                     {% endif %}
                     <div class="btn-group user-helper-dropdown">
@@ -92,7 +93,7 @@
                         <ul class="dropdown-menu pull-right">
                             <li><a href="javascript:void(0);"><i class="material-icons">person</i>Perfil</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Cerrar sesión</a></li>
+                            <li><a href="/logout"><i class="material-icons">input</i>Cerrar sesión</a></li>
                         </ul>
                     </div>
                 </div>

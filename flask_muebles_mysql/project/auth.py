@@ -9,9 +9,8 @@ from datetime import datetime
 
 auth = Blueprint('auth', __name__, url_prefix='/security')
 
-@auth.route('/login',methods=['GET'])
+@auth.route('/login')
 def login():
-
     return render_template('/security/login.html')
 
 @auth.route('/login', methods=['POST'])
@@ -23,22 +22,15 @@ def login_post():
 
     #Consultamos si existe un usuario ya registrado con el email.
     user = User.query.filter_by(email=email).first()
-    #Verificamos si el usuario existe, encriptamos el password y lo comparamos con
-    # el de la BD.
-
-    if not user or not check_password_hash(user.password, password):
-        print(user)
-        #Si el usuario no existe o no coinciden los passwords
-        flash('El usuario y/o la contraseña son incorrectos')
-        logging.error(' Fecha y Hora: {} - Usuario: {} y Contraseña: {} incorrectos, intento de inicio de sesion fallido '.format(datetime.now(),email, password))
-        return render_template('error.html') 
     print(user)
-    #En este punto el usuario tiene los datos correctos
-    #Creamos una sessión y logueamso al usuario.
+    if not user or not check_password_hash(user.password, password):
+        flash('El usuario y/o la contraseña son incorrectos')
+        return redirect(url_for('auth.login')) 
+    
     login_user(user, remember=remember)
     
     logging.debug(' Fecha y Hora: {} - Usuario: {} y Contraseña: {} correctos, inicio se sesion exitoso '.format(datetime.now(),email, password))
-    return render_template('index.html') 
+    return redirect(url_for('main.index_login'))
 
 @auth.route('/register')
 def register():

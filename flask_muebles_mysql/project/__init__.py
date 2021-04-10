@@ -59,10 +59,7 @@ def create_app():
         # Commit any database changes; the User and Roles must exist before we can add a Role to the User
         db.session.commit()
 
-        #userDataStore.add_role_to_user('vendedor@example.com', 'vendedor')
-        #userDataStore.add_role_to_user('admin@example.com', 'admin')
-        #userDataStore.add_role_to_user('almacenista@example.com', 'almacenista')
-        #db.session.commit()
+       
         
         #Conectando los modelos a flask-security.
         
@@ -71,22 +68,6 @@ def create_app():
     def page_not_found(e):
         logging.error(str(type(e))+'\n Tipo de error: '+str(e)+ '['+str(datetime.now())+']')
         return render_template('error.html')
-    #####################################################################3
-    #Configurando el login_manager
-    #login_manager = LoginManager()
-    #login_manager.login_view = 'auth.login'
-    #login_manager.init_app(app)
-
-    #Importamos la clase User.
-    #from .models import User
-    #@login_manager.user_loader
-    #def load_user(user_id):
-        #return User.query.get(int(user_id))
-
-    #Registramos el blueprint para las rutas auth
-    from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint)
-
     
         
     security = Security(app, userDataStore)
@@ -96,6 +77,9 @@ def create_app():
     # Add Flask-Admin views for Users and Roles
     admin.add_view(UserAdmin(User, db.session))
     admin.add_view(RoleAdmin(Role, db.session))
+    
+    from .auth import auth as auth_blueprint
+    app.register_blueprint(auth_blueprint)
     
     #Registramos el blueprint para el resto de la aplicación
     from .main import main as main_blueprint

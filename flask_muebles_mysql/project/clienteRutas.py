@@ -3,10 +3,13 @@ from .models import db
 from .models import cliente,persona,domicilio
 from project.validateInputs import validate as Validator
 
+from flask_security import login_required
+from flask_security.decorators import roles_required, roles_accepted
+
 import logging
 from datetime import datetime
 
-clienteRutas = Blueprint('clienteRutas', __name__)
+clienteRutas = Blueprint('clienteRutas', __name__ )
 
 @clienteRutas.route('/getAllClientesActivos',methods=['GET','POST'])
 #@login_required
