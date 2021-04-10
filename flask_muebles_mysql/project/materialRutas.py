@@ -59,6 +59,18 @@ def getAllSobranteInutilizable():
                 message = {"result":"error"}
                 logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
                 return render_template('error.html')
+           
+@materialRutas.route('/getSobranteDisponiblePorId', methods=['GET', 'POST'])
+def getSobranteDisponiblePorId():
+     if request.method == 'GET':
+          try:
+               id_ = request.args.get("id", "No contiene el nombre")
+               sobrantes = db.session.query(sobrante_material).filter(sobrante_material.id == id_, sobrante_material.estatus == "Disponible").all()
+               return render_template("", sobrantes = sobrantes, activos = False)
+          except Exception as inst:
+                message = {"result":"error"}
+                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+                return render_template('error.html')
 
 
 @materialRutas.route('/addMaterial', methods=['GET', 'POST'])
