@@ -208,12 +208,7 @@ def addVenta():
                                             producto=idProd,
                                             venta=objVent.id)
                 db.session.add(objDetalleVen)
-                db.session.commit()
-                
-                producto_cantidad = db.session.query(producto).filter(producto.id == idProd).first()
-                db.session.commit()
-                if producto_cantidad.cantidad < producto_cantidad.cantidad_minima:
-                    print('Crear Orden') 
+                db.session.commit() 
 
                 message = {"id":objVent.id}        
                 return make_response(message, 200)

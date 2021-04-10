@@ -16,6 +16,13 @@ users_roles = db.Table('users_roles',
     db.Column('userId', db.Integer, db.ForeignKey('user.id')),
     db.Column('roleId', db.Integer, db.ForeignKey('role.id')))
 
+""" class users_roles(db.Model):
+    __tablename__ = 'users_roles'
+    id = db.Column(db.Integer, primary_key=True)
+    userId = db.Column('userId',db.Integer,db.ForeignKey('user.id'))
+    roleId = db.Column('roleId',db.Integer,db.ForeignKey('role.id')) """
+    
+
 class persona (db.Model):
     __tablename__='persona'
     id=db.Column(db.Integer,primary_key=True)
