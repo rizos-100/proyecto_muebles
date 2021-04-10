@@ -1338,3 +1338,1303 @@ INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:53:34] "[37mGET /getAllVentasById?i
 INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:53:39] "[37mGET /getAllVentasById?idVenta=2 HTTP/1.1[0m" 200 -
 INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\ventasRutas.py', reloading
 INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 16:54:18.179317]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'ValueError'>
+ Tipo de error: invalid literal for int() with base 10: 'w'[2021-04-09 16:54:22.987796]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:54:23] "[37mGET /getAllVentasById?idVenta=w HTTP/1.1[0m" 200 -
+ERROR:root:<class 'ValueError'>
+ Tipo de error: invalid literal for int() with base 10: ''[2021-04-09 16:54:28.314024]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:54:28] "[37mGET /getAllVentasById?idVenta= HTTP/1.1[0m" 200 -
+ERROR:root:<class 'ValueError'>
+ Tipo de error: invalid literal for int() with base 10: ''[2021-04-09 16:54:31.241567]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:54:31] "[37mGET /getAllVentasById?idVenta= HTTP/1.1[0m" 200 -
+ERROR:root:<class 'sqlalchemy.exc.OperationalError'>
+ Tipo de error: (MySQLdb._exceptions.OperationalError) (2006, 'MySQL server has gone away')
+[SQL: SELECT venta.id AS venta_id, venta.fecha_venta AS venta_fecha_venta, venta.total AS venta_total, venta.cliente AS venta_cliente, venta.user AS venta_user, venta.estatus AS venta_estatus 
+FROM venta 
+WHERE venta.id = %s]
+[parameters: (0,)]
+(Background on this error at: http://sqlalche.me/e/13/e3q8)[2021-04-09 16:54:43.137847]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:54:43] "[37mGET /getAllVentasById HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:54:52] "[37mGET /getAllVentasById?idVenta=3 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:54:57] "[37mGET /getAllVentasById?idVenta=2 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:54:59] "[37mGET /getAllVentasById?idVenta=10 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 16:55:03] "[37mGET /getAllVentasById?idVenta=13 HTTP/1.1[0m" 200 -
+DEBUG:root: Fecha y Hora: 2021-04-09 17:20:12.547769 - Arranque de la aplicacion 
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:20:12] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:32:52] "[37mGET //login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:33:09] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:33:24.155930]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:33:24] "[37mGET //register HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:33:24.560838]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:33:24] "[37mGET //favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:34:04.272514]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //security/register.html HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/chosen/chosen.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/node-waves/waves.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/animate-css/animate.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/morrisjs/morris.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/css/themes/all-themes.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/node-waves/waves.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/morrisjs/morris.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/css/materialize.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-datatable/extensions/export/pdfmake.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-datatable/extensions/export/vfs_fonts.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-datatable/extensions/export/buttons.html5.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-datatable/extensions/export/buttons.print.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/js/pages/tables/jquery-datatable.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/jquery-sparkline/jquery.sparkline.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/bootstrap-notify/bootstrap-notify.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/js/admin.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/js/pages/index.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/plugins/sweetalert/sweetalert.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/js/pages/ui/notifications.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/js/demo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/MyJS/categoria.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/MyJS/cliente.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/images/user-img-background.jpg HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/MyJS/proveedor.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //static/js/script.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:34:04.979422]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:04] "[37mGET //security/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:34:09.017486]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:09] "[37mGET /security/register.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:34:09.226444]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:09] "[37mGET /security/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:34:25.748128]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:25] "[37mGET //register HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:34:26.004630]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:26] "[37mGET //favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:34:37] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:35:06] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:35:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:35:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:35:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:35:07] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:35:07] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:35:07] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:47] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:36:49.193578]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:49] "[37mGET //register HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:36:49.584057]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:49] "[37mGET //favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:36:51.044314]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //pages/typography.html HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/chosen/chosen.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/animate-css/animate.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/node-waves/waves.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/morrisjs/morris.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/css/themes/all-themes.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/node-waves/waves.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/morrisjs/morris.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/css/materialize.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-datatable/extensions/export/pdfmake.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/images/user-img-background.jpg HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-datatable/extensions/export/vfs_fonts.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-datatable/extensions/export/buttons.html5.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-datatable/extensions/export/buttons.print.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/js/pages/tables/jquery-datatable.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/jquery-sparkline/jquery.sparkline.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/bootstrap-notify/bootstrap-notify.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/js/admin.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/js/pages/index.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/js/pages/ui/notifications.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/plugins/sweetalert/sweetalert.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/js/demo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/MyJS/categoria.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/MyJS/cliente.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/MyJS/proveedor.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //static/js/script.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:36:51.989054]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:51] "[37mGET //pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:36:55] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:37:00] "[37mGET /getAllProveedorInactivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:37:03.809202]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:37:03] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:37:04.002208]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:37:04] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 17:43:18.767185]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:43:37.357251]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:43:37] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:43:46] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:44:06] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:44:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:44:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:44:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:44:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:44:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:44:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 17:44:31.564369]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 17:45:05.070136]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:45:06.281733]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:45:06] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:45:08] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:45:22] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:45:22] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:45:22] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:45:22] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:45:22] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:45:22] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:45:22] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 17:46:51.175829]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:46:54.323498]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:46:54] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:46:56] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:47:06] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:47:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:47:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:47:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:47:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:47:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:47:06] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 17:47:58.615757]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:51:06.109666]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:51:06] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:51:32.132620]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:51:32] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:51:32.313168]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:51:32] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:51:38] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 17:51:49.760392]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:52:56.678606]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:52:56] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:53:05.825125]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:53:05] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:53:05.992705]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:53:05] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:53:10] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:53:15] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:53:21] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:53:29] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:53:51] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:53:59] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:54:03] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:55:27] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:56:11] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 17:56:36.054010]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 17:56:47.387725]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:56:47] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:57:28] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:57:33] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:57:33] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:57:33] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:57:33] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:57:33] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:57:34] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:57:34] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:58:24] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:58:32] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:58:44] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:58:53] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 17:59:42] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 17:59:58.506155]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 18:01:11.586003]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:01:17.950143]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:01:17] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:01:18.499061]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:01:18] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:01:18.673595]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:01:18] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 18:02:03.105934]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+DEBUG:root: Fecha y Hora: 2021-04-09 18:02:11.078471 - Arranque de la aplicacion 
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:02:11] "[37mGET / HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:02:11.645133]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:02:11] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:02:11.781277]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:02:11] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:02:13] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:02:22] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 18:02:55.192968]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:03:04.959988]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:03:04] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:03:05.550920]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:03:05] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:03:05.788286]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:03:05] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 18:04:55.829751]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:05:10.397508]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:05:10] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:05:10.733302]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:05:10] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:05:10.921796]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:05:10] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:05:12] "[37mGET /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:05:28] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:05:32] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:05:46] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:06:11] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 18:06:33.050482]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 18:06:40.940476]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:06:45.466156]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:06:45] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:06:45.890993]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:06:45] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:06:46.031617]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:06:46] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+INFO:root:Incio de la aplicacion [2021-04-09 18:07:02.124713]
+INFO:root:Incio de la aplicacion [2021-04-09 18:07:03.240134]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+DEBUG:root: Fecha y Hora: 2021-04-09 18:07:30.026131 - Arranque de la aplicacion 
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:07:30] "[37mGET / HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:18:41] "[35m[1mGET /getAllCategoriasActivas HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:18:41] "[37mGET /getAllCategoriasActivas?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:18:41] "[37mGET /getAllCategoriasActivas?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:18:41] "[37mGET /getAllCategoriasActivas?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:18:42] "[37mGET /getAllCategoriasActivas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:18:42] "[37mGET /getAllCategoriasActivas?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:18:42] "[37mGET /getAllCategoriasActivas?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:18:46] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:19:13] "[37mGET /getCategoriasPorId?idCat=4 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:19:20] "[37mPOST /updateCategoria HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:19:23] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:19:34] "[37mGET /getCategoriasPorId?idCat=4 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:19:39] "[37mPOST /updateCategoria HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:19:42] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:19:44] "[37mGET /getCategoriasPorId?idCat=1 HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:19:54] "[37mPOST /updateCategoria HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:19:56] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:03] "[37mGET /getAllProveedorActivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:07.024281]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:07] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:07.353859]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:07] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.000391]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.059215]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.071252]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.101172]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/css/style.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.133088]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.137077]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/chosen/chosen.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.154030]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/node-waves/waves.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.169989]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/morrisjs/morris.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.187941]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.195919]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/animate-css/animate.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/css/themes/all-themes.css HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.206890]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.223844]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.236810]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.252768]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.267726]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/node-waves/waves.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.282693]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.292660]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.305626]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/morrisjs/morris.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.325573]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.336544]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.365485]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.381428]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.391397]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.406358]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.419322]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.426306]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.445255]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.457222]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.468230]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.485218]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/pdfmake.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.501240]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/vfs_fonts.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.513242]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.516233]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.html5.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-datatable/extensions/export/buttons.print.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.525250]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/js/pages/tables/jquery-datatable.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.537218]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.540266]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.547235]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/jquery-sparkline/jquery.sparkline.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/js/admin.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.553250]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/bootstrap-notify/bootstrap-notify.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/js/pages/index.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.564257]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/js/pages/ui/notifications.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.573231]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/plugins/sweetalert/sweetalert.min.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.585274]
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.589263]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/js/demo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/MyJS/categoria.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.603261]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/MyJS/proveedor.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.609245]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/MyJS/cliente.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.619219]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/static/js/script.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:11.673305]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:11] "[37mGET /pages/pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:14] "[37mGET /getAllClientesInactivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:16.234053]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:16] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:20:16.586265]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:20:16] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:21:04] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:21:36.292446]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:21:36] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:21:36.830237]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:21:36] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:21:46] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:26:03.293229]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:26:03] "[37mGET /pages/helper-classes.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:26:03.686696]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:26:03] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:26:07] "[37mGET /getAllCategoriasActivas HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:26:21.251438]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:26:21] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:26:21.535772]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:26:21] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:26:25] "[37mGET /getAllProveedorActivos HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:26:28] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:27:27.262026]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:27:27] "[37mGET /pages/helper-classes.html HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:27:27.554929]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:27:27] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+DEBUG:root: Fecha y Hora: 2021-04-09 18:34:44.507826 - Arranque de la aplicacion 
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:34:44] "[37mGET / HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:34:45.609893]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:34:45] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:34:57] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:34:57.813515]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:34:57] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:11] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:35:11.665071]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:11] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:root:Incio de la aplicacion [2021-04-09 18:35:46.870458]
+INFO:root:Incio de la aplicacion [2021-04-09 18:35:47.661863]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:35:55.935903]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:55] "[37mPOST /login HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:55] "[37mGET /static/plugins/bootstrap/css/bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/plugins/morrisjs/morris.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/plugins/node-waves/waves.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/plugins/chosen/chosen.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/plugins/animate-css/animate.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/plugins/sweetalert/sweetalert.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/css/themes/all-themes.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/css/style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/plugins/jquery/jquery.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/plugins/bootstrap-select/js/bootstrap-select.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/plugins/jquery-slimscroll/jquery.slimscroll.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/plugins/bootstrap/js/bootstrap.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:56] "[37mGET /static/css/materialize.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/node-waves/waves.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/jquery-countto/jquery.countTo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/raphael/raphael.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/morrisjs/morris.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/chartjs/Chart.bundle.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/images/user-img-background.jpg HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/flot-charts/jquery.flot.resize.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/flot-charts/jquery.flot.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/flot-charts/jquery.flot.pie.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/flot-charts/jquery.flot.categories.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/flot-charts/jquery.flot.time.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/jquery-datatable/jquery.dataTables.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/jquery-datatable/extensions/export/buttons.flash.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/jquery-datatable/extensions/export/jszip.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/jquery-datatable/extensions/export/vfs_fonts.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/jquery-datatable/extensions/export/buttons.html5.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:57] "[37mGET /static/plugins/jquery-datatable/extensions/export/buttons.print.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/js/pages/tables/jquery-datatable.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/plugins/jquery-sparkline/jquery.sparkline.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/plugins/bootstrap-notify/bootstrap-notify.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/js/admin.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/js/pages/index.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/js/pages/ui/notifications.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/plugins/sweetalert/sweetalert.min.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/js/demo.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/MyJS/categoria.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/MyJS/cliente.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/MyJS/proveedor.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:58] "[37mGET /static/js/script.js HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:35:59.018267]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:35:59] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\main.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 18:38:00.169550]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+DEBUG:root: Fecha y Hora: 2021-04-09 18:40:44.596188 - Arranque de la aplicacion 
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:40:44] "[35m[1mGET / HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:40:44] "[37mGET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:40:45] "[37mGET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:40:45] "[37mGET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:40:45] "[37mGET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:40:45] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:40:45] "[37mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+DEBUG:root: Fecha y Hora: 2021-04-09 18:41:05.432326 - Arranque de la aplicacion 
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:05] "[37mGET / HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:41:06.440968]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:06] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+DEBUG:root: Fecha y Hora: 2021-04-09 18:41:29.513184 - Arranque de la aplicacion 
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:29] "[37mGET / HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:41:30.161446]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:30] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:36] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:41:36.659090]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:36] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:45] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:45] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:45] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:45] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:46] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:46] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:41:46] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:42:07] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:42:08.313170]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:42:08] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:42:20] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:42:20.928123]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:42:20] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:42:25] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:42:25.730587]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:42:25] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 18:43:23.856957]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 18:44:02.414897]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:44:08.633107]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:44:08] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:44:09.077929]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:44:09] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:root:Incio de la aplicacion [2021-04-09 18:47:46.804168]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:47:53.379932]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:47:53] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:47:53.647191]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:47:53] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:48:05.312752]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:48:05] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:48:05.404988]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:48:05] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+DEBUG:root: Fecha y Hora: 2021-04-09 18:48:21.239368 - Arranque de la aplicacion 
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:48:21] "[37mGET / HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:48:21.824818]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:48:21] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:48:22.011107]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:48:22] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:48:22.089787]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:48:22] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:48:41] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:48:41.560453]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:48:41] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:49:03] "[35m[1mPOST /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:49:04] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:49:04] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:49:04] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:49:04] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:49:04] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:49:07] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:49:08.277543]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:49:08] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:49:22] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 18:49:23.220165]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:49:23] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 18:54:05.585737]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:46] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:46] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:46] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:46] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:47] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:47] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:50] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:50] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:50] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:50] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:51] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:51] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:54:51] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 18:57:40.838246]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:57:43] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:57:44] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:57:44] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:57:44] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:57:44] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:57:44] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 18:57:44] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:03:56.134011]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:05:11.125990]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\models.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:05:42.920981]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:05:56] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:05:56] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:05:57] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:05:57] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:05:57] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:05:57] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:05:57] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:11:46.485982]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:11:55] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:11:55] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:11:55] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:11:55] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:11:56] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:11:56] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:11:56] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:13:36.136470]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:16:41.744931]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:16:47] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:16:47] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:16:47] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:16:47] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:16:48] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:16:48] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:16:48] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:19:13.360218]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:19:17] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:19:17.562615]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:19:17] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:21:39.092440]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:22:57] "[35m[1mGET /login HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:22:57] "[37mGET /login?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:22:58] "[37mGET /login?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:22:58] "[37mGET /login?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:22:58] "[37mGET /login?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:22:58] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:22:58] "[37mGET /login?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:23:36.417125]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:23:40.967099]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:23:42] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:23:42.713096]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:23:42] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:25:20] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:25:20.899684]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:25:20] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:26:27.070450]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:27:19.937679]
+INFO:flask_wtf.csrf:The CSRF token is invalid.
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:27:26] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:27:26.747634]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:27:26] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:28:02] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:28:03.070078]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:28:03] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:29:34.978183]
+INFO:flask_wtf.csrf:The CSRF token is invalid.
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:29:41] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:29:41.465682]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:29:41] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:29:56.039864]
+INFO:flask_wtf.csrf:The CSRF token is invalid.
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:30:01] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:30:01.395915]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:30:01] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:30:52.354676]
+INFO:flask_wtf.csrf:The CSRF token is invalid.
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:30:59] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:30:59.841634]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:30:59] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:31:33.064528]
+INFO:flask_wtf.csrf:The CSRF token is invalid.
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:31:39] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:31:39.112262]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:31:39] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:31:43] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:31:43.940812]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:31:43] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:32:03.295949]
+INFO:flask_wtf.csrf:The CSRF token is invalid.
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:32:10] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:32:10.866274]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:32:10] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:32:41.915536]
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:33:09.457427]
+INFO:flask_wtf.csrf:The CSRF token is invalid.
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:33:16] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:33:16.324480]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:33:16] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:33:20] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:33:20.748528]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:33:20] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:33:24] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:33:25.065828]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:33:25] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\__init__.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:33:51.585348]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:34:06] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:34:07.188833]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:34:07] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:34:07] "[37mGET /static/plugins/bootstrap/fonts/glyphicons-halflings-regular.woff2 HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:34:07.830095]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:34:07] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:34:07.862980]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:34:07] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:34:45.512789]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:34:52] "[37mGET /getAllClientesActivos HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:34:52.766596]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:34:52] "[37mGET /static/plugins/bootstrap/css/bootstrap.css.map HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:34:53.249454]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:34:53] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:34:53.315277]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:34:53] "[37mGET /static/plugins/jquery-datatable/extensions/export/pdfmake.min.js.map HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:34:55] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:34:56.465848]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:34:56] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:35:07.277052]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:35:08.000151]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:35:54.062153]
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:35:54.767269]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:35:59] "[37mGET /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:35:59.101351]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:35:59] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:36:13] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:36:13.734157]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:36:13] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading
+INFO:werkzeug: * Restarting with stat
+DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
+DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
+DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
+DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
+DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
+INFO:root:Incio de la aplicacion [2021-04-09 19:37:13.484649]
+INFO:flask_wtf.csrf:The CSRF token is invalid.
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:38:01] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:38:01.786279]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:38:01] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:39:06] "[37mPOST /login HTTP/1.1[0m" 200 -
+ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-09 19:39:06.690195]
+INFO:werkzeug:127.0.0.1 - - [09/Apr/2021 19:39:06] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+INFO:werkzeug: * Detected change in 'C:\\Users\\Oscar\\Desktop\\proyecto_muebles\\flask_muebles_mysql\\project\\auth.py', reloading

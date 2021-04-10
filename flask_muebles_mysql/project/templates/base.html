@@ -81,7 +81,11 @@
             <div class="user-info">
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                    <div class="email">john.doe@example.com</div>
+                    {% if name %}
+                        <div class="email">{{name}}</div>
+                    {% else %}
+                        <div class="email">example@helpers.com</div>
+                    {% endif %}
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
                             aria-expanded="true">keyboard_arrow_down</i>

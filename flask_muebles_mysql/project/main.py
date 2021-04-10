@@ -21,4 +21,4 @@ def index():
 @login_required
 @roles_accepted('admin')#autorización para el rol admin
 def profile():
-    return render_template('profile.html', name=current_user.name)
+    return render_template('index.html', name=current_user.email)

@@ -40,7 +40,7 @@ class User(UserMixin, db.Model):
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     numero_empleado = db.Column(db.String(255), nullable=False)
-    correo = db.Column(db.String(255), unique=True)
+    email = db.Column(db.String(255), unique=True)
     password = db.Column(db.String(255), nullable=False)
     nivel_escolar = db.Column(db.String(255), nullable=False)
     profesion = db.Column(db.String(255), nullable=False)
@@ -48,9 +48,11 @@ class User(UserMixin, db.Model):
     idPersona = db.Column(db.Integer,db.ForeignKey('persona.id'))
     estatus = db.Column(db.Boolean)
     confirmed_at = db.Column(db.Date,default=datetime.datetime.now)
+    active = db.Column(db.Boolean)
     roles = db.relationship('Role',
         secondary=users_roles,
         backref= db.backref('users', lazy='dynamic'))
+    
     
     personaForeign = db.relationship('persona')
     
@@ -65,12 +67,7 @@ class Role(RoleMixin, db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
     description =  db.Column(db.String(255))
-    
-    def __str__(self):
-        return self.name
-    
-    def __hash__(self):
-        return hash(self.name)
+
     
 class UserAdmin(sqla.ModelView):
 
