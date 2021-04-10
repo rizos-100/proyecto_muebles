@@ -22,21 +22,15 @@ def login_post():
 
     #Consultamos si existe un usuario ya registrado con el email.
     user = User.query.filter_by(email=email).first()
-
-    #Verificamos si el usuario existe, encriptamos el password y lo comparamos con
-    # el de la BD.
+    print(user)
     if not user or not check_password_hash(user.password, password):
-        #Si el usuario no existe o no coinciden los passwords
         flash('El usuario y/o la contraseña son incorrectos')
-        logging.error(' Fecha y Hora: {} - Usuario: {} y Contraseña: {} incorrectos, intento de inicio de sesion fallido '.format(datetime.now(),email, password))
         return redirect(url_for('auth.login')) 
-
-    #En este punto el usuario tiene los datos correctos
-    #Creamos una sessión y logueamso al usuario.
+    
     login_user(user, remember=remember)
     
     logging.debug(' Fecha y Hora: {} - Usuario: {} y Contraseña: {} correctos, inicio se sesion exitoso '.format(datetime.now(),email, password))
-    return redirect(url_for('main.profile'))
+    return redirect(url_for('main.index_login'))
 
 @auth.route('/register')
 def register():
@@ -47,7 +41,7 @@ def register_post():
     email = request.form.get('email')
     name = request.form.get('name')
     password = request.form.get('password')
-
+    
     #Consultamos si existe un usuario ya registrado con el email.
     user = User.query.filter_by(email=email).first()
 

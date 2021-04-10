@@ -95,12 +95,12 @@ def addProveedor():
             rfc_= Validator.validarRFC(request.form['rfc'])
             calle_=Validator.sanitizarNombre(request.form['calle'])
             colonia_=Validator.sanitizarNombre(request.form['colonia'])
-            num_int=request.form['num_int']
-            num_ext=request.form['num_ext']
-            cp_=request.form['cp']
+            num_int=Validator.validarNumDireccion(request.form['num_int'])
+            num_ext=Validator.validarNumDireccion(request.form['num_ext'])
+            cp_=Validator.validarTel(request.form['cp'])
             nombreC=Validator.sanitizarNombre(request.form['nombre_contacto'])
             puestoC=Validator.sanitizarNombre(request.form['puesto_contacto'])
-            telefonoC=request.form['telefono_contacto']
+            telefonoC=Validator.validarTel(request.form['telefono_contacto'])
             correoC=Validator.sanitizarCorreo(request.form['correo_contacto'])
             estatus_='Activo'
             estado_=Validator.sanitizarNombre(request.form['estado'])
@@ -156,16 +156,16 @@ def updateProveedor():
             rfc_= Validator.validarRFC(request.form['rfc'])
             calle_=Validator.sanitizarNombre(request.form['calle'])
             colonia_=Validator.sanitizarNombre(request.form['colonia'])
-            cp_=request.form['cp']
+            cp_=Validator.validarTel(request.form['cp'])
             nombreC=Validator.sanitizarNombre(request.form['nombre_contacto'])
             puestoC=Validator.sanitizarNombre(request.form['puesto_contacto'])
-            telefonoC=request.form['telefono_contacto']
+            telefonoC=Validator.validarTel(request.form['telefono_contacto'])
             correoC= Validator.sanitizarCorreo(request.form['correo_contacto'])
             estado_=Validator.sanitizarNombre(request.form['estado'])
             municipio_=Validator.sanitizarNombre(request.form['municipio'])
             referencias_=Validator.sanitizarNombre(request.form['referencias'])
-            num_int=request.form['num_int']
-            num_ext=request.form['num_ext']
+            num_int=Validator.validarNumDireccion(request.form['num_int'])
+            num_ext=Validator.validarNumDireccion(request.form['num_ext'])
 
         
             prov = db.session.query(proveedor).filter(proveedor.id==id).first()
