@@ -110,6 +110,7 @@ def create_app():
         
         from .ventasRutas import ventasRutas as ventasRutas_blueprint
         app.register_blueprint(ventasRutas_blueprint)
+        
         from .productoRutas import productoRutas as productoRutas_blueprint
         app.register_blueprint(productoRutas_blueprint)
         
@@ -118,6 +119,9 @@ def create_app():
         
         from .ordenCompraRutas import ordenCompraRutas as ordenCompraRutas_blueprint
         app.register_blueprint(ordenCompraRutas_blueprint)
+        
+        from .personaRutas import personasRutas as personasRutas_blueprint
+        app.register_blueprint(personasRutas_blueprint)
         
     except Exception as inst:
         message = {"result":"error"}
