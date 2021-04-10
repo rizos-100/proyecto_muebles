@@ -3,8 +3,11 @@ from .models import db, producto, ProductoSchema, categoria, material, detalle_p
 import logging
 from datetime import datetime
 from project.validateInputs import validate as Validator
+import os
 
 productoRutas = Blueprint('productoRutas', __name__)
+
+FOLDER = os.path.abspath('project/static/img/')
 
 @productoRutas.route('/getAllProductosActivos', methods=['GET','POST'])
 def getAllProductosActivos():
@@ -120,7 +123,14 @@ def addProducto():
             try:
                 modelo_ = Validator.sanitizarNombre(request.form['modelo'])
                 descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
-                img_ = request.form['img']
+                img_ = request.file['img']
+                
+
+                filename = img_.filename
+                if filename != None and filename != "":
+                    img_.save(os.path.join(FOLDER, filename))
+                
+                
                 peso_ = Validator.validarDecimal(request.form['peso'])
                 color_ = Validator.sanitizarNombre(request.form['color'])
                 alto_ = Validator.validarDecimal(request.form['alto'])
@@ -135,7 +145,7 @@ def addProducto():
                 
                 prod = producto(modelo = modelo_,
                                 descripcion = descripcion_,
-                                img = img_,
+                                img = filename,
                                 peso = peso_,
                                 color = color_,
                                 alto = alto_,
@@ -166,6 +176,12 @@ def updateProducto():
             modelo_ = Validator.sanitizarNombre(request.form['modelo'])
             descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
             img_ = request.form['img']
+            
+            filename = img_.filename
+            if filename != None and filename != "":
+                img_.save(os.path.join(FOLDER, filename))
+            
+            
             peso_ =Validator.validarDecimal(request.form['peso'])
             color_ = Validator.sanitizarNombre(request.form['color'])
             alto_ = Validator.validarDecimal(request.form['alto'])
@@ -179,7 +195,7 @@ def updateProducto():
             c = db.session.query(categoria).filter(categoria.id == idCategoria_).first()
             p.modelo = modelo_
             p.descripcion = descripcion_
-            p.img = img_
+            p.img = filename
             p.peso = peso_
             p.color = color_
             p.alto = alto_
