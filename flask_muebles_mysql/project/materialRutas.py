@@ -68,10 +68,10 @@ def addMaterial():
                nombre_ = Validator.sanitizarNombre(request.form['nombre'])
                tipo_ = Validator.sanitizarNombre(request.form['tipo'])
                descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
-               cantidad_ = request.form['cantidad']
-               alto_ = request.form['alto']
-               ancho_ = request.form['ancho']
-               grosor_ = request.form['grosor']
+               cantidad_ = Validator.validarDecimal(request.form['cantidad'])
+               alto_ = Validator.validarDecimal(request.form['alto'])
+               ancho_ = Validator.validarDecimal(request.form['ancho'])
+               grosor_ = Validator.validarDecimal(request.form['grosor'])
                color_ = Validator.sanitizarNombre(request.form['color'])
                
                mat = material(tipo = tipo_,
@@ -99,8 +99,8 @@ def addMaterial():
 def addSobrante():
      if request.method == 'POST':
           try:
-               alto_ = request.form['alto']
-               ancho_ = request.form['ancho']
+               alto_ = Validator.validarDecimal(request.form['alto'])
+               ancho_ = Validator.validarDecimal(request.form['ancho'])
                comentario_ = Validator.sanitizarNombre(request.form['comentario'])
                id_material = request.form['id_material']
                
@@ -130,10 +130,10 @@ def updateMaterial():
                nombre_ = Validator.sanitizarNombre(request.form['nombre'])
                tipo_ = Validator.sanitizarNombre(request.form['tipo'])
                descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
-               cantidad_ = request.form['cantidad']
-               alto_ = request.form['alto']
-               ancho_ = request.form['ancho']
-               grosor_ = request.form['grosor']
+               cantidad_ = Validator.validarDecimal(request.form['cantidad'])
+               alto_ = Validator.validarDecimal(request.form['alto'])
+               ancho_ = Validator.validarDecimal(request.form['ancho'])
+               grosor_ = Validator.validarDecimal(request.form['grosor'])
                color_ = Validator.sanitizarNombre(request.form['color'])
                
                materia = db.session.query(material).filter(material.id == id_).first()
@@ -161,9 +161,9 @@ def updateCantidadMaterial():
      if request.method == 'POST':
           try:
                id_ = request.form['id']
-               cantidad_ = int(request.form['cantidad'])
-               alto_ = int(request.form['alto'])
-               ancho_ = int(request.form['ancho'])
+               cantidad_ = Validator.validarDecimal(request.form['cantidad'])
+               alto_ = Validator.validarDecimal(request.form['alto'])
+               ancho_ = Validator.validarDecimal(request.form['ancho'])
 
                materia = db.session.query(material).filter(material.id == id_).first()
 
@@ -191,8 +191,8 @@ def updateSobrante():
           try:
                id_ = request.form['id']
                comentario_ = Validator.sanitizarNombre(request.form['comentario'])
-               alto_ = request.form['alto']
-               ancho_ = request.form['ancho']
+               alto_ = Validator.validarDecimal(request.form['alto'])
+               ancho_ = Validator.validarDecimal(request.form['ancho'])
                
                sobrante = db.session.query(sobrante_material).filter(sobrante_material.id == id_).first()
 
