@@ -1,0 +1,527 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3>
+                   Materiales {%if activos == True%} activos {%else%} inutiles {%endif%}
+                </h3>
+                {%if activos == True%}
+                <p>¡Buen día! En esta pantalla podrás registrar los materiales que se necesiten para productos.</p> 
+                <ul class="header-dropdown m-r--5">
+                    <li>
+                        <button type="button" class="btn bg-brown waves-effect" data-toggle="modal" data-target="#modalMaterial">
+                            <i class="material-icons">playlist_add</i>
+                            <span>Agregar Material</span>
+                        </button>
+                    </li>
+                </ul>
+                {%else%} <p>¡Buen día! En esta pantalla podrás visualizar los materiales inutilizables.</p> 
+                {%endif%}
+            </div>
+            <div class="body">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs tab-nav-right" role="tablist">
+                    <li role="presentation" class="active"><a href="#tablas" data-toggle="tab">TABLAS</a></li>
+                    <li role="presentation"><a href="#tornillos" data-toggle="tab">TORNILLOS</a></li>
+                    <li role="presentation"><a href="#clavos" data-toggle="tab">CLAVOS</a></li>
+                    <li role="presentation"><a href="#grapas" data-toggle="tab">GRAPAS</a></li>
+                    <li role="presentation"><a href="#rieles" data-toggle="tab">RIELES</a></li>
+                    <li role="presentation"><a href="#pegamentos" data-toggle="tab">PEGAMENTOS</a></li>
+                    <li role="presentation"><a href="#pinturas" data-toggle="tab">PINTURAS</a></li>
+                    <li role="presentation"><a href="#agarraderas" data-toggle="tab">AGARRADERAS</a></li>
+                    <li role="presentation"><a href="#escuadras" data-toggle="tab">ESCUADRAS</a></li>
+                </ul>
+
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane fade in active" id="tablas">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </tfoot>
+                                <tbody id="tbTablaM">
+                                    {%for obj in materiales%}
+                                        {%if obj.tipo == 'Tabla'%}
+                                        <tr>
+                                            <td>{{obj.nombre}}</td>
+                                            <td>{{obj.descripcion}}</td>
+                                            <td>{{obj.cantidad}} Pz</td>
+                                            <td><b>Alto: </b>{{obj.alto}} m<br> <b>Ancho: </b>{{obj.ancho}} m<br> <b>Grosor: </b>{{obj.grosor}} cm</td>
+                                            {%if activos == True%}
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-primary waves-effect" onclick="detalleTablaM({{obj.id}})">
+                                            <i class="material-icons">mode_edit</i>
+                                            </button>
+                                            </td>
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-danger waves-effect" onclick="eliminarMaterial({{obj.id}})">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                            </td>
+                                            {%endif%}
+                                        </tr>
+                                        {%endif%}
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="tornillos">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </tfoot>
+                                <tbody id="tbTornilloM">
+                                    {%for obj in materiales%}
+                                        {%if obj.tipo == 'Tornillo'%}
+                                        <tr>
+                                            <td>{{obj.nombre}}</td>
+                                            <td>{{obj.descripcion}}</td>
+                                            <td>{{obj.cantidad}} Pz</td>
+                                            <td><b>Alto: </b>{{obj.alto}} cm</td>
+                                            {%if activos == True%}
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-primary waves-effect" onclick="detalleTornilloM({{obj.id}})">
+                                            <i class="material-icons">mode_edit</i>
+                                            </button>
+                                            </td>
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-danger waves-effect" onclick="eliminarMaterial({{obj.id}})">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                            </td>
+                                            {%endif%}
+                                        </tr>
+                                        {%endif%}
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="clavos">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </tfoot>
+                                <tbody id="tbClavoM">
+                                    {%for obj in materiales%}
+                                        {%if obj.tipo == 'Clavo'%}
+                                        <tr>
+                                            <td>{{obj.nombre}}</td>
+                                            <td>{{obj.descripcion}}</td>
+                                            <td>{{obj.cantidad}} Pz</td>
+                                            <td><b>Alto: </b>{{obj.alto}} cm</td>
+                                            {%if activos == True%}
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-primary waves-effect" onclick="detalleClavoM({{obj.id}})">
+                                            <i class="material-icons">mode_edit</i>
+                                            </button>
+                                            </td>
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-danger waves-effect" onclick="eliminarMaterial({{obj.id}})">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                            </td>
+                                            {%endif%}
+                                        </tr>
+                                        {%endif%}
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="grapas">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </tfoot>
+                                <tbody id="tbGrapaM">
+                                    {%for obj in materiales%}
+                                        {%if obj.tipo == 'Grapas'%}
+                                        <tr>
+                                            <td>{{obj.nombre}}</td>
+                                            <td>{{obj.descripcion}}</td>
+                                            <td>{{obj.cantidad}} Tiras</td>
+                                            {%if activos == True%}
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-primary waves-effect" onclick="detalleGrapaM({{obj.id}})">
+                                            <i class="material-icons">mode_edit</i>
+                                            </button>
+                                            </td>
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-danger waves-effect" onclick="eliminarMaterial({{obj.id}})">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                            </td>
+                                            {%endif%}
+                                        </tr>
+                                        {%endif%}
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="rieles">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </tfoot>
+                                <tbody id="tbRielM">
+                                    {%for obj in materiales%}
+                                        {%if obj.tipo == 'Riel'%}
+                                        <tr>
+                                            <td>{{obj.nombre}}</td>
+                                            <td>{{obj.descripcion}}</td>
+                                            <td>{{obj.cantidad}} Pz</td>
+                                            <td><b>Alto: </b>{{obj.alto}} cm</td>
+                                            {%if activos == True%}
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-primary waves-effect" onclick="detalleRielM({{obj.id}})">
+                                            <i class="material-icons">mode_edit</i>
+                                            </button>
+                                            </td>
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-danger waves-effect" onclick="eliminarMaterial({{obj.id}})">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                            </td>
+                                            {%endif%}
+                                        </tr>
+                                        {%endif%}
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="pegamentos">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </tfoot>
+                                <tbody id="tbPegamentoM">
+                                    {%for obj in materiales%}
+                                        {%if obj.tipo == 'Pegamento'%}
+                                        <tr>
+                                            <td>{{obj.nombre}}</td>
+                                            <td>{{obj.descripcion}}</td>
+                                            <td>{{obj.cantidad}} L</td>
+                                            {%if activos == True%}
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-primary waves-effect" onclick="detallePegamentoM({{obj.id}})">
+                                            <i class="material-icons">mode_edit</i>
+                                            </button>
+                                            </td>
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-danger waves-effect" onclick="eliminarMaterial({{obj.id}})">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                            </td>
+                                            {%endif%}
+                                        </tr>
+                                        {%endif%}
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="pinturas">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Color</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Color</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </tfoot>
+                                <tbody id="tbPinturaM">
+                                    {%for obj in materiales%}
+                                        {%if obj.tipo == 'Pintura'%}
+                                        <tr>
+                                            <td>{{obj.nombre}}</td>
+                                            <td>{{obj.descripcion}}</td>
+                                            <td>{{obj.cantidad}} L</td>
+                                            <td>{{obj.color}}</td>
+                                            {%if activos == True%}
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-primary waves-effect" onclick="detallePinturaM({{obj.id}})">
+                                            <i class="material-icons">mode_edit</i>
+                                            </button>
+                                            </td>
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-danger waves-effect" onclick="eliminarMaterial({{obj.id}})">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                            </td>
+                                            {%endif%}
+                                        </tr>
+                                        {%endif%}
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="agarraderas">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </tfoot>
+                                <tbody id="tbAgarraderaM">
+                                    {%for obj in materiales%}
+                                        {%if obj.tipo == 'Agarradera'%}
+                                        <tr>
+                                            <td>{{obj.nombre}}</td>
+                                            <td>{{obj.descripcion}}</td>
+                                            <td>{{obj.cantidad}} Pz</td>
+                                            <td><b>Ancho: </b>{{obj.ancho}} cm</td>
+                                            {%if activos == True%}
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-primary waves-effect" onclick="detalleAgarraderaM({{obj.id}})">
+                                            <i class="material-icons">mode_edit</i>
+                                            </button>
+                                            </td>
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-danger waves-effect" onclick="eliminarMaterial({{obj.id}})">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                            </td>
+                                            {%endif%}
+                                        </tr>
+                                        {%endif%}
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="escuadras">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Nombre</th>
+                                        <th>Descripción</th>
+                                        <th>Cantidad</th>
+                                        <th>Medidas</th>
+                                        {%if activos == True%}
+                                        <th>Modificar</th>
+                                        <th>Eliminar</th>
+                                        {%endif%}
+                                    </tr>
+                                </tfoot>
+                                <tbody id="tbEscuadraM">
+                                    {%for obj in materiales%}
+                                        {%if obj.tipo == 'Escuadra'%}
+                                        <tr>
+                                            <td>{{obj.nombre}}</td>
+                                            <td>{{obj.descripcion}}</td>
+                                            <td>{{obj.cantidad}} Pz</td>
+                                            <td><b>Alto: </b>{{obj.alto}} cm<br> <b>Ancho: </b>{{obj.ancho}} cm</td>
+                                            {%if activos == True%}
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-primary waves-effect" onclick="detalleEscuadraM({{obj.id}})">
+                                            <i class="material-icons">mode_edit</i>
+                                            </button>
+                                            </td>
+                                            <td class="text-center">
+                                            <button type="button" class="btn btn-danger waves-effect" onclick="eliminarMaterial({{obj.id}})">
+                                                <i class="material-icons">delete</i>
+                                            </button>
+                                            </td>
+                                            {%endif%}
+                                        </tr>
+                                        {%endif%}
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

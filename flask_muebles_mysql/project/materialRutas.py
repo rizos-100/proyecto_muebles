@@ -6,61 +6,73 @@ import logging
 from datetime import datetime
 from project.validateInputs import validate as Validator
 
+from flask_security import login_required
+from flask_security.decorators import roles_required, roles_accepted
+
 materialRutas = Blueprint('materialRutas', __name__)
 
-@materialRutas.route('/getAllMaterialDisponible', methods=['GET', 'POST'])
+@materialRutas.route('/getAllMaterialDisponibles', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def getAllMaterialActivos():
      try:
           materiales = db.session.query(material).filter(material.estatus == "Disponible").all()
-          return render_template("", materiales = materiales, activos = True)
+          return render_template("material.html", materiales = materiales, activos = True)
      except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
+          message = {"result":"error"}
+          logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+          return render_template('error.html')
      
 @materialRutas.route('/getAllMaterialInutilizable', methods=['GET', 'POST'])
+@login_required
 def getAllMaterialInactivos():
      try:
           materiales = db.session.query(material).filter(material.estatus == "Inutilizable").all()
           return render_template("", materiales = materiales, activos = False)
      except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
+          message = {"result":"error"}
+          logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+          return render_template('error.html')
 
 @materialRutas.route('/getMaterialPorId', methods=['GET', 'POST'])
+@login_required
 def getMaterialPorId():
      if request.method == 'GET':
           try:
                id_ = request.args.get("id", "No contiene el nombre")
                materia = db.session.query(material).filter(material.id == id_,  material.estatus == "Disponible").all()
-               return render_template("", material = materia, activos = True)
+               materia_schema = MaterialSchema(many=False)
+               result = materia_schema.dump(materia)
+               return jsonify(result)
           except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
+               message = {"result":"error"}
+               logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+               return render_template('error.html')
           
 @materialRutas.route('/getAllSobranteDisponible', methods=['GET', 'POST'])
+@login_required
 def getAllSobranteDisponible():
      try:
           sobrantes = db.session.query(sobrante_material).filter(sobrante_material.estatus == "Disponible").all()
           return render_template("", sobrantes = sobrantes, activos = True)
      except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
+               message = {"result":"error"}
+               logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+               return render_template('error.html')
 
 @materialRutas.route('/getAllSobranteInutilizable', methods=['GET', 'POST'])
+@login_required
 def getAllSobranteInutilizable():
      try:
           sobrantes = db.session.query(sobrante_material).filter(sobrante_material.estatus == "Inutilizable").all()
           return render_template("", sobrantes = sobrantes, activos = False)
      except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
+               message = {"result":"error"}
+               logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+               return render_template('error.html')
            
 @materialRutas.route('/getSobranteDisponiblePorId', methods=['GET', 'POST'])
+@login_required
 def getSobranteDisponiblePorId():
      if request.method == 'GET':
           try:
@@ -68,12 +80,13 @@ def getSobranteDisponiblePorId():
                sobrantes = db.session.query(sobrante_material).filter(sobrante_material.id == id_, sobrante_material.estatus == "Disponible").all()
                return render_template("", sobrantes = sobrantes, activos = False)
           except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
+               message = {"result":"error"}
+               logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+               return render_template('error.html')
 
 
 @materialRutas.route('/addMaterial', methods=['GET', 'POST'])
+@login_required
 def addMaterial():
      if request.method == 'POST':
           try:
@@ -103,11 +116,12 @@ def addMaterial():
                
                return jsonify(result)
           except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
+               message = {"result":"error"}
+               logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+               return render_template('error.html')
            
 @materialRutas.route('/addSobrante', methods=['GET', 'POST'])
+@login_required
 def addSobrante():
      if request.method == 'POST':
           try:
@@ -129,12 +143,13 @@ def addSobrante():
                
                return jsonify(result)
           except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
+               message = {"result":"error"}
+               logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+               return render_template('error.html')
      
 
 @materialRutas.route('/updateMaterial', methods=['GET', 'POST'])
+@login_required
 def updateMaterial():
      if request.method == 'POST':
           try:
@@ -164,11 +179,12 @@ def updateMaterial():
                
                return jsonify(result)
           except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
+               message = {"result":"error"}
+               logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+               return render_template('error.html')
      
 @materialRutas.route('/restarCantidadMaterial', methods=['GET', 'POST'])
+@login_required
 def updateCantidadMaterial():
      if request.method == 'POST':
           try:
@@ -193,11 +209,12 @@ def updateCantidadMaterial():
                
                     return jsonify(result)
           except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')     
+               message = {"result":"error"}
+               logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+               return render_template('error.html')     
 
 @materialRutas.route('/updateSobrante', methods=['GET', 'POST'])
+@login_required
 def updateSobrante():
      if request.method == 'POST':
           try:
@@ -223,6 +240,7 @@ def updateSobrante():
                 return render_template('error.html')
      
 @materialRutas.route('/deleteMaterial', methods=['GET', 'POST'])
+@login_required
 def deleteMaterial():
      if request.method == 'POST':
           try:
@@ -236,11 +254,12 @@ def deleteMaterial():
                
                return jsonify(result)
           except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
+               message = {"result":"error"}
+               logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+               return render_template('error.html')
      
 @materialRutas.route('/deleteSobrante', methods=['GET', 'POST'])
+@login_required
 def deleteSobrante():
      if request.method == 'POST':
           try:
@@ -254,7 +273,7 @@ def deleteSobrante():
                
                return jsonify(result)
           except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
+               message = {"result":"error"}
+               logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+               return render_template('error.html')
          

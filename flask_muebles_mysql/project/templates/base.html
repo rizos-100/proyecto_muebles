@@ -31,6 +31,9 @@
 
     <link href="../static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
 
+    <link href="../static/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+
     <!-- Custom Css -->
     <link href="../static/css/style.css" rel="stylesheet">
 
@@ -80,15 +83,15 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="info-container">
-                    {% if user %}
-                    
-                        <div class="email">{{user.email}}</div>
+                    {% if current_user.is_authenticated %}
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{current_user.email}}</div>
+                        <div class="email">{{current_user.roles[0].description}}</div>
                         <script>
-                            localStorage.setItem('idUser',{{user.id}});
+                            localStorage.setItem('idUser',{{current_user.id}});
                         </script>
                     {% else %}
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                        <div class="email">example@helpers.com</div>
+                    <div class="email">example@helpers.com</div>
                     {% endif %}
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
@@ -112,7 +115,7 @@
                             <span>Tablero</span>
                         </a>
                     </li>
-                    {% if rol and (rol.idRol == 7 or rol.idRol == 8) %}
+                    {% if ( current_user.has_role('admin') or current_user.has_role('vendedor')) %}
                         <li>
                             <a href="pages/typography.html">
                                 <i class="material-icons">shopping_cart</i>
@@ -120,7 +123,7 @@
                             </a>
                         </li>
                     {% endif %}
-                    {% if rol and (rol.idRol == 7 or rol.idRol == 9) %}
+                    {% if (current_user.has_role('admin') or current_user.has_role('almacenista')) %}
                     <li>
                         <a href="pages/typography.html">
                             <i class="material-icons">assignment</i>
@@ -128,7 +131,7 @@
                         </a>
                     </li>
                     {% endif %}
-                    {% if rol  %}
+                    {% if current_user.is_authenticated  %}
                         <li>
                             <a href="pages/helper-classes.html">
                                 <i class="material-icons">weekend</i>
@@ -136,15 +139,15 @@
                             </a>
                         </li>
                     {% endif %}
-                    {% if rol %}
+                    {% if current_user.is_authenticated %}
                     <li>
-                        <a href="pages/typography.html">
+                        <a href="/getAllMaterialDisponibles">
                             <i class="material-icons">view_quilt</i>
                             <span>Materia prima</span>
                         </a>
                     </li>
                     {% endif %}
-                    {% if rol and (rol.idRol == 7) %}
+                    {% if current_user.has_role('admin') %}
                     <li>
                         <a href="pages/typography.html">
                             <i class="material-icons">account_box</i>
@@ -152,7 +155,7 @@
                         </a>
                     </li>
                     {% endif %}
-                    {% if rol and (rol.idRol == 7 or rol.idRol == 8) %}
+                    {% if (current_user.has_role('admin') or current_user.has_role('vendedor')) %}
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">account_circle</i>
@@ -168,7 +171,7 @@
                         </ul>
                     </li>
                     {% endif %}
-                    {% if rol %}
+                    {% if current_user.is_authenticated %}
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">domain</i>
@@ -184,7 +187,7 @@
                         </ul>
                     </li>
                     {% endif %}
-                    {% if rol and (rol.idRol == 7 or rol.idRol == 9) %}
+                    {% if (current_user.has_role('admin') or current_user.has_role('almacenista')) %}
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">swap_calls</i>
@@ -726,6 +729,147 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="modalMaterial" data-backdrop="static" tabindex="-1" role="dialog"
+        style="display: none;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" onclick="limpiarMaterial()">&times;</button>
+                    <h4 class="modal-title" id="defaultModalLabel">Formulario para la gestión de materiales. </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <select id="lstTipoM" onchange="ocultarCampos(),mostrarCampos()" class="form-control">
+                                    <option value="0" selected disabled>-- Seleccion un tipo de material --</option>
+                                    <option value="Tabla">Tabla</option>
+                                    <option value="Tornillo">Tornillo</option>
+                                    <option value="Clavo">Clavo</option>
+                                    <option value="Grapas">Grapas</option>
+                                    <option value="Riel">Riel</option>
+                                    <option value="Pegamento">Pegamento</option>
+                                    <option value="Pintura">Pintura</option>
+                                    <option value="Agarradera">Agarradera</option>
+                                    <option value="Escuadra">Escuadra</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" id="divTiposM" style="display: none;">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Nombre <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="text" id="txtNombreMaterial" class="form-control" placeholder="Nombre" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Descripción <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="text" id="txtDescripcionMaterial" class="form-control" placeholder="Descripción" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Cantidad <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="number" id="txtCantidadMaterial" class="form-control" placeholder="Descripción" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="divAlto" style="display: none;">
+                            <div class="form-group">
+                                <b>Alto <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="number" id="txtAltoMaterial" class="form-control" placeholder="Alto" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="divAncho" style="display: none;">
+                            <div class="form-group">
+                                <b>Ancho <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="number" id="txtAnchoMaterial" class="form-control" placeholder="Ancho" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="divGrosor" style="display: none;">
+                            <div class="form-group">
+                                <b>Grosor <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="number" id="txtGrosorMaterial" class="form-control" placeholder="Grosor" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="divColor" style="display: none;">
+                            <div class="form-group">
+                                <b>Color <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="text" id="txtColorMaterial" class="form-control" placeholder="Color" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="txtIdMaterial" class="form-control" placeholder="id">
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info waves-effect"
+                        onclick="decidirMaterial()">Guardar</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal" onclick="limpiarMaterial()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Jquery Core Js -->
     <script src="../static/plugins/jquery/jquery.min.js"></script>
 
@@ -791,7 +935,18 @@
     <script src="../static/MyJS/categoria.js"></script>
     <script src="../static/MyJS/cliente.js"></script>
     <script src="../static/MyJS/proveedor.js"></script>
+    <script src="../static/MyJS/material.js"></script>
     <script src="../static/js/script.js"></script>
+
+    <!--Mensajes de Flask security-->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>
+        showNotification("bg-red", "{{ messages[0] }}", "bottom", "center", "", "");
+    </script>
+    {% endif %}
+    {% endwith %}
+    
     
 </body>
 
