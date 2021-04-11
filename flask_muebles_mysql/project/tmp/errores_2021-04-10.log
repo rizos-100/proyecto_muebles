@@ -1,23 +1,23 @@
-DEBUG:passlib.registry:registered 'bcrypt' handler: <class 'passlib.handlers.bcrypt.bcrypt'>
-DEBUG:passlib.registry:registered 'des_crypt' handler: <class 'passlib.handlers.des_crypt.des_crypt'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha256' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha256'>
-DEBUG:passlib.registry:registered 'pbkdf2_sha512' handler: <class 'passlib.handlers.pbkdf2.pbkdf2_sha512'>
-DEBUG:passlib.registry:registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
-DEBUG:passlib.registry:registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
-DEBUG:passlib.registry:registered 'plaintext' handler: <class 'passlib.handlers.misc.plaintext'>
-DEBUG:passlib.registry:registered 'hex_md5' handler: <class 'passlib.handlers.digests.hex_md5'>
-INFO:root:Incio de la aplicacion [2021-04-10 13:42:52.440281]
-INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:06] "[37mGET / HTTP/1.1[0m" 200 -
-DEBUG:root: Fecha y Hora: 2021-04-10 13:43:09.244034 - Usuario: admin@example.com y Contraseña: password correctos, inicio se sesion exitoso 
-INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:09] "[32mPOST /security/login HTTP/1.1[0m" 302 -
-INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:10] "[37mGET /profile HTTP/1.1[0m" 200 -
+
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 23:13:46] "[32mGET /getAllMaterialDisponibles HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 23:14:02] "[37mGET /login?next=%2FgetAllMaterialDisponibles HTTP/1.1[0m" 200 -
 ERROR:root:<class 'werkzeug.exceptions.NotFound'>
- Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-10 13:43:12.389693]
-INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:12] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-10 23:14:02.445737]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 23:14:02] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+DEBUG:root: Fecha y Hora: 2021-04-10 23:14:07.842774 - Usuario: admin@example.com y Contraseña: password correctos, inicio se sesion exitoso 
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 23:14:07] "[32mPOST /security/login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 23:14:09] "[37mGET /profile HTTP/1.1[0m" 200 -
+DEBUG:root: Fecha y Hora: 2021-04-10 23:14:09.711350 - Usuario: admin@example.com y Contraseña: password correctos, inicio se sesion exitoso 
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 23:14:09] "[32mPOST /security/login HTTP/1.1[0m" 302 -
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 23:14:10] "[37mGET /profile HTTP/1.1[0m" 200 -
 ERROR:root:<class 'werkzeug.exceptions.NotFound'>
- Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-10 13:43:13.076772]
-INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:13] "[37mGET /pages/favicon.ico HTTP/1.1[0m" 200 -
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-10 23:14:11.346506]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 23:14:11] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+ERROR:root:<class 'jinja2.exceptions.TemplateSyntaxError'>
+ Tipo de error: Encountered unknown tag 'else'. Jinja was looking for the following tags: 'endblock'. The innermost block that needs to be closed is 'block'.[2021-04-10 23:14:14.412391]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 23:14:14] "[37mGET /getAllMaterialDisponibles HTTP/1.1[0m" 200 -
 ERROR:root:<class 'werkzeug.exceptions.NotFound'>
+<<<<<<< HEAD
  Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-10 13:43:18.469934]
 INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 13:43:18] "[37mGET /pages/typography.html HTTP/1.1[0m" 200 -
 ERROR:root:<class 'werkzeug.exceptions.NotFound'>
@@ -197,3 +197,7 @@ INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 14:38:04] "[37mGET / HTTP/1.1[0m" 200
 DEBUG:root: Fecha y Hora: 2021-04-10 14:38:08.264597 - Usuario: admin@example.com y Contraseña: password correctos, inicio se sesion exitoso 
 INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 14:38:08] "[32mPOST /security/login HTTP/1.1[0m" 302 -
 INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 14:38:09] "[37mGET /profile HTTP/1.1[0m" 200 -
+=======
+ Tipo de error: 404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.[2021-04-10 23:14:15.436652]
+INFO:werkzeug:127.0.0.1 - - [10/Apr/2021 23:14:15] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
+>>>>>>> 0d4f4bee4da40315781a10c22a7b3712b0bada4a
