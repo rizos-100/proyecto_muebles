@@ -117,10 +117,21 @@
                     </li>
                     {% if ( current_user.has_role('admin') or current_user.has_role('vendedor')) %}
                         <li>
-                            <a href="pages/typography.html">
+                            <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons">shopping_cart</i>
                                 <span>Ventas</span>
                             </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="/getAllVentasHoy">Al día</a>
+                                </li>
+                                <li>
+                                    <a href="/getAllVentasActivas">Activas</a>
+                                </li>
+                                <li>
+                                    <a href="/getAllVentasInactivas">Inactivas</a>
+                                </li>
+                            </ul>
                         </li>
                     {% endif %}
                     {% if (current_user.has_role('admin') or current_user.has_role('almacenista')) %}
@@ -936,6 +947,8 @@
     <script src="../static/MyJS/cliente.js"></script>
     <script src="../static/MyJS/proveedor.js"></script>
     <script src="../static/MyJS/material.js"></script>
+    <script src="../static/MyJS/ventaDia.js"></script>
+    <script src="../static/MyJS/venta.js"></script>
     <script src="../static/js/script.js"></script>
 
     <!--Mensajes de Flask security-->

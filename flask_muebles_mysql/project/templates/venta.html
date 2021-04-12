@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3>
+                    Ventas {%if activos == True%} activas {%else%} inactivas {%endif%}
+                </h3>
+                {%if activos == True%}
+                <p>¡Buen día! En esta pantalla podrás visualizar las ventas de la empresa. </p>
+                {%else%} <p>¡Buen día! En esta pantalla podrás visualizar las ventas inactivas.</p>
+                {%endif%}
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <thead>
+                            <tr>
+                                <th>Empleado</th>
+                                <th>Cliente</th>
+                                <th>Fecha de venta</th>
+                                <th>Total</th>
+                                <th>Detalle</th>
+                                {%if activos == True%}
+                                <th>Eliminar</th>
+                                {%endif%}
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Empleado</th>
+                                <th>Cliente</th>
+                                <th>Fecha de venta</th>
+                                <th>Total</th>
+                                <th>Detalle</th>
+                                {%if activos == True%}
+                                <th>Eliminar</th>
+                                {%endif%}
+                            </tr>
+                        </tfoot>
+                        <tbody id="tbVentas2">
+                            {%for obj in ventas%}
+                            <tr>
+                                <td>{{obj.user.nombre}} {{obj.user.apellidoP}}
+                                    {{obj.user.apellidoM}}</td>
+                                <td>{{obj.cliente.idPersona.nombre}} {{obj.cliente.idPersona.apellidoP}}
+                                    {{obj.cliente.idPersona.apellidoM}}</td>
+                                <td>{{obj.fecha_venta}}</td>
+                                <td>{{obj.total}}</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn bg-deep-orange waves-effect"
+                                        onclick="detalleVenta({{obj.id}})">
+                                        <i class="material-icons">zoom_in</i>
+                                    </button>
+                                </td>
+                                {%if activos == True%}
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger waves-effect"
+                                        onclick="eliminarVenta({{obj.id}})">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                                {%endif%}
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="modalDetalleVenta" data-backdrop="static" tabindex="-1" role="dialog"
+    style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="limpiarCategoria()">&times;</button>
+                <h4 class="modal-title" id="defaultModalLabel">Detalle de venta. </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>Datos del cliente</h4>
+                        <hr />
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Nombre </b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <p id="txtNombreCliente"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Número celular</b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <p id="txtNumeroCelularC"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h4>Datos del empleado</h4>
+                            <hr/>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Nombre </b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <p id="txtEmpleado"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> 
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>Datos de la venta</h4>
+                        <hr />
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Fecha venta </b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <p id="txtFechaVenta"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Total </b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <p id="txtTotal"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table id="tbVentaDetalle"
+                        class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Imagén</th>
+                                <th>Modelo</th>
+                                <th>Descripción</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyVentaDetalle">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn waves-effect" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

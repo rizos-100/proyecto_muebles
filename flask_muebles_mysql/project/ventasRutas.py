@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, jsonify, request,make_response
 from .models import db
-from .models import cliente,persona,personaSchema,User,venta,VentaSchema,detalle_venta,Detalle_ventaSchema,producto,ProductoSchema,ClienteSchema
+from .models import cliente,persona,personaSchema,User,venta,VentaSchema,detalle_venta,Detalle_ventaSchema,producto,ProductoSchema,ClienteSchema, domicilio, categoria
 import json
 from project.validateInputs import validate as Validator
 import logging
@@ -55,8 +55,8 @@ def getAllVentas():
 
             ventasArray.append(objVenta)        
 
-        #return render_template('', ventas=ventasArray, activos = True)
-        return make_response(jsonify(ventasArray), 200)
+        return render_template('venta.html', ventas=ventasArray, activos = True)
+        #return make_response(jsonify(ventasArray), 200)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
@@ -108,8 +108,8 @@ def getAllVentasInactivas():
 
             ventasArray.append(objVenta)        
 
-        #return render_template('', ventas=ventasArray, activos = False)
-        return make_response(jsonify(ventasArray), 200)
+        return render_template('venta.html', ventas=ventasArray, activos = False)
+        #return make_response(jsonify(ventasArray), 200)
     
     except Exception as inst:
         message = {"result":"error"}
@@ -167,7 +167,7 @@ def getAllVentasById():
                 ventasArray.append(objVenta)        
 
             #return render_template('', ventas=ventasArray)
-            return make_response(jsonify(ventasArray), 200)
+            return jsonify(ventasArray)
 
     except Exception as inst:
         message = {"result":"error"}
@@ -182,7 +182,7 @@ def addVenta():
         if request.method == 'POST':
             now = datetime.now()
             fechaVent_ = now.strftime('%Y-%m-%d')
-            total_ = Validator.validarDecimal(request.form['total'])
+            total_ = int(request.form['total'])
             idCli_ = int(request.form['cliente'])
             idUse_ = int(request.form['user'])
             
@@ -194,8 +194,10 @@ def addVenta():
             
             db.session.add(objVent)
             db.session.commit()
+            db.session.refresh(objVent)
+            print(objVent.id)
             detalleVen = json.loads(request.form['detalleVenta'])
-            
+            print(objVent.id)
             for i in detalleVen:
                 idProd = int(i['producto'])
                 producto_upd = db.session.query(producto).filter(producto.id == idProd).first()
@@ -203,15 +205,15 @@ def addVenta():
                 
                 db.session.commit()
                 
-                objDetalleVen = detalle_venta(cantidad=Validator.validarDecimal(i['cantidad']),
-                                            subtotal=Validator.validarDecimal(i['subtotal']),
+                objDetalleVen = detalle_venta(cantidad=int(i['cantidad']),
+                                            subtotal=int(i['subtotal']),
                                             producto=idProd,
                                             venta=objVent.id)
                 db.session.add(objDetalleVen)
                 db.session.commit() 
-
-                message = {"id":objVent.id}        
-                return make_response(message, 200)
+    
+            result = {"id": objVent.id}
+            return jsonify(result)
             
     except Exception as inst:
         message = {"result":"error"}
@@ -229,9 +231,11 @@ def deleteVenta():
             ventaDel.estatus='Inactivo'
             db.session.commit()
 
-            message = {"id":ventaDel.id}  
+            result = {"id": idVent}
+          
+            return jsonify(result) 
             #return render_template('', ventas=ventasArray, activos = False)
-            return make_response(message, 200)
+            #return jsonify(message)
     
     except Exception as inst:
         message = {"result":"error"}
@@ -244,10 +248,40 @@ def deleteVenta():
 #@roles_accepted('admin','vendedor')
 def getAllVentasHoy():
     try:
+        
+        clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Activo').all()
+        
+        arrayProductos = list()
+        productos = db.session.query(producto, categoria).join(producto.categoria).filter(producto.estatus == 'Activo').all()
+        
+        for i in productos:
+            productoObj ={
+                'idProducto': i.producto.id,
+                'modelo': i.producto.modelo,
+                'descripcion': i.producto.descripcion,
+                'img': i.producto.img,
+                'peso': i.producto.peso,
+                'color': i.producto.color,
+                'alto': i.producto.alto,
+                'ancho': i.producto.ancho,
+                'largo': i.producto.largo,
+                'cantidad': i.producto.cantidad,
+                'cantidad_minima': i.producto.cantidad_minima,
+                'precio': i.producto.precio,
+                'estatus': i.producto.estatus,
+                'categoria':{
+                    'id':i.categoria.id,
+                    'nombre':i.categoria.nombre,
+                    'descripcion':i.categoria.descripcion,
+                    'estatus':i.categoria.estatus,
+                }
+            }
+            arrayProductos.append(productoObj) 
+            
         now = datetime.now()
         fechaHoy = now.strftime('%Y-%m-%d')
         ventasArray = list()
-        ventas = db.session.query(venta).filter(venta.fecha_venta==fechaHoy).all()
+        ventas = db.session.query(venta).filter(venta.fecha_venta==fechaHoy, venta.estatus=='Activo').all()
         
         for i in ventas:
             persJson=personaSchema(many=False)
@@ -256,7 +290,7 @@ def getAllVentasHoy():
             ventJson=VentaSchema(many=False)
             clienJson=ClienteSchema(many=False)
             
-            clientePers = db.session.query(cliente).filter(persona.id==i.cliente).first()
+            clientePers = db.session.query(cliente).filter(cliente.id==i.cliente).first()
             if clientePers:
                 resCliente=clienJson.dump(clientePers)
                 clientePers = db.session.query(persona).filter(persona.id==clientePers.idPersona).first()
@@ -287,8 +321,8 @@ def getAllVentasHoy():
 
             ventasArray.append(objVenta)        
 
-        #return render_template('', ventas=ventasArray, activos = False)
-        return make_response(jsonify(ventasArray), 200)
+        return render_template('ventaDia.html', ventas=ventasArray, clientes=clientes, productos=arrayProductos)
+        #return make_response(jsonify(ventasArray), 200)
     
     except Exception as inst:
         message = {"result":"error"}

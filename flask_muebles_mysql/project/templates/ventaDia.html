@@ -1,0 +1,430 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3>
+                    Ventas del día
+                </h3>
+                <p>¡Buen día! En esta pantalla podrás visualizar las ventas de la empresa. </p>
+                <ul class="header-dropdown m-r--5">
+                    <li>
+                        <button type="button" class="btn bg-brown waves-effect" data-toggle="modal" data-target="#modalAgregarVenta">
+                            <i class="material-icons">playlist_add</i>
+                            <span>Agregar Venta</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <thead>
+                            <tr>
+                                <th>Empleado</th>
+                                <th>Cliente</th>
+                                <th>Fecha de venta</th>
+                                <th>Total</th>
+                                <th>Detalle</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Empleado</th>
+                                <th>Cliente</th>
+                                <th>Fecha de venta</th>
+                                <th>Total</th>
+                                <th>Detalle</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </tfoot>
+                        <tbody id="tbVentaAlDia">
+                            {%for obj in ventas%}
+                            <tr>
+                                <td>{{obj.user.nombre}} {{obj.user.apellidoP}}
+                                    {{obj.user.apellidoM}}</td>
+                                <td>{{obj.cliente.idPersona.nombre}} {{obj.cliente.idPersona.apellidoP}}
+                                    {{obj.cliente.idPersona.apellidoM}}</td>
+                                <td>{{obj.fecha_venta}}</td>
+                                <td>{{obj.total}}</td>
+                                <td class="text-center">
+                                    <button type="button" class="btn bg-deep-orange waves-effect"
+                                        onclick="detalleVentaAgregar({{obj.id}})">
+                                        <i class="material-icons">zoom_in</i>
+                                    </button>
+                                </td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger waves-effect"
+                                        onclick="eliminarVentaAgregar({{obj.id}})">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAgregarVenta" style="overflow-y: scroll" data-backdrop="static" tabindex="-1" role="dialog"
+    style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="limpiarModalVentaAgregar()">&times;</button>
+                <h4 class="modal-title" id="defaultModalLabel">Formulario para la gestión de ventas. </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>Datos del cliente</h4>
+                        <hr />
+                    </div>
+
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Nombre </b>
+                            <div class="input-group chosen-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line form-line-chosen">
+                                    <p id="txtNombreClienteVenta">-</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12 mt-3">
+                        <div class="form-group">
+                            <button type="button" class="btn bg-primary waves-effect" data-toggle="modal" data-target="#modalClienteV">
+                                <i class="material-icons">playlist_add</i> Agregar cliente
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>Productos</h4>
+                        <hr />
+                    </div>
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Cantidad </b>
+                            <font color="red"><b>*</b></font>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="number" id="txtCantidadProducto" class="form-control"
+                                        placeholder="1" value="1"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <button type="button" class="btn bg-primary waves-effect mt-5" data-toggle="modal" data-target="#modalProductoV">
+                                <i class="material-icons">playlist_add</i>Agregar producto
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table id="tbVentaAgregarProducto"
+                        class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Imagén</th>
+                                <th>Modelo</th>
+                                <th>Descripción</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyVentaAgregarProducto">
+                            <tr>
+                                <th>No hay registros para mostrar</th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                                <th></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <br><br>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <b>Total de la venta  </b>
+                        <div class="input-group chosen-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">rate_review</i>
+                            </span>
+                            <div class="form-line form-line-chosen">
+                                <p id="txtTotalVentaAgregar">-</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info waves-effect"
+                        onclick="agregarVenta()">Guardar</button>
+                <button type="button" class="btn waves-effect" data-dismiss="modal" onclick="limpiarModalVentaAgregar()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalClienteV" data-backdrop="static" tabindex="-1" role="dialog"
+    style="display: none;">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="defaultModalLabel">Formulario para seleccionar un cliente. </h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Número celular</th>
+                                <th>Dirección</th>
+                                <th>Entidad federativa</th>
+                                <th>Seleccionar</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Número celular</th>
+                                <th>Dirección</th>
+                                <th>Entidad federativa</th>
+                                <th>Seleccionar</th>
+                            </tr>
+                        </tfoot>
+                        <tbody id="tbClienteV">
+                            {%for obj in clientes%}
+                            <tr>
+                                <td>{{obj.persona.nombre}} {{obj.persona.apellidoP}} {{obj.persona.apellidoM}}</td>
+                                <td>{{obj.persona.celular}}</td>
+                                <td><b>Calle: </b>{{obj.domicilio.calle}}, # {{obj.domicilio.numero_exterior}} Int. {{obj.domicilio.numero_interior}} <br> <b>Colonia: </b>{{obj.domicilio.colonia}}<br>  </td>
+                                <td>{{obj.domicilio.municipio}}, {{obj.domicilio.estado}} </td>
+                                <td class="text-center">
+                                <button type="button" class="btn btn-primary waves-effect" onclick="seleccionarCliente({{obj.cliente.id}})">
+                                <i class="material-icons">check</i>
+                                <input type="hidden" id="txtIdClienteAV" class="form-control" placeholder="Id">
+                                </button></td>
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn waves-effect" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalProductoV" data-backdrop="static" tabindex="-1" role="dialog"
+    style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="defaultModalLabel">Formulario para seleccionar un producto </h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <thead>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Categoría</th>
+                                <th>Modelo</th>
+                                <th>Descripción</th>
+                                <th>Color</th>
+                                <th>Medidas</th>
+                                <th>Precio</th>
+                                <th>Seleccionar</th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Imagen</th>
+                                <th>Categoría</th>
+                                <th>Modelo</th>
+                                <th>Descripción</th>
+                                <th>Color</th>
+                                <th>Medidas</th>
+                                <th>Precio</th>
+                                <th>Seleccionar</th>
+                            </tr>
+                        </tfoot>
+                        <tbody id="tbProductoVenta">
+                            {%for p in productos%}
+                            <tr>
+                                <td class="text-center"><img class="mb-4" src="{{p.img}}" alt="" width="120" height="95"></td>
+                                <td>{{p.categoria.nombre}}</td>
+                                <td>{{p.modelo}}</td>
+                                <td>{{p.descripcion}}</td>
+                                <td>{{p.color}}</td>
+                                <td><b>Alto: </b>{{p.alto}} <br> <b>Largo: </b>{{p.largo}} <br> <b>Ancho:
+                                    </b>{{p.ancho}} <br> <b>Peso: </b>{{p.peso}}</td>
+                                <td>{{p.precio}} </td>
+                                <td class="text-center">
+                                    <button type="button" class="btn bg-primary waves-effect"
+                                        onclick="seleccionarProducto({{p.idProducto}})">
+                                        <i class="material-icons">check</i>
+                                    </button>
+                                </td>
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn waves-effect" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalDetalleVentaAgregar" data-backdrop="static" tabindex="-1" role="dialog"
+    style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="limpiarCategoria()">&times;</button>
+                <h4 class="modal-title" id="defaultModalLabel">Detalle de venta. </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>Datos del cliente</h4>
+                        <hr />
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Nombre </b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <p id="txtNombreClienteVA"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Número celular</b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <p id="txtNumeroCelularCVA"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <h4>Datos del empleado</h4>
+                            <hr/>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Nombre </b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+                                    <div class="form-line">
+                                        <p id="txtEmpleadoVA"></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>Datos de la venta</h4>
+                        <hr />
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Fecha venta </b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <p id="txtFechaVentaVA"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Total </b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <p id="txtTotalVA"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table id="tbVentaDetalleVA"
+                        class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Imagén</th>
+                                <th>Modelo</th>
+                                <th>Descripción</th>
+                                <th>Cantidad</th>
+                                <th>Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyVentaDetalle">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn waves-effect" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
