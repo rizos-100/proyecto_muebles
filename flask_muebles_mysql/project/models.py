@@ -1,4 +1,4 @@
-#from . import db
+from . import db
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -8,20 +8,14 @@ from flask_admin.contrib  import sqla
 import datetime
 from wtforms.fields import PasswordField
 
-db = SQLAlchemy()
+
+#db = SQLAlchemy()
 ma = Marshmallow()
 
 #Definiendo la tabla relacional
 users_roles = db.Table('users_roles',
     db.Column('userId', db.Integer, db.ForeignKey('user.id')),
     db.Column('roleId', db.Integer, db.ForeignKey('role.id')))
-
-""" class users_roles(db.Model):
-    __tablename__ = 'users_roles'
-    id = db.Column(db.Integer, primary_key=True)
-    userId = db.Column('userId',db.Integer,db.ForeignKey('user.id'))
-    roleId = db.Column('roleId',db.Integer,db.ForeignKey('role.id')) """
-    
 
 class persona (db.Model):
     __tablename__='persona'
