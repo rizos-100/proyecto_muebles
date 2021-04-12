@@ -24,7 +24,7 @@ def getAllVentas():
             ventJson=VentaSchema(many=False)
             clienJson=ClienteSchema(many=False)
             
-            clientePers = db.session.query(cliente).filter(persona.id==i.cliente).first()
+            clientePers = db.session.query(cliente).filter(cliente.id==i.cliente).first()
             if clientePers:
                 resCliente=clienJson.dump(clientePers)
                 clientePers = db.session.query(persona).filter(persona.id==clientePers.idPersona).first()
@@ -77,7 +77,7 @@ def getAllVentasInactivas():
             ventJson=VentaSchema(many=False)
             clienJson=ClienteSchema(many=False)
             
-            clientePers = db.session.query(cliente).filter(persona.id==i.cliente).first()
+            clientePers = db.session.query(cliente).filter(cliente.id==i.cliente).first()
             if clientePers:
                 resCliente=clienJson.dump(clientePers)
                 clientePers = db.session.query(persona).filter(persona.id==clientePers.idPersona).first()
@@ -135,7 +135,7 @@ def getAllVentasById():
                 ventJson=VentaSchema(many=False)
                 clienJson=ClienteSchema(many=False)
                 
-                clientePers = db.session.query(cliente).filter(persona.id==i.cliente).first()
+                clientePers = db.session.query(cliente).filter(cliente.id==i.cliente).first()
                 if clientePers:
                     resCliente=clienJson.dump(clientePers)
                     clientePers = db.session.query(persona).filter(persona.id==clientePers.idPersona).first()
