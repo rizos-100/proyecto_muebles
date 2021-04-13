@@ -87,6 +87,7 @@ function seleccionarProducto(idP) {
                         productos.push(parametros);
                         productos_envio.push(parametros_envio);
                         llenarTablaDetalleProducto();
+                        $('#txtCantidadProducto').val(1)
                         swal("Correcto", "Producto agregado a la venta. ", "success");
                         $('#modalProductoV').modal('hide');
                     });
@@ -112,6 +113,8 @@ function eliminarProductoVenta(indice) {
         showLoaderOnConfirm: false
     }, function () {
         productos.splice(indice, 1);
+        productos_envio.splice(indice, 1);
+        $('#txtCantidadProducto').val(1);
         swal("Correcto", "Producto eliminado de la venta. ", "success");
         llenarTablaDetalleProducto();
     });
@@ -130,6 +133,8 @@ function llenarTablaDetalleProducto() {
         datos += '<td> </td>';
         datos += '</tr>';
         $('#tbodyVentaAgregarProducto').html(datos);
+        $('#txtTotalVentaAgregar').text("-");
+        $('#txtCantidadProducto').val(1)
     } else {
         $("#tbVentaAgregarProducto > tbody").empty();
         for (var i = 0; i < productos.length; i++) {
@@ -188,7 +193,7 @@ function validarVenta() {
         return "Por favor, selecciona a un cliente. ";
     }
     if (productos.length == 0) {
-        return "Por favor, selecciona un producto ";;
+        return "Por favor, selecciona un producto.";;
     }
     return "ok";
 }

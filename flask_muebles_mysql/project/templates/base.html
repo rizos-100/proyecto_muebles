@@ -123,7 +123,7 @@
                             </a>
                             <ul class="ml-menu">
                                 <li>
-                                    <a href="/getAllVentasHoy">Al día</a>
+                                    <a href="/getAllVentasHoy">Hoy</a>
                                 </li>
                                 <li>
                                     <a href="/getAllVentasActivas">Activas</a>
@@ -136,10 +136,18 @@
                     {% endif %}
                     {% if (current_user.has_role('admin') or current_user.has_role('almacenista')) %}
                     <li>
-                        <a href="pages/typography.html">
+                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">assignment</i>
                             <span>Orden de compra</span>
                         </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="/getAllOrdenCompraByDia">Hoy</a>
+                            </li>
+                            <li>
+                                <a href="/getAllOrdenCompra">Activas</a>
+                            </li>
+                        </ul>
                     </li>
                     {% endif %}
                     {% if current_user.is_authenticated  %}
@@ -949,6 +957,7 @@
     <script src="../static/MyJS/material.js"></script>
     <script src="../static/MyJS/ventaDia.js"></script>
     <script src="../static/MyJS/venta.js"></script>
+    <script src="../static/MyJS/ordenCompra.js"></script>
     <script src="../static/js/script.js"></script>
 
     <!--Mensajes de Flask security-->
