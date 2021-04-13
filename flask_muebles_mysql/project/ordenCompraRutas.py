@@ -167,8 +167,7 @@ def addOrdenCompra():
 @ordenCompraRutas.route('/getAllOrdenCompraByDia',methods=['GET','POST'])
 def getAllOrdenCompraByDia():
     try:
-        materiales = db.session.query(material).filter(material.estatus == "Disponible").all()
-        
+        materiales_lista = db.session.query(material).filter(material.estatus == "Disponible").all()
         proveedores = db.session.query(proveedor).filter(proveedor.estatus == 'Activo').all()
         arrayProveedores=list()
         for prov in proveedores:
@@ -243,12 +242,13 @@ def getAllOrdenCompraByDia():
             }
             arrayOrdenes.append(ordenObj)
         #return jsonify(arrayOrdenes)
-        return render_template("ordenCompraDia.html",ordenes=arrayOrdenes,activos=True, proveedores=arrayProveedores, materiales=materiales)
+        print(materiales)
+        return render_template("ordenCompraDia.html",ordenes=arrayOrdenes,activos=True, proveedores=arrayProveedores, materiales=materiales_lista)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
-        return render_template(message)
+        #return render_template(message)
 
 
 @ordenCompraRutas.route('/getMateriaOrdenById',methods=['GET','POST'])
