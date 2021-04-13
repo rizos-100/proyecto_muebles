@@ -22,6 +22,8 @@
                 {%else%} <p>¡Buen día! En esta pantalla podrás visualizar los proveedores inactivos.</p> 
                 {%endif%}
             </div>
+            {% set rolUser = current_user.roles[0].name %}
+            {{rolUser}}
             <div class="body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover dataTable js-exportable">
@@ -35,10 +37,10 @@
                                 <th>Correo eléctronico contacto</th>
                                 <th>Dirección</th>
                                 <th>Entidad Federativa</th>
-                                {%if activos == True%}
-                                <th>Modificar</th>
-                                <th>Eliminar</th>
-                                {%endif%}
+                                {%if activos == True   %}
+                                    <th>Modificar</th>
+                                    <th>Eliminar</th>
+                                {%endif%}    
                             </tr>
                         </thead>
                         <tfoot>
@@ -51,7 +53,7 @@
                                 <th>Correo eléctronico contacto</th>
                                 <th>Dirección</th>
                                 <th>Entidad Federativa</th>
-                                {%if activos == True%}
+                                {%if activos == True  %}
                                 <th>Modificar</th>
                                 <th>Eliminar</th>
                                 {%endif%}
@@ -68,16 +70,20 @@
                                 <td>{{obj.correo_contacto}}</td>
                                 <td><b>Calle: </b>{{obj.domicilio.calle}}, # {{obj.domicilio.num_ext}} Int. {{obj.domicilio.num_int}} <br> <b>Colonia: </b>{{obj.domicilio.colonia}}<br>  </td>
                                 <td>{{obj.domicilio.municipio}}, {{obj.domicilio.estado}} </td>
-                                {%if activos == True%}
+                                {%if activos == True %}
                                 <td class="text-center">
+                                {% if rolUser != 'vendedor' %}
                                 <button type="button" class="btn btn-primary waves-effect" onclick="detalleProveedor({{obj.id}})">
-                                <i class="material-icons">mode_edit</i>
+                                    <i class="material-icons">mode_edit</i>
                                 </button>
+                                {%endif%}
                                 </td>
                                 <td class="text-center">
+                                {% if rolUser != 'vendedor' %}
                                 <button type="button" class="btn btn-danger waves-effect" onclick="eliminarProveedor({{obj.id}})">
                                     <i class="material-icons">delete</i>
                                 </button>
+                                {%endif%}
                                 </td>
                                 {%endif%}
                             </tr>

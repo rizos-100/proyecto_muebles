@@ -7,10 +7,13 @@ from datetime import datetime
 import logging
 from project.validateInputs import validate as Validator
 
+from flask_security import login_required
+from flask_security.decorators import roles_accepted
+
 ordenCompraRutas = Blueprint('ordenCompraRutas',__name__)
 
-#@login_required
-#@roles_accepted('admin','almacenista')
+@login_required
+@roles_accepted('admin','almacenista')
 @ordenCompraRutas.route('/getAllOrdenCompra',methods=['GET','POST'])
 def getAllOrdenCompra():
     try:
@@ -64,8 +67,8 @@ def getAllOrdenCompra():
         return render_template(message)
         #return render_template('error.html')
 
-#@login_required
-#@roles_accepted('admin','almacenista')
+@login_required
+@roles_accepted('admin','almacenista')
 @ordenCompraRutas.route('/getAllOrdenCompraById',methods=['GET','POST'])
 def getAllOrdenCompraById():
     try:
@@ -113,8 +116,8 @@ def getAllOrdenCompraById():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
 
-#@login_required
-#@roles_accepted('admin','almacenista')
+@login_required
+@roles_accepted('admin','almacenista')
 @ordenCompraRutas.route('/addOrdenCompra',methods=['GET','POST'])
 def addOrdenCompra():
     try:
@@ -162,8 +165,8 @@ def addOrdenCompra():
         return make_response(jsonify(message), 400)
         #return render_template(message)
 
-#@login_required
-#@roles_accepted('admin','almacenista')
+@login_required
+@roles_accepted('admin','almacenista')
 @ordenCompraRutas.route('/getAllOrdenCompraByDia',methods=['GET','POST'])
 def getAllOrdenCompraByDia():
     try:
@@ -252,6 +255,8 @@ def getAllOrdenCompraByDia():
 
 
 @ordenCompraRutas.route('/getMateriaOrdenById',methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def getMateriaOrdenById():
      if request.method == 'GET':
           idM = request.args.get("id", "No contiene el nombre")

@@ -31,8 +31,8 @@ def create_app():
     #Generar la clave de sessión para crear una cookie con la inf. de la sessión
     app.config['SECRET_KEY'] = os.urandom(24)
     #Usar en caso de que no se tenga algun acceso a la principal
-    #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u512768467_user_producci2:7=Vhafn^K9@31.170.161.1/u512768467_muebleria2'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u512768467_user_produccio:7=Vhafn^K9@31.170.161.1/u512768467_muebleria'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u512768467_user_producci2:7=Vhafn^K9@31.170.161.1/u512768467_muebleria2'
+    #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u512768467_user_produccio:7=Vhafn^K9@31.170.161.1/u512768467_muebleria'
     app.config['SECURITY_PASSWORD_SALT'] = 'thisissecretsalt'
 
     db.init_app(app)
@@ -122,8 +122,8 @@ def create_app():
         from .ordenCompraRutas import ordenCompraRutas as ordenCompraRutas_blueprint
         app.register_blueprint(ordenCompraRutas_blueprint)
         
-        from .personaRutas import personasRutas as personasRutas_blueprint
-        app.register_blueprint(personasRutas_blueprint)
+        from .empleadoRutas import empleadoRutas as empleadoRutas_blueprint
+        app.register_blueprint(empleadoRutas_blueprint)
         
     except Exception as inst:
         message = {"result":"error"}

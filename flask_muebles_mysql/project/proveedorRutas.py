@@ -7,9 +7,13 @@ import logging
 from datetime import datetime
 proveedorRutas = Blueprint('proveedorRutas', __name__)
 
-#@login_required
-#@roles_accepted('admin','almacenista','vendedor')
+from flask_security import login_required
+from flask_security.decorators import roles_accepted
+
+
 @proveedorRutas.route('/getAllProveedorActivos',methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista','vendedor')
 def getAllProveedorActivos():
     try:
         proveedores = db.session.query(proveedor).filter(proveedor.estatus == 'Activo').all()
@@ -46,9 +50,10 @@ def getAllProveedorActivos():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
     
-#@login_required
-#@roles_accepted('admin','almacenista','vendedor')
+
 @proveedorRutas.route('/getAllProveedorInactivos',methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista','vendedor')
 def getAllProveedorInactivos():
     try:
         proveedores = db.session.query(proveedor).filter(proveedor.estatus == 'Inactivo').all()
@@ -85,9 +90,10 @@ def getAllProveedorInactivos():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
 
-#@login_required
-#@roles_accepted('admin','almacenista')
+
 @proveedorRutas.route('/addProveedor',methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def addProveedor():
     try:
         if request.method=='POST':
@@ -144,9 +150,10 @@ def addProveedor():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return make_response(jsonify(message), 400)
 
-#@login_required
-#@roles_accepted('admin','almacenista')
+
 @proveedorRutas.route('/updateProveedor',methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def updateProveedor():
     try:
         if request.method == 'POST':
@@ -196,9 +203,10 @@ def updateProveedor():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return make_response(jsonify(message), 400)
 
-#@login_required
-#@roles_accepted('admin','almacenista')
+
 @proveedorRutas.route('/deleteProveedor',methods=['POST','GET'])
+@login_required
+@roles_accepted('admin','almacenista')
 def deleteProveedor():
     try:
         if request.method=='POST':
@@ -217,9 +225,9 @@ def deleteProveedor():
         return make_response(jsonify(message), 400)
 
 
-#@login_required
-#@roles_accepted('admin','almacenista')
 @proveedorRutas.route('/getAllProveedorById',methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def getAllProveedorbyId():
     try:
         if request.method == 'POST':

@@ -5,11 +5,16 @@ from datetime import datetime
 from project.validateInputs import validate as Validator
 import os
 
+from flask_security import login_required
+from flask_security.decorators import roles_accepted
+
 productoRutas = Blueprint('productoRutas', __name__)
 
 FOLDER = os.path.abspath('project/static/img/')
 
 @productoRutas.route('/getAllProductosActivos', methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista','vendedor')
 def getAllProductosActivos():
     try:
         arrayProductos = list()
@@ -44,9 +49,9 @@ def getAllProductosActivos():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
         
-
-
 @productoRutas.route('/getAllProductosInactivos', methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista','vendedor')
 def getAllProductosInactivos():
     try:
         arrayProductos = list()
@@ -82,6 +87,8 @@ def getAllProductosInactivos():
         return render_template('error.html')
 
 @productoRutas.route('/getAllProductosPorId', methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def getAllProductosPorId():
     try:
         arrayProductos = list()
@@ -118,6 +125,8 @@ def getAllProductosPorId():
         return render_template('error.html')
 
 @productoRutas.route('/addProducto', methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def addProducto():
         if request.method == 'POST':
             try:
@@ -169,6 +178,8 @@ def addProducto():
                 return render_template('error.html')
     
 @productoRutas.route('/updateProducto', methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def updateProducto():
     if request.method == 'POST':
         try:
@@ -277,6 +288,8 @@ def updateStockProducto():
                 return render_template('error.html')
         
 @productoRutas.route('/deleteProducto', methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def deleteProducto():
     if request.method == 'POST':
         try:
@@ -358,6 +371,8 @@ def getAllProductosPorCategoria():
     return jsonify(arrayProductos)"""
 
 @productoRutas.route('/getAllProductosRecomendados', methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista','vendedor')
 def getAllProductosRecomendados():
     try:
         prodJson = ProductoSchema(many=False)

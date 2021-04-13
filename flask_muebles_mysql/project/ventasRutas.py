@@ -6,12 +6,15 @@ from project.validateInputs import validate as Validator
 import logging
 from datetime import datetime
 
+from flask_security import login_required
+from flask_security.decorators import roles_accepted
+
 
 ventasRutas = Blueprint('ventasRutas', __name__)
 
 @ventasRutas.route('/getAllVentasActivas',methods=['GET','POST'])
-#@login_required
-#@roles_accepted('admin','vendedor')
+@login_required
+@roles_accepted('admin','vendedor')
 def getAllVentas():
     try:
         ventasArray = list()
@@ -63,8 +66,8 @@ def getAllVentas():
         return render_template('error.html')
 
 @ventasRutas.route('/getAllVentasInactivas',methods=['GET','POST'])
-#@login_required
-#@roles_accepted('admin','vendedor')
+@login_required
+@roles_accepted('admin','vendedor')
 def getAllVentasInactivas():
     try:
         ventasArray = list()
@@ -117,8 +120,8 @@ def getAllVentasInactivas():
         return render_template('error.html')
 
 @ventasRutas.route('/getAllVentasById',methods=['GET','POST'])
-#@login_required
-#@roles_accepted('admin','vendedor')
+@login_required
+@roles_accepted('admin','vendedor')
 def getAllVentasById():
     try:
 
@@ -175,8 +178,8 @@ def getAllVentasById():
         return render_template('error.html')
     
 @ventasRutas.route('/addVenta',methods=['GET','POST'])
-#@login_required
-#@roles_accepted('admin','vendedor')
+@login_required
+@roles_accepted('admin','vendedor')
 def addVenta():
     try:
         if request.method == 'POST':
@@ -221,8 +224,8 @@ def addVenta():
         return make_response(message, 400)
     
 @ventasRutas.route('/deleteVenta',methods=['GET','POST'])
-#@login_required
-#@roles_accepted('admin','vendedor')
+@login_required
+@roles_accepted('admin','vendedor')
 def deleteVenta():
     try:
         if request.method == 'POST':
@@ -244,8 +247,8 @@ def deleteVenta():
 
 
 @ventasRutas.route('/getAllVentasHoy',methods=['GET','POST'])
-#@login_required
-#@roles_accepted('admin','vendedor')
+@login_required
+@roles_accepted('admin','vendedor')
 def getAllVentasHoy():
     try:
         

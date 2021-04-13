@@ -7,7 +7,7 @@ from datetime import datetime
 from project.validateInputs import validate as Validator
 
 from flask_security import login_required
-from flask_security.decorators import roles_required, roles_accepted
+from flask_security.decorators import roles_accepted
 
 from .productoRutas import productoRutas
 
@@ -15,7 +15,7 @@ materialRutas = Blueprint('materialRutas', __name__)
 
 @materialRutas.route('/getAllMaterialDisponibles', methods=['GET', 'POST'])
 @login_required
-@roles_accepted('admin','almacenista')
+@roles_accepted('admin','almacenista','vendedor')
 def getAllMaterialActivos():
      try:
           materiales = db.session.query(material).filter(material.estatus == "Disponible").all()
@@ -27,6 +27,7 @@ def getAllMaterialActivos():
      
 @materialRutas.route('/getAllMaterialInutilizable', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista','vendedor')
 def getAllMaterialInactivos():
      try:
           materiales = db.session.query(material).filter(material.estatus == "Inutilizable").all()
@@ -38,6 +39,7 @@ def getAllMaterialInactivos():
 
 @materialRutas.route('/getMaterialPorId', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista')
 def getMaterialPorId():
      if request.method == 'GET':
           try:
@@ -53,6 +55,7 @@ def getMaterialPorId():
           
 @materialRutas.route('/getAllSobranteDisponible', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista','vendedor')
 def getAllSobranteDisponible():
      try:
           sobrantes = db.session.query(sobrante_material).filter(sobrante_material.estatus == "Disponible").all()
@@ -64,6 +67,7 @@ def getAllSobranteDisponible():
 
 @materialRutas.route('/getAllSobranteInutilizable', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista','vendedor')
 def getAllSobranteInutilizable():
      try:
           sobrantes = db.session.query(sobrante_material).filter(sobrante_material.estatus == "Inutilizable").all()
@@ -75,6 +79,7 @@ def getAllSobranteInutilizable():
            
 @materialRutas.route('/getSobranteDisponiblePorId', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista')
 def getSobranteDisponiblePorId():
      if request.method == 'GET':
           try:
@@ -92,6 +97,7 @@ def getSobranteDisponiblePorId():
 
 @materialRutas.route('/addMaterial', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista')
 def addMaterial():
      if request.method == 'POST':
           try:
@@ -127,6 +133,7 @@ def addMaterial():
            
 @materialRutas.route('/addSobrante', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista')
 def addSobrante():
      if request.method == 'POST':
           try:
@@ -155,6 +162,7 @@ def addSobrante():
 
 @materialRutas.route('/updateMaterial', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista')
 def updateMaterial():
      if request.method == 'POST':
           try:
@@ -190,6 +198,7 @@ def updateMaterial():
      
 @materialRutas.route('/restarCantidadMaterial', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista')
 def updateCantidadMaterial():
      if request.method == 'POST':
           try:
@@ -220,6 +229,7 @@ def updateCantidadMaterial():
 
 @materialRutas.route('/updateSobrante', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista')
 def updateSobrante():
      if request.method == 'POST':
           try:
@@ -246,6 +256,7 @@ def updateSobrante():
      
 @materialRutas.route('/deleteMaterial', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista')
 def deleteMaterial():
      if request.method == 'POST':
           try:
@@ -265,6 +276,7 @@ def deleteMaterial():
      
 @materialRutas.route('/deleteSobrante', methods=['GET', 'POST'])
 @login_required
+@roles_accepted('admin','almacenista')
 def deleteSobrante():
      if request.method == 'POST':
           try:
@@ -284,8 +296,8 @@ def deleteSobrante():
          
 
 @materialRutas.route('/getAllMaterialRecomendado', methods=['GET', 'POST'])
-#@login_required
-#@roles_accepted('admin','almacenista','vendedor')
+@login_required
+@roles_accepted('admin','almacenista','vendedor')
 def getAllMaterialRecomendado():
      try:
           arrayRecom = list()
