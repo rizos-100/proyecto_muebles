@@ -40,7 +40,8 @@ def getMaterialPorId():
      if request.method == 'GET':
           try:
                id_ = request.args.get("id", "No contiene el nombre")
-               materia = db.session.query(material).filter(material.id == id_,  material.estatus == "Disponible").all()
+               materia = db.session.query(material).filter(material.id == id_,  material.estatus == "Disponible").first()
+               print(materia)
                materia_schema = MaterialSchema(many=False)
                result = materia_schema.dump(materia)
                return jsonify(result)
@@ -77,7 +78,7 @@ def getSobranteDisponiblePorId():
      if request.method == 'GET':
           try:
                id_ = request.args.get("id", "No contiene el nombre")
-               sobrantes = db.session.query(sobrante_material).filter(sobrante_material.id == id_, sobrante_material.estatus == "Disponible").all()
+               sobrantes = db.session.query(sobrante_material).filter(sobrante_material.material == id_, sobrante_material.estatus == "Disponible").all()
                return render_template("", sobrantes = sobrantes, activos = False)
           except Exception as inst:
                message = {"result":"error"}

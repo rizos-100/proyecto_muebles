@@ -98,20 +98,22 @@ function modificarMaterial() {
 
 }
 
-function detalleTablaM(idM) {
+function detalleMaterialM(idM) {
     var data = {
         id: idM
     };
     $.ajax(
         {
             type: "GET",
-            url: "/getAllMaterialPorId",
+            url: "/getMaterialPorId",
             async: true,
             data: data
         })
         .done(
             function (data) {
                 Material = data;
+                limpiarMaterial();
+                $('#lstTipoM').val(Material.tipo);
                 $('#txtIdMaterial').val(Material.id);
                 $('#txtNombreMaterial').val(Material.nombre);
                 $('#txtDescripcionMaterial').val(Material.descripcion);
@@ -120,6 +122,7 @@ function detalleTablaM(idM) {
                 $('#txtAnchoMaterial').val(Material.ancho);
                 $('#txtGrosorMaterial').val(Material.grosor);
                 $('#txtColorMaterial').val(Material.color);
+                mostrarCampos();
                 $('#modalMaterial').modal('show');
             }
         );
@@ -194,8 +197,8 @@ function validarMaterial() {
             }
         }
         if ($('#lstTipoM').val() == "Riel") {
-            if ($('#txtAltoMaterial').val() == "") {
-                return "Por favor, indica el alto. ";
+            if ($('#txtAnchoMaterial').val() == "") {
+                return "Por favor, indica el ancho. ";
             }
         }
         if ($('#lstTipoM').val() == "Pintura") {
@@ -222,6 +225,7 @@ function validarMaterial() {
 }
 
 function limpiarMaterial() {
+    $('#lstTipoM').prop('selectedIndex',-1);
     $('#txtIdMaterial').val('');
     $('#txtNombreMaterial').val('');
     $('#txtDescripcionMaterial').val('');
@@ -229,7 +233,7 @@ function limpiarMaterial() {
     $('#txtAltoMaterial').val('');
     $('#txtAnchoMaterial').val('');
     $('#txtGrosorMaterial').val('');
-    $('#txtColorMaterial').val('');
+    $('#txtColorMaterial').val('col-lg-3 col-md-3');
     ocultarCampos();
 }
 
@@ -239,31 +243,99 @@ function ocultarCampos() {
     $('#divAncho').hide();
     $('#divGrosor').hide();
     $('#divColor').hide();
+    $('#tituloTabla').hide();
+    $('#tituloTornillo').hide();
+    $('#tituloClavo').hide();
+    $('#tituloGrapas').hide();
+    $('#tituloRiel').hide();
+    $('#tituloPegamento').hide();
+    $('#tituloPintura').hide();
+    $('#tituloAgarradera').hide();
+    $('#tituloEscuadra').hide();
+
+    $('#instruccionesTabla').hide();
+    $('#instruccionesAltura').hide();
+    $('#instruccionesAnchura').hide();
+    $('#instruccionesAltAnc').hide();
+    removerClases(3);
+    removerClases(4);
+    removerClases(6);
+    removerClases(12);
+}
+
+function removerClases(nm){
+    $('#divAlto').removeClass('col-lg-'+nm);
+    $('#divAncho').removeClass('col-lg-'+nm);
+    $('#divGrosor').removeClass('col-lg-'+nm);
+    $('#divColor').removeClass('col-lg-'+nm);
+    $('#divAlto').removeClass('col-md-'+nm);
+    $('#divAncho').removeClass('col-md-'+nm);
+    $('#divGrosor').removeClass('col-md-'+nm);
+    $('#divColor').removeClass('col-md-'+nm);
 }
 
 function mostrarCampos() {
     $('#divTiposM').show();
     if ($('#lstTipoM').val() == "Tabla") {
+        $('#tituloTabla').show();
+        $('#instruccionesTabla').show();
+        $('#divAlto').addClass('col-lg-4');
+        $('#divAncho').addClass('col-lg-4');
+        $('#divGrosor').addClass('col-lg-4');
+        $('#divAlto').addClass('col-md-4');
+        $('#divAncho').addClass('col-md-4');
+        $('#divGrosor').addClass('col-md-4');
         $('#divAlto').show();
         $('#divAncho').show();
         $('#divGrosor').show();
     }
     if ($('#lstTipoM').val() == "Tornillo") {
+        $('#tituloTornillo').show();
+        $('#instruccionesAltura').show();
+        $('#divAlto').addClass('col-lg-12');
+        $('#divAlto').addClass('col-md-12');
         $('#divAlto').show();
     }
     if ($('#lstTipoM').val() == "Clavo") {
+        $('#tituloClavo').show();
+        $('#instruccionesAltura').show();
+        $('#divAlto').addClass('col-lg-12');
+        $('#divAlto').addClass('col-md-12');
         $('#divAlto').show();
     }
     if ($('#lstTipoM').val() == "Riel") {
-        $('#divAlto').show();
+        $('#tituloRiel').show();
+        $('#instruccionesAnchura').show();
+        $('#divAncho').addClass('col-lg-12');
+        $('#divAncho').addClass('col-md-12');
+        $('#divAncho').show();
+    }
+    if ($('#lstTipoM').val() == "Grapas") {
+        $('#tituloGrapas').show();
+    }
+    if ($('#lstTipoM').val() == "Pegamento") {
+        $('#tituloPegamento').show();
     }
     if ($('#lstTipoM').val() == "Pintura") {
+        $('#tituloPintura').show();
+        $('#divColor').addClass('col-lg-12');
+        $('#divColor').addClass('col-md-12');
         $('#divColor').show();
     }
     if ($('#lstTipoM').val() == "Agarradera") {
+        $('#tituloAgarradera').show();
+        $('#instruccionesAnchura').show();
+        $('#divAncho').addClass('col-lg-12');
+        $('#divAncho').addClass('col-md-12');
         $('#divAncho').show();
     }
     if ($('#lstTipoM').val() == "Escuadra") {
+        $('#tituloEscuadra').show();
+        $('#instruccionesAltAnc').show();
+        $('#divAncho').addClass('col-lg-6');
+        $('#divAncho').addClass('col-md-6');
+        $('#divAlto').addClass('col-lg-6');
+        $('#divAlto').addClass('col-md-6');
         $('#divAlto').show();
         $('#divAncho').show();
     }
