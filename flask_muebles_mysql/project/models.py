@@ -59,7 +59,7 @@ class User(UserMixin, db.Model):
     
 class UserSchema(ma.Schema):
     class Meta:
-        fields = ('id','numero_empleado','nivel_escolar','profesion','observaciones','idPersona')
+        fields = ('id','email','numero_empleado','nivel_escolar','profesion','observaciones','idPersona')
     
 class Role(RoleMixin, db.Model):
     """Role model"""

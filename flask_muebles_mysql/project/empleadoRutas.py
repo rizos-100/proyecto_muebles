@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, jsonify, request,make_response
 from .models import db
-from .models import persona,personaSchema,domicilio,DomicilioSchema,User
+from .models import persona,personaSchema,domicilio,DomicilioSchema,User,UserSchema,cliente
 from project.validateInputs import validate as Validator
 
 from flask_security import login_required
@@ -11,20 +11,24 @@ from datetime import datetime
 
 empleadoRutas = Blueprint('empleadoRutas', __name__ )
 
-@empleadoRutas.route('/getAllEmpleadosActivas',methods=['GET','POST'])
+@empleadoRutas.route('/getAllEmpleadosSinAsignar',methods=['GET','POST'])
 @login_required
 @roles_accepted('admin')
-def getAllPersonasActivas():
+def getAllEmpleadosSinAsignar():
     try:
         arrayPersonas = list()
-        personas = db.session.query(persona,User).join(User.personaForeign).filter(persona.estatus == 'Activo').all()
-
+        personas = db.session.query(persona).filter(persona.estatus == 'Activo').all()
+        
         for per in personas:
-            perJson = personaSchema(many=False).dump(per.persona)
-            domi = db.session.query(domicilio).filter(domicilio.id==per.persona.domicilio).first()
-            perJson['domicilio'] = DomicilioSchema(many=False).dump(domi)
-            
-            arrayPersonas.append(perJson)
+            userPer = db.session.query(User).filter(User.idPersona == per.id).first()
+            clienPer = db.session.query(cliente).filter(cliente.idPersona == per.id).first()
+            if not userPer and not clienPer:
+                print(per)
+                perJson = personaSchema(many=False).dump(per)
+                domi = db.session.query(domicilio).filter(domicilio.id==per.domicilio).first()
+                perJson['domicilio'] = DomicilioSchema(many=False).dump(domi)
+                
+                arrayPersonas.append(perJson)
         
         #return render_template('', peronas=peronas, activos = True)
         return make_response(jsonify(arrayPersonas), 200)
@@ -32,6 +36,85 @@ def getAllPersonasActivas():
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
+
+@empleadoRutas.route('/getAllEmpleadosActivos',methods=['GET','POST'])
+@login_required
+@roles_accepted('admin')
+def getAllEmpleadosActivos():
+    try:
+        arrayUser = list()
+        personas = db.session.query(persona,User).join(User.personaForeign).filter(persona.estatus == 'Activo').all()
+
+        for per in personas:
+            print(per)
+            perJson = personaSchema(many=False).dump(per.persona)
+            useJson = UserSchema(many=False).dump(per.User)
+            domi = db.session.query(domicilio).filter(domicilio.id==per.persona.domicilio).first()
+            perJson['domicilio'] = DomicilioSchema(many=False).dump(domi)
+            useJson['idPersona'] = perJson
+                
+            arrayUser.append(useJson)
+        
+        #return render_template('', peronas=peronas, activos = True)
+        return make_response(jsonify(arrayUser), 200)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+
+@empleadoRutas.route('/getAllEmpleadosInactivos',methods=['GET','POST'])
+@login_required
+@roles_accepted('admin')
+def getAllEmpleadosInactivos():
+    try:
+        arrayUser = list()
+        personas = db.session.query(persona,User).join(User.personaForeign).filter(persona.estatus == 'Inactivo').all()
+
+        for per in personas:
+            print(per)
+            perJson = personaSchema(many=False).dump(per.persona)
+            useJson = UserSchema(many=False).dump(per.User)
+            domi = db.session.query(domicilio).filter(domicilio.id==per.persona.domicilio).first()
+            perJson['domicilio'] = DomicilioSchema(many=False).dump(domi)
+            useJson['idPersona'] = perJson
+                
+            arrayUser.append(useJson)
+        
+        #return render_template('', peronas=peronas, activos = True)
+        return make_response(jsonify(arrayUser), 200)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+
+@empleadoRutas.route('/getAllEmpleadosById',methods=['GET','POST'])
+@login_required
+@roles_accepted('admin')
+def getAllEmpleadosById():
+    try:
+        if request.method == 'GET':
+            idPer = int(request.args.get('idPersona','0'))
+            arrayUser = list()
+            personas = db.session.query(persona,User).join(User.personaForeign).filter(persona.id == idPer).all()
+
+            for per in personas:
+                print(per)
+                perJson = personaSchema(many=False).dump(per.persona)
+                useJson = UserSchema(many=False).dump(per.User)
+                domi = db.session.query(domicilio).filter(domicilio.id==per.persona.domicilio).first()
+                perJson['domicilio'] = DomicilioSchema(many=False).dump(domi)
+                useJson['idPersona'] = perJson
+                    
+                arrayUser.append(useJson)
+            
+            #return render_template('', peronas=peronas, activos = True)
+            return make_response(jsonify(arrayUser), 200)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+
+
 
 @empleadoRutas.route('/addEmpleado', methods=['GET', 'POST'])
 @login_required
@@ -92,7 +175,7 @@ def addEmpleado():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return make_response(jsonify(message), 400)
  
-@clienteRutas.route('/updateEmpleado', methods=['GET', 'POST'])
+@empleadoRutas.route('/updateEmpleado', methods=['GET', 'POST'])
 @login_required
 @roles_accepted('admin')
 def updateEmpleado():
@@ -149,4 +232,19 @@ def updateEmpleado():
         return make_response(jsonify(message), 400)    
 
 
-
+@clienteRutas.route('/deleteEmpleado', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin')
+def deleteEmpleado():
+    try:
+        if request.method == 'POST':
+         
+          idPers = int(request.form['idP'])
+          
+          persona_upd = db.session.query(persona).filter(persona.id == idPers).first()
+          persona_upd.estatus='Inactivo'
+        
+          db.session.commit()
+          result = {"id": persona_upd.id}
+          
+          return make_response(jsonify(result),200)
