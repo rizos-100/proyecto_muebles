@@ -92,7 +92,7 @@ def addEmpleado():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return make_response(jsonify(message), 400)
  
-@clienteRutas.route('/updateEmpleado', methods=['GET', 'POST'])
+@empleadoRutas.route('/updateEmpleado', methods=['GET', 'POST'])
 @login_required
 @roles_accepted('admin')
 def updateEmpleado():
