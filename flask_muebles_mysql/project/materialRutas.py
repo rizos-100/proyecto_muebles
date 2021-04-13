@@ -1,6 +1,6 @@
-from flask import Blueprint, render_template, jsonify, request
+from flask import Blueprint, render_template, jsonify, request,make_response
 from .models import db
-from .models import material, MaterialSchema, sobrante_material, SobranteMaterialSchema
+from .models import material, MaterialSchema, sobrante_material, SobranteMaterialSchema,producto,detalle_producto_material as dpm,material
 import json
 import logging
 from datetime import datetime
@@ -8,6 +8,8 @@ from project.validateInputs import validate as Validator
 
 from flask_security import login_required
 from flask_security.decorators import roles_required, roles_accepted
+
+from .productoRutas import productoRutas
 
 materialRutas = Blueprint('materialRutas', __name__)
 
@@ -277,3 +279,48 @@ def deleteSobrante():
                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
                return render_template('error.html')
          
+
+@materialRutas.route('/getAllMaterialRecomendado', methods=['GET', 'POST'])
+#@login_required
+#@roles_accepted('admin','almacenista','vendedor')
+def getAllMaterialRecomendado():
+     try:
+          arrayRecom = list()
+          arrayRecList = list()
+          productos = db.session.query(producto).filter(producto.estatus == 'Activo').all()
+          
+          for i in productos:
+               if i.cantidad < i.cantidad_minima:
+                    detalle_mate = db.session.query(dpm,material).join(dpm.material).filter(dpm.idProducto == i.id).all()
+                    for j in detalle_mate:
+                         objRec = {
+                            "idMaterial":j.material.id,
+                            "nombre":j.material.nombre,
+                            "tipo":j.material.tipo,
+                            "cantidadRecom":j.detalle_producto_material.cantidad * (i.cantidad_minima - i.cantidad)  
+                         }
+                         arrayRecom.append(objRec)
+              
+          materiales = db.session.query(material).filter(material.estatus == 'Disponible').all()
+          for k in materiales:
+               cont = 0
+               for l in arrayRecom:
+                    if k.id == l['idMaterial'] and int(l['cantidadRecom']) > 0:
+                         print(l)
+                         cont = int(l['cantidadRecom']) + cont
+               if cont > 0:
+                    objRec = {
+                              "idMaterial":k.id,
+                              "nombre":k.nombre,
+                              "tipo":k.tipo,
+                              "cantidadRecom": cont
+                         }     
+                    arrayRecList.append(objRec)
+               cont = 0
+               
+          return make_response(jsonify(arrayRecList),200)
+          #return render_template("material.html", materiales = materiales, activos = True)
+     except Exception as inst:
+          message = {"result":"error"}
+          logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+          return render_template('error.html')

@@ -1,5 +1,5 @@
-from flask import Blueprint, render_template, jsonify, request
-from .models import db, producto, ProductoSchema, categoria, material, detalle_producto_material, sobrante_material
+from flask import Blueprint, render_template, jsonify, request,make_response
+from .models import db, producto, ProductoSchema, categoria,CategoriaSchema, material, detalle_producto_material, sobrante_material
 import logging
 from datetime import datetime
 from project.validateInputs import validate as Validator
@@ -356,3 +356,29 @@ def getAllProductosPorCategoria():
         }
         arrayProductos.append(productoObj) 
     return jsonify(arrayProductos)"""
+
+@productoRutas.route('/getAllProductosRecomendados', methods=['GET','POST'])
+def getAllProductosRecomendados():
+    try:
+        prodJson = ProductoSchema(many=False)
+        cateJson = CategoriaSchema(many=False)
+        arrayProductos = list()
+        productos = db.session.query(producto, categoria).join(producto.categoria).filter(producto.estatus == 'Activo').all()
+        
+        for i in productos:
+            if i.producto.cantidad < i.producto.cantidad_minima:
+                productoObj = prodJson.dump(i.producto)
+                productoObj['idCategoria'] = cateJson.dump(i.categoria)
+                productoObj['cantRecomend'] = i.producto.cantidad_minima - i.producto.cantidad;
+            
+                arrayProductos.append(productoObj) 
+        
+        return make_response(jsonify(arrayProductos),200)
+        #return render_template("", productos = arrayProductos, activos = True)
+        
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+        
+
