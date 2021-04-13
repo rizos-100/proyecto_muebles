@@ -129,6 +129,35 @@ function detalleMaterialM(idM) {
 
 }
 
+function mostrarSobrante(idM) {
+    var data = {
+        id: idM
+    };
+    $.ajax(
+        {
+            type: "GET",
+            url: "/getSobranteDisponiblePorId",
+            async: true,
+            data: data
+        })
+        .done(
+            function (data) {
+                sobrantes = data;
+                if(sobrantes == null){
+                    $("#tbSobranteTablas > tbody").empty();
+                    $("#tbSobranteTablas>tbody").append('<tr><td colspan="4" class="text-center">No hay sobrantes de este material</td></tr>');
+                }else{
+                    $("#tbSobranteTablas > tbody").empty();
+                    for (var i = 0; i < sobrantes.length; i++){
+                        $("#tbSobranteTablas>tbody").append('<tr><td>' + sobrantes[i].alto +' m</td><td>' + sobrantes[i].ancho + ' m</td><td>'+ sobrantes[i].comentario +'</td><td class="text-center"><button type="button" class="btn btn-danger waves-effect"onclick="eliminarSobrante('+sobrantes[i].id+')"><i class="material-icons">delete</i></button></td></tr>');
+                    }
+                }
+                $('#modalSobrantes').modal('show');
+            }
+        );
+
+}
+
 function eliminarMaterial(idM) {
     var data = {
         id: idM
@@ -160,6 +189,38 @@ function eliminarMaterial(idM) {
     });
 
 }
+
+function eliminarSobrante(idS) {
+    var data = {
+        id: idS
+    };
+    swal({
+        title: "¿Deseas continuar?",
+        text: "Por favor, confirma que deseas eliminar el registro.",
+        type: "info",
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Si, eliminar",
+        closeOnConfirm: false,
+        showLoaderOnConfirm: true
+    }, function () {
+        $.ajax(
+            {
+                type: "POST",
+                url: "/deleteSobrante",
+                async: true,
+                data: data
+            })
+            .done(
+                function (data) {
+                    swal('Movimiento realizado', 'Sobrante eliminado con exíto.', 'success');
+                    setTimeout(function () { location.href = "/getAllMaterialDisponibles"; }, 2000)
+                }
+            );
+    });
+
+}s
 
 function validarMaterial() {
     console.log($('#lstTipoM').val())

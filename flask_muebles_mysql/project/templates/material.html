@@ -47,6 +47,7 @@
                                         <th>Descripción</th>
                                         <th>Cantidad</th>
                                         <th>Medidas</th>
+                                        <th>Sobrante</th>
                                         {%if activos == True%}
                                         <th>Modificar</th>
                                         <th>Eliminar</th>
@@ -59,6 +60,7 @@
                                         <th>Descripción</th>
                                         <th>Cantidad</th>
                                         <th>Medidas</th>
+                                        <th>Sobrante</th>
                                         {%if activos == True%}
                                         <th>Modificar</th>
                                         <th>Eliminar</th>
@@ -74,6 +76,11 @@
                                             <td>{{obj.cantidad}} Pz</td>
                                             <td><b>Alto: </b>{{obj.alto}} m<br> <b>Ancho: </b>{{obj.ancho}} m<br> <b>Grosor: </b>{{obj.grosor}} cm</td>
                                             {%if activos == True%}
+                                            <td class="text-center">
+                                                <button type="button" class="btn bg-deep-orange waves-effect" onclick="mostrarSobrante({{obj.id}})">
+                                                    <i class="material-icons">zoom_in</i>
+                                                </button>
+                                                </td>
                                             <td class="text-center">
                                             <button type="button" class="btn btn-primary waves-effect" onclick="detalleMaterialM({{obj.id}})">
                                             <i class="material-icons">mode_edit</i>
@@ -523,5 +530,36 @@
         </div>
     </div>
 </div>
-
+<div class="modal fade" id="modalSobrantes" data-backdrop="static" tabindex="-1" role="dialog"
+    style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="">&times;</button>
+                <h4 class="modal-title" id="defaultModalLabel">Sobrantes del material. </h4>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table id="tbSobranteTablas"
+                        class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Alto</th>
+                                <th>Ancho</th>
+                                <th>Comentarios</th>
+                                <th>Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodySobranteTablas">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn waves-effect" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
