@@ -222,6 +222,14 @@
                         </ul>
                     </li>
                     {% endif %}
+                    {% if current_user.is_authenticated %}
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#modalInformacionEmpresarial">
+                            <i class="material-icons">bookmark</i>
+                            <span>Información empresarial</span>
+                        </a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- #Menu -->
@@ -952,6 +960,102 @@
                     <button type="button" class="btn btn-info waves-effect"
                         onclick="decidirMaterial()">Guardar</button>
                     <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal" onclick="limpiarMaterial()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalInformacionEmpresarial" data-backdrop="static" tabindex="-1" role="dialog"
+        style="display: none;">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" onclick="">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#home_animation_2" data-toggle="tab">
+                                <i class="material-icons">format_align_justify</i> Misión
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#profile_with_icon_title" data-toggle="tab">
+                                <i class="material-icons">line_weight</i> Visión
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#messages_with_icon_title" data-toggle="tab">
+                                <i class="material-icons">storage</i> Valores
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#settings_with_icon_title" data-toggle="tab">
+                                <i class="material-icons">library_books</i> Historia
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane animated fadeInRight active" id="home_animation_2">
+                            <h1>Misión</h2>
+                            <p class="text-center">
+                                "Generar bienestar para todos los integrantes de la organización, 
+                                mediante la fabricación de productos innovadores, que satisfagan las 
+                                necesidades de nuestros clientes por encima de sus expectativas". 
+                            </p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane animated fadeInRight" id="profile_with_icon_title">
+                            <h1>Visión</h1>
+                            <p class="text-center">
+                                "Ser líder a nivel mundial, garantizando la calidad y 
+                                servicio en nuestros productos, que siempre serán prácticos e innovadores". 
+                            </p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane animated fadeInRight" id="messages_with_icon_title">
+                            <h1>Valores empresariales</h1>
+                            <p>
+                                <ol>
+                                    <li>Trabajo en equipo.</li>
+                                    <li>Respeto.</li>
+                                    <li>Pasión.</li>
+                                    <li>Crecimiento de colaboradores.</li>
+                                    <li>Innovación.</li>
+                                    <li>Emprendurismo.</li>
+                                    <li>Enfoque al cliente.</li>
+                                    <li>Responsabilidad.</li>
+                                  </ol>
+                            </p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane animated fadeInRight" id="settings_with_icon_title">
+                            <h1>Historia</h1>
+                            <p class="text-justify">
+                                &nbsp &nbsp &nbsp Mueblería del valle fue creada en 1995 para la comercialización de muebles de oficina, 
+                                convirtiéndose en una marca de la empresa 100% mexicana Creaciones industriales,
+                                fundada en 1986 en la ciudad de Aguascalientes por Jorge Eduardo González Martínez. <br><br>
+                                
+                                &nbsp &nbsp &nbsp Desde sus inicios, nos hemos caracterizados por ser la opción más practica e innovadora 
+                                para el montaje de oficinas. Nuestra filosofía de mejora continua nos ha colocado 
+                                actualmente en el plano internacional, dentro del competitivo campo del diseño modular. <br><br>
+                                
+                                &nbsp &nbsp &nbsp Bajo el modelado Lean Enterprise, trabajamos como una organización que está en constante 
+                                mejora y actualización, con una oferta de productos innovadores y valores que se hacen 
+                                notar dentro y fuera de la empresa. <br><br>
+
+                                &nbsp &nbsp &nbsp Tenemos respeto y admiración por nuestro equipo de trabajo y fiel arraigo a 
+                                nuestras raíces. Promovemos un estilo de trabajo orientado al crecimiento 
+                                personal y profesional de nuestros colaboradores. 
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn waves-effect" data-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>

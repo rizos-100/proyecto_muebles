@@ -245,7 +245,6 @@ def getAllOrdenCompraByDia():
             }
             arrayOrdenes.append(ordenObj)
         #return jsonify(arrayOrdenes)
-        print(materiales)
         return render_template("ordenCompraDia.html",ordenes=arrayOrdenes,activos=True, proveedores=arrayProveedores, materiales=materiales_lista)
     except Exception as inst:
         message = {"result":"error"}
