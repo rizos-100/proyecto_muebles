@@ -232,7 +232,7 @@ def updateEmpleado():
         return make_response(jsonify(message), 400)    
 
 
-@clienteRutas.route('/deleteEmpleado', methods=['GET', 'POST'])
+@empleadoRutas.route('/deleteEmpleado', methods=['GET', 'POST'])
 @login_required
 @roles_accepted('admin')
 def deleteEmpleado():
@@ -248,3 +248,7 @@ def deleteEmpleado():
           result = {"id": persona_upd.id}
           
           return make_response(jsonify(result),200)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return make_response(jsonify(message), 400)
