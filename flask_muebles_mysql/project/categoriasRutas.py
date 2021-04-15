@@ -22,6 +22,15 @@ def getAllCategoriasInactivas():
      categoria_ = db.session.query(categoria).filter(categoria.estatus == "Inactivo").all()
      return render_template('categoria.html', categorias=categoria_, activos = False)
  
+@categoriasRutas.route('/getSelectCategorias', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin','almacenista')
+def getSelectCategorias():
+     categoria_ = db.session.query(categoria).filter(categoria.estatus == "Activo").all()
+     categoria_schema = CategoriaSchema(many=True)
+     result = categoria_schema.dump(categoria_)
+     return jsonify(result)
+
 @categoriasRutas.route('/getCategoriasPorId', methods=['GET', 'POST'])
 @login_required
 @roles_accepted('admin','almacenista')

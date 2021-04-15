@@ -43,7 +43,7 @@ def getAllProductosActivos():
                 }
             }
             arrayProductos.append(productoObj) 
-        return render_template("", productos = arrayProductos, activos = True)
+        return render_template("productos.html", productos = arrayProductos, activos = True)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
@@ -80,7 +80,7 @@ def getAllProductosInactivos():
                 }
             }
             arrayProductos.append(productoObj) 
-        return render_template("", productos = arrayProductos, activos = True)
+        return render_template("productos.html", productos = arrayProductos, activos = False)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')

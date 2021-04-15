@@ -24,6 +24,20 @@ def getAllMaterialActivos():
           message = {"result":"error"}
           logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
           return render_template('error.html')
+
+@materialRutas.route('/getSelectMateriales', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin','almacenista','vendedor')
+def getAllMaterialesDis():
+     try:
+          materiales = db.session.query(material).filter(material.estatus == "Disponible").all()
+          materia_schema = MaterialSchema(many=True)
+          result = materia_schema.dump(materiales)
+          return jsonify(result)
+     except Exception as inst:
+          message = {"result":"error"}
+          logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+          return render_template('error.html')
      
 @materialRutas.route('/getAllMaterialInutilizable', methods=['GET', 'POST'])
 @login_required
