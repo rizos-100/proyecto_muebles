@@ -12,9 +12,10 @@ from flask_security.decorators import roles_accepted
 
 ordenCompraRutas = Blueprint('ordenCompraRutas',__name__)
 
+
+@ordenCompraRutas.route('/getAllOrdenCompra',methods=['GET','POST'])
 @login_required
 @roles_accepted('admin','almacenista')
-@ordenCompraRutas.route('/getAllOrdenCompra',methods=['GET','POST'])
 def getAllOrdenCompra():
     try:
         ordenes=db.session.query(orden_compra).all()
@@ -67,9 +68,10 @@ def getAllOrdenCompra():
         return render_template(message)
         #return render_template('error.html')
 
+
+@ordenCompraRutas.route('/getAllOrdenCompraById',methods=['GET','POST'])
 @login_required
 @roles_accepted('admin','almacenista')
-@ordenCompraRutas.route('/getAllOrdenCompraById',methods=['GET','POST'])
 def getAllOrdenCompraById():
     try:
         if request.method == 'POST':
@@ -116,9 +118,10 @@ def getAllOrdenCompraById():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
 
+
+@ordenCompraRutas.route('/addOrdenCompra',methods=['GET','POST'])
 @login_required
 @roles_accepted('admin','almacenista')
-@ordenCompraRutas.route('/addOrdenCompra',methods=['GET','POST'])
 def addOrdenCompra():
     try:
         if request.method=='POST':
@@ -165,9 +168,10 @@ def addOrdenCompra():
         return make_response(jsonify(message), 400)
         #return render_template(message)
 
+
+@ordenCompraRutas.route('/getAllOrdenCompraByDia',methods=['GET','POST'])
 @login_required
 @roles_accepted('admin','almacenista')
-@ordenCompraRutas.route('/getAllOrdenCompraByDia',methods=['GET','POST'])
 def getAllOrdenCompraByDia():
     try:
         materiales_lista = db.session.query(material).filter(material.estatus == "Disponible").all()

@@ -4,9 +4,14 @@ import logging
 from datetime import datetime
 from project.validateInputs import validate as Validator
 
+from flask_security import login_required
+from flask_security.decorators import  roles_accepted
+
 detalleProductoMaterialRutas = Blueprint('detalleProductoMaterialRutas', __name__)
 
 @detalleProductoMaterialRutas.route('/getAllDetalleProductosMaterial', methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def getAllDetalleProductosMaterial():
     if request.method == 'GET':
         try:
@@ -43,6 +48,8 @@ def getAllDetalleProductosMaterial():
 
 
 @detalleProductoMaterialRutas.route('/addDetalleProductosMaterial', methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def addDetalleProductosMaterial():
     if request.method == 'POST':
         try:

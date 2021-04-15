@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template,request
 from flask_security import login_required, current_user
 from flask_security.decorators import roles_required, roles_accepted
 from . import db
@@ -9,8 +9,6 @@ from .models import users_roles,Role
 main = Blueprint('main', __name__)
 
 
-
-#Definimos la ruta a la página principal
 @main.route('/')
 def index():
     try:
@@ -19,8 +17,6 @@ def index():
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
-
-
 
 #Definimos la ruta a la página de perfil
 @main.route('/profile')
@@ -33,3 +29,4 @@ def index_login():
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
+

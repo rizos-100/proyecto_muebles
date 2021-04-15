@@ -2,6 +2,7 @@
 
 {% block content %}
 
+{% set rolUser = current_user.roles[0].name %}
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -11,6 +12,8 @@
                 </h3>
                 {%if activos == True%} 
                 <p>¡Buen día! En esta pantalla podrás registrar los proveedores de la empresa.</p> 
+                {% if rolUser != 'vendedor' %}
+                                
                 <ul class="header-dropdown m-r--5">
                     <li>
                         <button type="button" class="btn bg-brown waves-effect" data-toggle="modal" data-target="#modalProveedor">
@@ -19,11 +22,11 @@
                         </button>
                     </li>
                 </ul>
+                {%endif%}
                 {%else%} <p>¡Buen día! En esta pantalla podrás visualizar los proveedores inactivos.</p> 
                 {%endif%}
             </div>
-            {% set rolUser = current_user.roles[0].name %}
-            {{rolUser}}
+
             <div class="body">
                 <div class="table-responsive">
                     <table class="table table-bordered table-striped table-hover dataTable js-exportable">

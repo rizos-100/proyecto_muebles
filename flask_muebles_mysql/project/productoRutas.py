@@ -307,68 +307,6 @@ def deleteProducto():
                 logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
                 return render_template('error.html')
     
-    
-    """@productoRutas.route('/getAllProductosPorModelo', methods=['GET','POST'])
-def getAllProductosPorModelo():
-    arrayProductos = list()
-    modelo_ = request.args.get("modelo", "No contiene el nombre")
-    productos = db.session.query(producto, categoria).join(producto.categoria).filter(producto.modelo == modelo_, producto.estatus == 'Activo').all()
-    
-    for i in productos:
-        productoObj ={
-            'idProducto': i.producto.id,
-            'modelo': i.producto.modelo,
-            'descripcion': i.producto.descripcion,
-            'img': i.producto.img,
-            'peso': i.producto.peso,
-            'color': i.producto.color,
-            'alto': i.producto.alto,
-            'ancho': i.producto.ancho,
-            'largo': i.producto.largo,
-            'cantidad': i.producto.cantidad,
-            'cantidad_minima': i.producto.cantidad_minima,
-            'precio': i.producto.precio,
-            'estatus': i.producto.estatus,
-            'categoria':{
-                'id':i.categoria.id,
-                'nombre':i.categoria.nombre,
-                'descripcion':i.categoria.descripcion,
-                'estatus':i.categoria.estatus,
-            }
-        }
-        arrayProductos.append(productoObj) 
-    return jsonify(arrayProductos)"""
-
-"""@productoRutas.route('/getAllProductosPorCategoria', methods=['GET','POST'])
-def getAllProductosPorCategoria():
-    arrayProductos = list()
-    nombre = request.args.get("nombre", "No contiene el nombre")
-    productos = db.session.query(producto, categoria).join(producto.categoria).filter(categoria.nombre == nombre, producto.estatus == 'Activo').all()
-    
-    for i in productos:
-        productoObj ={
-            'idProducto': i.producto.id,
-            'modelo': i.producto.modelo,
-            'descripcion': i.producto.descripcion,
-            'img': i.producto.img,
-            'peso': i.producto.peso,
-            'color': i.producto.color,
-            'alto': i.producto.alto,
-            'ancho': i.producto.ancho,
-            'largo': i.producto.largo,
-            'cantidad': i.producto.cantidad,
-            'cantidad_minima': i.producto.cantidad_minima,
-            'precio': i.producto.precio,
-            'estatus': i.producto.estatus,
-            'categoria':{
-                'id':i.categoria.id,
-                'nombre':i.categoria.nombre,
-                'descripcion':i.categoria.descripcion,
-                'estatus':i.categoria.estatus,
-            }
-        }
-        arrayProductos.append(productoObj) 
-    return jsonify(arrayProductos)"""
 
 @productoRutas.route('/getAllProductosRecomendados', methods=['GET','POST'])
 @login_required

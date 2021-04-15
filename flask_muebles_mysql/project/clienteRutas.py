@@ -21,7 +21,7 @@ def getAllClientesActivos():
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-        return render_template('error.html')
+        return render_template('error.html'),302
 
 @clienteRutas.route('/getAllClientesInactivos',methods=['GET','POST'])
 @login_required

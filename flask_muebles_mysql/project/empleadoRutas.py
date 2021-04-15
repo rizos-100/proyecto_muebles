@@ -114,8 +114,6 @@ def getAllEmpleadosById():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
 
-
-
 @empleadoRutas.route('/addEmpleado', methods=['GET', 'POST'])
 @login_required
 @roles_accepted('admin')

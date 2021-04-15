@@ -1,5 +1,5 @@
 import os
-from flask import Flask,render_template
+from flask import Flask,render_template,request
 from flask_security import Security, SQLAlchemyUserDatastore, utils, current_user
 from flask_sqlalchemy import SQLAlchemy
 from flask_admin import Admin
@@ -70,10 +70,6 @@ def create_app():
             return render_template('error.html')
     
     security = Security(app, userDataStore)
-    
-    @app.route('/login')
-    def index_login_fail():
-        return render_template('security/login.html')
         
     try:
         
@@ -90,6 +86,14 @@ def create_app():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
     
+    @app.route('/login',methods=['GET','POST'])
+    def index_login_fail():
+   
+        if request.method == 'POST' and request.form['email']:
+            return render_template('security/login.html')
+            print(request.form.get('next'))
+        else:
+            return render_template('security/login.html')
     try:
         #Registramos el blueprint para el resto de la aplicación
         from .main import main as main_blueprint
@@ -133,7 +137,6 @@ def create_app():
     logging.info('Incio de la aplicacion ['+str(datetime.now())+']')
     
     register_error_handlers(app)
-    
     
     return app
 
