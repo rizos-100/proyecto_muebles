@@ -249,6 +249,7 @@ def updateStockProducto():
                 dtmp = db.session.query(detalle_producto_material).filter(detalle_producto_material.idProducto == idProducto_).all()
                 print(dtmp)
                 #Consultamos el material de ese detalle
+                arraySobrantes = []
                 for i in dtmp:
                     #Si es madera, se busca en los sobrantes
                     if i.alto != 0 and i.ancho != 0:  # Si cumple la condicion es madera
@@ -258,21 +259,33 @@ def updateStockProducto():
                         if s != None:
                             s.alto = s.alto - float(i.alto)
                             s.ancho = s.ancho - float(i.ancho)
-
+                            print("entre")
                             if s.alto <= .5 and s.ancho <= .5:
                                 s.estatus = "Inutilizable"
                             #db.session.commit()
                         else:  # Sino, busca la madera en material y la descuenta
                             m = db.session.query(material).filter(material.id == i.idMaterial).first()
                         #Descuento de material
-                            if m.alto >= float(i.alto) and m.ancho >= float(i.ancho) and m.alto != 0 and m.ancho != 0:
-                                m.alto = m.alto - float(i.alto)
-                                m.ancho = m.ancho - float(i.ancho)
-                                #db.session.commit()
+                            if m.cantidad > 0:
+                                m.cantidad = m.cantidad - 1
+                                
+                                alto_ = m.alto - float(i.alto)
+                                ancho_ = m.ancho - float(i.ancho)
+                                comentario_ = "ninguno"
+                                id_material = m.id
+                                
+                                sobrante = sobrante_material(alto = alto_,
+                                        ancho = ancho_,
+                                        comentario = comentario_,
+                                        estatus = "Disponible",
+                                        material = id_material)
+                                
+                                arraySobrantes.append(sobrante)
+
                                 result = {"id": p.id}
                             else:
                                 bb = False
-                                result = {"error": "El material con id: " + str(m.id) + " no es suficiente y no se realizo ningun cambio"}
+                                result = {"error": "El material con id: " + str(m.id) + " no tiene suficientes tablones y no se realizo ningun cambio"}
                     else:  # Sino cumple la condicion de que es madera, descuenta la cantidad de material
                         m = db.session.query(material).filter(
                             material.id == i.idMaterial).first()
@@ -286,6 +299,9 @@ def updateStockProducto():
                             result = {"error": "El material con id: " + str(m.id) + " no es suficiente y no se realizo ningun cambio"}
                 z += 1
             if bb != False:
+                for so in arraySobrantes:
+                    db.session.add(so)
+                    db.session.commit()
                 db.session.commit()
 
             return jsonify(result)
