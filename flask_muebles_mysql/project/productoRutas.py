@@ -229,64 +229,72 @@ def updateProducto():
                 logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
                 return render_template('error.html')
         
-@productoRutas.route('/updateStockProducto', methods=['GET','POST'])
+@productoRutas.route('/updateStockProducto', methods=['GET', 'POST'])
 def updateStockProducto():
     if request.method == 'POST':
         try:
             idProducto_ = request.form['idProducto']
             cantidad_ = Validator.validarDecimal(request.form['cantidad'])
 
-            p = db.session.query(producto).filter(producto.id == idProducto_).first()
+            p = db.session.query(producto).filter(
+            producto.id == idProducto_).first()
             p.cantidad = p.cantidad + float(cantidad_)
-            db.session.commit()
-            
+            #db.session.commit()
+
+            bb = True
             z = 0
-            while z < float(cantidad_): 
-            
+            while z < float(cantidad_):
+
                 #Consultar detalles producto materil del producto
-                dtmp =  db.session.query(detalle_producto_material).filter(detalle_producto_material.idProducto == idProducto_).all()
+                dtmp = db.session.query(detalle_producto_material).filter(detalle_producto_material.idProducto == idProducto_).all()
                 print(dtmp)
-                    #Consultamos el material de ese detalle
+                #Consultamos el material de ese detalle
                 for i in dtmp:
                     #Si es madera, se busca en los sobrantes
-                    if i.alto != 0 and i.ancho != 0: #Si cumple la condicion es madera
+                    if i.alto != 0 and i.ancho != 0:  # Si cumple la condicion es madera
                         #Buscar en los sobrantes
                         s = db.session.query(sobrante_material).filter(sobrante_material.alto >= float(i.alto), sobrante_material.ancho >= float(i.ancho), sobrante_material.estatus == "Disponible").first()
                         #Si se encuentra, se descuenta
                         if s != None:
-                            s.alto =  s.alto - float(i.alto)
+                            s.alto = s.alto - float(i.alto)
                             s.ancho = s.ancho - float(i.ancho)
-                            
+
                             if s.alto <= .5 and s.ancho <= .5:
                                 s.estatus = "Inutilizable"
-                            db.session.commit()
-                        else: #Sino, busca la madera en material y la descuenta
+                            #db.session.commit()
+                        else:  # Sino, busca la madera en material y la descuenta
                             m = db.session.query(material).filter(material.id == i.idMaterial).first()
                         #Descuento de material
-                            if  m.alto >= float(i.alto) and m.ancho >= float(i.ancho) and m.alto != 0 and m.ancho != 0:
-                                m.alto =  m.alto - float(i.alto)
+                            if m.alto >= float(i.alto) and m.ancho >= float(i.ancho) and m.alto != 0 and m.ancho != 0:
+                                m.alto = m.alto - float(i.alto)
                                 m.ancho = m.ancho - float(i.ancho)
-                                db.session.commit()
+                                #db.session.commit()
                                 result = {"id": p.id}
                             else:
-                                result = {"error": "El material con id: " + str(m.id) + " no es suficiente"}
-                    else: #Sino cumple la condicion de que es madera, descuenta la cantidad de material
-                        m = db.session.query(material).filter(material.id == i.idMaterial).first()
+                                bb = False
+                                result = {"error": "El material con id: " + str(m.id) + " no es suficiente y no se realizo ningun cambio"}
+                    else:  # Sino cumple la condicion de que es madera, descuenta la cantidad de material
+                        m = db.session.query(material).filter(
+                            material.id == i.idMaterial).first()
                         #Descuento de material
                         if m.cantidad >= float(i.cantidad) and m.cantidad != 0:
                             m.cantidad = m.cantidad - float(i.cantidad)
-                            db.session.commit()
+                            #db.session.commit()
                             result = {"id": p.id}
                         else:
-                            result = {"error": "El material con id: " + str(m.id) + " no es suficiente"}
-                z+=1
-                            
+                            bb = False
+                            result = {"error": "El material con id: " + str(m.id) + " no es suficiente y no se realizo ningun cambio"}
+                z += 1
+            if bb != False:
+                db.session.commit()
+
             return jsonify(result)
         except Exception as inst:
-                message = {"result":"error"}
-                logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-                return render_template('error.html')
-        
+            message = {"result": "error"}
+            logging.error(str(type(inst))+'\n Tipo de error: ' +
+                          str(inst) + '['+str(datetime.now())+']')
+            return render_template('error.html')
+    
 @productoRutas.route('/deleteProducto', methods=['GET','POST'])
 @login_required
 @roles_accepted('admin','almacenista')
