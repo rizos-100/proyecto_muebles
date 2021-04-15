@@ -2,20 +2,38 @@ from flask import Blueprint, render_template, jsonify, request
 from .models import db, categoria, CategoriaSchema
 from project.validateInputs import validate as Validator
 
+from flask_security import login_required
+from flask_security.decorators import roles_accepted
+
 categoriasRutas = Blueprint('categoriasRutas', __name__)
 
 
 @categoriasRutas.route('/getAllCategoriasActivas', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def getAllMaterialActivos():
      categoria_ = db.session.query(categoria).filter(categoria.estatus == "Activo").all()
      return render_template('categoria.html', categorias=categoria_, activos = True)
  
 @categoriasRutas.route('/getAllCategoriasInactivas', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def getAllCategoriasInactivas():
      categoria_ = db.session.query(categoria).filter(categoria.estatus == "Inactivo").all()
      return render_template('categoria.html', categorias=categoria_, activos = False)
  
+@categoriasRutas.route('/getSelectCategorias', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin','almacenista')
+def getSelectCategorias():
+     categoria_ = db.session.query(categoria).filter(categoria.estatus == "Activo").all()
+     categoria_schema = CategoriaSchema(many=True)
+     result = categoria_schema.dump(categoria_)
+     return jsonify(result)
+
 @categoriasRutas.route('/getCategoriasPorId', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def getCategoriasPorId():
      if request.method == 'GET':
           idC = request.args.get("idCat", "No contiene el nombre")
@@ -25,6 +43,8 @@ def getCategoriasPorId():
           return jsonify(result)
 
 @categoriasRutas.route('/addCategoria', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def addCategoria():
      if request.method == 'POST':
           nombre_ = Validator.sanitizarNombre(request.form['nombre'])
@@ -43,6 +63,8 @@ def addCategoria():
           return jsonify(result)
       
 @categoriasRutas.route('/updateCategoria', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def updateCategoria():
      if request.method == 'POST':
           id_ = request.form['id']
@@ -60,6 +82,8 @@ def updateCategoria():
           return jsonify(result)
 
 @categoriasRutas.route('/deleteCategoria', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin','almacenista')
 def deleteCategoria():
      if request.method == 'POST':
           id_ = request.form['id']

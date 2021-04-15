@@ -31,6 +31,9 @@
 
     <link href="../static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
 
+    <link href="../static/plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
+
     <!-- Custom Css -->
     <link href="../static/css/style.css" rel="stylesheet">
 
@@ -80,12 +83,15 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="info-container">
-                    {% if user %}
-                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{user.persona.nombre+' '+user.persona.apellidoP+' '+user.persona.apellidoM}}</div>
-                        <div class="email">{{user.User.email}}</div>
+                    {% if current_user.is_authenticated %}
+                        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{current_user.email}}</div>
+                        <div class="email">{{current_user.roles[0].description}}</div>
+                        <script>
+                            localStorage.setItem('idUser',{{current_user.id}});
+                        </script>
                     {% else %}
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">John Doe</div>
-                        <div class="email">example@helpers.com</div>
+                    <div class="email">example@helpers.com</div>
                     {% endif %}
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true"
@@ -109,36 +115,66 @@
                             <span>Tablero</span>
                         </a>
                     </li>
+                    {% if ( current_user.has_role('admin') or current_user.has_role('vendedor')) %}
+                        <li>
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">shopping_cart</i>
+                                <span>Ventas</span>
+                            </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="/getAllVentasHoy">Hoy</a>
+                                </li>
+                                <li>
+                                    <a href="/getAllVentasActivas">Activas</a>
+                                </li>
+                                <li>
+                                    <a href="/getAllVentasInactivas">Inactivas</a>
+                                </li>
+                            </ul>
+                        </li>
+                    {% endif %}
+                    {% if (current_user.has_role('admin') or current_user.has_role('almacenista')) %}
                     <li>
-                        <a href="pages/typography.html">
-                            <i class="material-icons">shopping_cart</i>
-                            <span>Ventas</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="pages/typography.html">
+                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">assignment</i>
                             <span>Orden de compra</span>
                         </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="/getAllOrdenCompraByDia">Hoy</a>
+                            </li>
+                            <li>
+                                <a href="/getAllOrdenCompra">Activas</a>
+                            </li>
+                        </ul>
                     </li>
+                    {% endif %}
+                    {% if current_user.is_authenticated  %}
+                        <li>
+                            <a href="pages/helper-classes.html">
+                                <i class="material-icons">weekend</i>
+                                <span>Productos</span>
+                            </a>
+                        </li>
+                    {% endif %}
+                    {% if current_user.is_authenticated %}
                     <li>
-                        <a href="pages/helper-classes.html">
-                            <i class="material-icons">weekend</i>
-                            <span>Productos</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="pages/typography.html">
+                        <a href="/getAllMaterialDisponibles">
                             <i class="material-icons">view_quilt</i>
                             <span>Materia prima</span>
                         </a>
                     </li>
+                    {% endif %}
+                    {% if current_user.has_role('admin') %}
                     <li>
                         <a href="pages/typography.html">
                             <i class="material-icons">account_box</i>
                             <span>Empleados</span>
                         </a>
                     </li>
+                    {% endif %}
+                    {% if (current_user.has_role('admin') or current_user.has_role('vendedor')) %}
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">account_circle</i>
@@ -153,6 +189,8 @@
                             </li>
                         </ul>
                     </li>
+                    {% endif %}
+                    {% if current_user.is_authenticated %}
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">domain</i>
@@ -167,6 +205,8 @@
                             </li>
                         </ul>
                     </li>
+                    {% endif %}
+                    {% if (current_user.has_role('admin') or current_user.has_role('almacenista')) %}
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">swap_calls</i>
@@ -181,6 +221,15 @@
                             </li>
                         </ul>
                     </li>
+                    {% endif %}
+                    {% if current_user.is_authenticated %}
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#modalInformacionEmpresarial">
+                            <i class="material-icons">bookmark</i>
+                            <span>Información empresarial</span>
+                        </a>
+                    </li>
+                    {% endif %}
                 </ul>
             </div>
             <!-- #Menu -->
@@ -707,6 +756,310 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="modalMaterial" data-backdrop="static" tabindex="-1" role="dialog"
+        style="display: none;">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" onclick="limpiarMaterial()">&times;</button>
+                    <h4 class="modal-title" id="defaultModalLabel">Formulario para la gestión de materiales. </h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <select id="lstTipoM" onchange="ocultarCampos(),mostrarCampos()" class="form-control">
+                                    <option value="0" selected disabled>-- Seleccion un tipo de material --</option>
+                                    <option value="Tabla">Tabla</option>
+                                    <option value="Tornillo">Tornillo</option>
+                                    <option value="Clavo">Clavo</option>
+                                    <option value="Grapas">Grapas</option>
+                                    <option value="Riel">Riel</option>
+                                    <option value="Pegamento">Pegamento</option>
+                                    <option value="Pintura">Pintura</option>
+                                    <option value="Agarradera">Agarradera</option>
+                                    <option value="Escuadra">Escuadra</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;" id="tituloTabla">
+                            <h4>Datos de la tabla</h4>
+                            <hr />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;" id="tituloTornillo">
+                            <h4>Datos del tornillo</h4>
+                            <hr />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;" id="tituloClavo">
+                            <h4>Datos del clavo</h4>
+                            <hr />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;" id="tituloGrapas">
+                            <h4>Datos de las grapas</h4>
+                            <hr />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;" id="tituloRiel">
+                            <h4>Datos del riel</h4>
+                            <hr />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;" id="tituloPegamento">
+                            <h4>Datos del pegamento</h4>
+                            <hr />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;" id="tituloPintura">
+                            <h4>Datos de la pintura</h4>
+                            <hr />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;" id="tituloAgarradera">
+                            <h4>Datos de la agarradera</h4>
+                            <hr />
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="display: none;" id="tituloEscuadra">
+                            <h4>Datos de la escuadra</h4>
+                            <hr />
+                        </div>
+                    </div>
+                    <div class="row" id="divTiposM" style="display: none;">
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Nombre <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="text" id="txtNombreMaterial" class="form-control" placeholder="Nombre" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Descripción <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="text" id="txtDescripcionMaterial" class="form-control" placeholder="Descripción" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                            <div class="form-group">
+                                <b>Cantidad <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="number" id="txtCantidadMaterial" class="form-control" placeholder="cantidad" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="divAlto" style="display: none;">
+                            <div class="form-group">
+                                <b>Alto <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="number" id="txtAltoMaterial" class="form-control" placeholder="Alto" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="divAncho" style="display: none;">
+                            <div class="form-group">
+                                <b>Ancho <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="number" id="txtAnchoMaterial" class="form-control" placeholder="Ancho" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="divGrosor" style="display: none;">
+                            <div class="form-group">
+                                <b>Grosor <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="number" id="txtGrosorMaterial" class="form-control" placeholder="Grosor" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="divColor" style="display: none;">
+                            <div class="form-group">
+                                <b>Color <font color="red">*</font></b>
+                                <div class="input-group">
+                                    <span class="input-group-addon">
+                                        <i class="material-icons">rate_review</i>
+                                    </span>
+
+                                    <div class="form-line">
+                                        <input type="text" id="txtColorMaterial" class="form-control" placeholder="Color" maxlength="100" data-length="100" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="txtIdMaterial" class="form-control" placeholder="id">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="instruccionesTabla" style="display: none;">
+                            <h4>Instrucciones</h4>
+                            <ol>
+                                <li>Ingresa la altura conciente de que son metros</li>
+                                <li>Ingresa la anchura conciente de que son metros</li>
+                                <li>Ingresa el grosor conciente de que son centimetros</li>
+                            </ol>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="instruccionesAltAnc" style="display: none;">
+                            <h4>Instrucciones</h4>
+                            <ol>
+                                <li>Ingresa la altura conciente de que son centimetros</li>
+                                <li>Ingresa la anchura conciente de que son centimetros</li>
+                            </ol>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="instruccionesAltura" style="display: none;">
+                            <h4>Instrucciones</h4>
+                            <ol>
+                                <li>Ingresa la altura conciente de que son centimetros</li>
+                            </ol>
+                        </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="instruccionesAnchura" style="display: none;">
+                            <h4>Instrucciones</h4>
+                            <ol>
+                                <li>Ingresa la anchura conciente de que son centimetros</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-info waves-effect"
+                        onclick="decidirMaterial()">Guardar</button>
+                    <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal" onclick="limpiarMaterial()">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="modalInformacionEmpresarial" data-backdrop="static" tabindex="-1" role="dialog"
+        style="display: none;">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" onclick="">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active">
+                            <a href="#home_animation_2" data-toggle="tab">
+                                <i class="material-icons">format_align_justify</i> Misión
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#profile_with_icon_title" data-toggle="tab">
+                                <i class="material-icons">line_weight</i> Visión
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#messages_with_icon_title" data-toggle="tab">
+                                <i class="material-icons">storage</i> Valores
+                            </a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#settings_with_icon_title" data-toggle="tab">
+                                <i class="material-icons">library_books</i> Historia
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane animated fadeInRight active" id="home_animation_2">
+                            <h1>Misión</h2>
+                            <p class="text-center">
+                                "Generar bienestar para todos los integrantes de la organización, 
+                                mediante la fabricación de productos innovadores, que satisfagan las 
+                                necesidades de nuestros clientes por encima de sus expectativas". 
+                            </p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane animated fadeInRight" id="profile_with_icon_title">
+                            <h1>Visión</h1>
+                            <p class="text-center">
+                                "Ser líder a nivel mundial, garantizando la calidad y 
+                                servicio en nuestros productos, que siempre serán prácticos e innovadores". 
+                            </p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane animated fadeInRight" id="messages_with_icon_title">
+                            <h1>Valores empresariales</h1>
+                            <p>
+                                <ol>
+                                    <li>Trabajo en equipo.</li>
+                                    <li>Respeto.</li>
+                                    <li>Pasión.</li>
+                                    <li>Crecimiento de colaboradores.</li>
+                                    <li>Innovación.</li>
+                                    <li>Emprendurismo.</li>
+                                    <li>Enfoque al cliente.</li>
+                                    <li>Responsabilidad.</li>
+                                  </ol>
+                            </p>
+                        </div>
+                        <div role="tabpanel" class="tab-pane animated fadeInRight" id="settings_with_icon_title">
+                            <h1>Historia</h1>
+                            <p class="text-justify">
+                                &nbsp &nbsp &nbsp Mueblería del valle fue creada en 1995 para la comercialización de muebles de oficina, 
+                                convirtiéndose en una marca de la empresa 100% mexicana Creaciones industriales,
+                                fundada en 1986 en la ciudad de Aguascalientes por Jorge Eduardo González Martínez. <br><br>
+                                
+                                &nbsp &nbsp &nbsp Desde sus inicios, nos hemos caracterizados por ser la opción más practica e innovadora 
+                                para el montaje de oficinas. Nuestra filosofía de mejora continua nos ha colocado 
+                                actualmente en el plano internacional, dentro del competitivo campo del diseño modular. <br><br>
+                                
+                                &nbsp &nbsp &nbsp Bajo el modelado Lean Enterprise, trabajamos como una organización que está en constante 
+                                mejora y actualización, con una oferta de productos innovadores y valores que se hacen 
+                                notar dentro y fuera de la empresa. <br><br>
+
+                                &nbsp &nbsp &nbsp Tenemos respeto y admiración por nuestro equipo de trabajo y fiel arraigo a 
+                                nuestras raíces. Promovemos un estilo de trabajo orientado al crecimiento 
+                                personal y profesional de nuestros colaboradores. 
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn waves-effect" data-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Jquery Core Js -->
     <script src="../static/plugins/jquery/jquery.min.js"></script>
 
@@ -772,7 +1125,21 @@
     <script src="../static/MyJS/categoria.js"></script>
     <script src="../static/MyJS/cliente.js"></script>
     <script src="../static/MyJS/proveedor.js"></script>
+    <script src="../static/MyJS/material.js"></script>
+    <script src="../static/MyJS/ventaDia.js"></script>
+    <script src="../static/MyJS/venta.js"></script>
+    <script src="../static/MyJS/ordenCompra.js"></script>
     <script src="../static/js/script.js"></script>
+
+    <!--Mensajes de Flask security-->
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <script>
+        showNotification("bg-red", "{{ messages[0] }}", "bottom", "center", "", "");
+    </script>
+    {% endif %}
+    {% endwith %}
+    
     
 </body>
 

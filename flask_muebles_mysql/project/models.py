@@ -1,4 +1,4 @@
-#from . import db
+from . import db
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
@@ -8,7 +8,8 @@ from flask_admin.contrib  import sqla
 import datetime
 from wtforms.fields import PasswordField
 
-db = SQLAlchemy()
+
+#db = SQLAlchemy()
 ma = Marshmallow()
 
 #Definiendo la tabla relacional
@@ -58,7 +59,7 @@ class User(UserMixin, db.Model):
     
 class UserSchema(ma.Schema):
     class Meta:
-        fields = ('id','numero_empleado','nivel_escolar','profesion','observaciones','idPersona')
+        fields = ('id','email','numero_empleado','nivel_escolar','profesion','observaciones','idPersona')
     
 class Role(RoleMixin, db.Model):
     """Role model"""
@@ -185,10 +186,10 @@ class material(db.Model):
     tipo = db.Column(db.String(255), nullable=False)
     nombre = db.Column(db.String(255), nullable=False)
     descripcion = db.Column(db.String(255), nullable=False)
-    cantidad = db.Column(db.Integer,nullable=False)
-    alto = db.Column(db.Integer,nullable=False)
-    ancho = db.Column(db.Integer,nullable=False)
-    grosor = db.Column(db.Integer,nullable=False)
+    cantidad = db.Column(db.Float,nullable=False)
+    alto = db.Column(db.Float,nullable=False)
+    ancho = db.Column(db.Float,nullable=False)
+    grosor = db.Column(db.Float,nullable=False)
     color = db.Column(db.String(100), nullable=False)
     estatus = db.Column(db.String(100), nullable=False)
     
@@ -213,8 +214,8 @@ class detalleOrdenSchema(ma.Schema):
 class sobrante_material (db.Model):
     __tablename__='sobrante_material'
     id=db.Column(db.Integer,primary_key=True)
-    alto = db.Column(db.Integer,nullable=False)
-    ancho = db.Column(db.Integer,nullable=False)
+    alto = db.Column(db.Float,nullable=False)
+    ancho = db.Column(db.Float,nullable=False)
     comentario = db.Column(db.String(255), nullable=True)
     estatus = db.Column(db.String(100), nullable=False)
     material = db.Column(db.Integer,db.ForeignKey('material.id'))
@@ -247,7 +248,7 @@ class producto (db.Model):
     alto = db.Column(db.Float,nullable=False)
     ancho = db.Column(db.Float,nullable=False)
     largo = db.Column(db.Float,nullable=False)
-    cantidad = db.Column(db.Integer,nullable=False)
+    cantidad = db.Column(db.Float,nullable=False)
     cantidad_minima = db.Column(db.Integer,nullable=False)
     precio = db.Column(db.Float,nullable=False)
     estatus = db.Column(db.String(100), nullable=False)

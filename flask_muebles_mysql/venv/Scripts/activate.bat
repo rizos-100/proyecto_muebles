@@ -38,3 +38,7 @@ if defined _OLD_VIRTUAL_PATH goto ENDIFVPATH2
 :ENDIFVPATH2
 
 set "PATH=%VIRTUAL_ENV%\Scripts;%PATH%"
+
+set "FLASK_APP=project\"
+set "FLASK_DEBUG=1"
+set "FLASK_ENV=development"

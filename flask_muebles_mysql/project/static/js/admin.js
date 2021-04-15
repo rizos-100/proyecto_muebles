@@ -305,15 +305,14 @@ $.AdminBSB.input = {
 /* Form - Select - Function ================================================================================================
 *  You can manage the 'select' of form elements
 *  
-*/
-$.AdminBSB.select = {
-    activate: function () {
-        if ($.fn.selectpicker) { $('select:not(.ms)').selectpicker(); }
-    }
-}
-//==========================================================================================================================
-
-/* DropdownMenu - Function =================================================================================================
+*
+*$.AdminBSB.select = {
+*    activate: function () {
+*        if ($.fn.selectpicker) { $('select:not(.ms)').selectpicker(); }
+*    }
+*}
+*
+*DropdownMenu - Function =================================================================================================
 *  You can manage the dropdown menu
 *  
 */
@@ -462,7 +461,7 @@ $(function () {
     $.AdminBSB.navbar.activate();
     $.AdminBSB.dropdownMenu.activate();
     $.AdminBSB.input.activate();
-    $.AdminBSB.select.activate();
+    //$.AdminBSB.select.activate();
     $.AdminBSB.search.activate();
 
     setTimeout(function () { $('.page-loader-wrapper').fadeOut(); }, 50);

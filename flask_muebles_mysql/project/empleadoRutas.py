@@ -1,84 +1,123 @@
 from flask import Blueprint, render_template, jsonify, request,make_response
 from .models import db
-from .models import cliente,persona,domicilio
+from .models import persona,personaSchema,domicilio,DomicilioSchema,User,UserSchema,cliente
 from project.validateInputs import validate as Validator
 
 from flask_security import login_required
-from flask_security.decorators import  roles_accepted
+from flask_security.decorators import roles_accepted
 
 import logging
 from datetime import datetime
 
-clienteRutas = Blueprint('clienteRutas', __name__ )
+empleadoRutas = Blueprint('empleadoRutas', __name__ )
 
-@clienteRutas.route('/getAllClientesActivos',methods=['GET','POST'])
+@empleadoRutas.route('/getAllEmpleadosSinAsignar',methods=['GET','POST'])
 @login_required
-@roles_accepted('admin','vendedor')
-def getAllClientesActivos():
+@roles_accepted('admin')
+def getAllEmpleadosSinAsignar():
     try:
-        clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Activo').all()
-        return render_template('cliente.html', clientes=clientes, activos = True)
-    except Exception as inst:
-        message = {"result":"error"}
-        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-        return render_template('error.html'),302
-
-@clienteRutas.route('/getAllClientesInactivos',methods=['GET','POST'])
-@login_required
-@roles_accepted('admin','vendedor')
-def getAllClientesInactivos():
-    try:
-        clientes = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(persona.estatus == 'Inactivo').all()
-        return render_template('cliente.html', clientes=clientes, activos = False)
+        arrayPersonas = list()
+        personas = db.session.query(persona).filter(persona.estatus == 'Activo').all()
+        
+        for per in personas:
+            userPer = db.session.query(User).filter(User.idPersona == per.id).first()
+            clienPer = db.session.query(cliente).filter(cliente.idPersona == per.id).first()
+            if not userPer and not clienPer:
+                print(per)
+                perJson = personaSchema(many=False).dump(per)
+                domi = db.session.query(domicilio).filter(domicilio.id==per.domicilio).first()
+                perJson['domicilio'] = DomicilioSchema(many=False).dump(domi)
+                
+                arrayPersonas.append(perJson)
+        
+        #return render_template('', peronas=peronas, activos = True)
+        return make_response(jsonify(arrayPersonas), 200)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
 
-@clienteRutas.route('/getAllClientesById',methods=['GET','POST'])
+@empleadoRutas.route('/getAllEmpleadosActivos',methods=['GET','POST'])
 @login_required
-@roles_accepted('admin','vendedor')
-def getAllClientesById():
+@roles_accepted('admin')
+def getAllEmpleadosActivos():
     try:
-        if request.method == 'GET':
-          idClien = int(request.args.get("idCliente", "0"))
-          print(idClien)
-          i = db.session.query(cliente,persona,domicilio).join(cliente.persona,persona.domicil).filter(cliente.id ==idClien).first()
-          clienObj ={
-            'idCliente': i.cliente.id,
-            'persona':{
-                'id':i.persona.id,
-                'nombre':i.persona.nombre,
-                'apellidoP':i.persona.apellidoP,
-                'apellidoM':i.persona.apellidoM,
-                'numFijo':i.persona.numero_fijo,
-                'celular':i.persona.celular,
-                'rfc':i.persona.rfc
-            },
-            'domicilio':{
-                'id':i.domicilio.id,
-                'calle':i.domicilio.calle,
-                'colonia':i.domicilio.colonia,
-                'numero_exterior':i.domicilio.numero_exterior,
-                'numero_interior':i.domicilio.numero_interior,
-                'estado':i.domicilio.estado,
-                'municipio':i.domicilio.municipio,
-                'cp':i.domicilio.cp,
-                'referencias':i.domicilio.referencias
-            }
-        }
+        arrayUser = list()
+        personas = db.session.query(persona,User).join(User.personaForeign).filter(persona.estatus == 'Activo').all()
+
+        for per in personas:
+            print(per)
+            perJson = personaSchema(many=False).dump(per.persona)
+            useJson = UserSchema(many=False).dump(per.User)
+            domi = db.session.query(domicilio).filter(domicilio.id==per.persona.domicilio).first()
+            perJson['domicilio'] = DomicilioSchema(many=False).dump(domi)
+            useJson['idPersona'] = perJson
+                
+            arrayUser.append(useJson)
         
-        return clienObj
+        #return render_template('', peronas=peronas, activos = True)
+        return make_response(jsonify(arrayUser), 200)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-        return make_response(jsonify(message), 400)
+        return render_template('error.html')
 
-
-@clienteRutas.route('/addCliente', methods=['GET', 'POST'])
+@empleadoRutas.route('/getAllEmpleadosInactivos',methods=['GET','POST'])
 @login_required
-@roles_accepted('admin','vendedor')
-def addCliente():
+@roles_accepted('admin')
+def getAllEmpleadosInactivos():
+    try:
+        arrayUser = list()
+        personas = db.session.query(persona,User).join(User.personaForeign).filter(persona.estatus == 'Inactivo').all()
+
+        for per in personas:
+            print(per)
+            perJson = personaSchema(many=False).dump(per.persona)
+            useJson = UserSchema(many=False).dump(per.User)
+            domi = db.session.query(domicilio).filter(domicilio.id==per.persona.domicilio).first()
+            perJson['domicilio'] = DomicilioSchema(many=False).dump(domi)
+            useJson['idPersona'] = perJson
+                
+            arrayUser.append(useJson)
+        
+        #return render_template('', peronas=peronas, activos = True)
+        return make_response(jsonify(arrayUser), 200)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+
+@empleadoRutas.route('/getAllEmpleadosById',methods=['GET','POST'])
+@login_required
+@roles_accepted('admin')
+def getAllEmpleadosById():
+    try:
+        if request.method == 'GET':
+            idPer = int(request.args.get('idPersona','0'))
+            arrayUser = list()
+            personas = db.session.query(persona,User).join(User.personaForeign).filter(persona.id == idPer).all()
+
+            for per in personas:
+                print(per)
+                perJson = personaSchema(many=False).dump(per.persona)
+                useJson = UserSchema(many=False).dump(per.User)
+                domi = db.session.query(domicilio).filter(domicilio.id==per.persona.domicilio).first()
+                perJson['domicilio'] = DomicilioSchema(many=False).dump(domi)
+                useJson['idPersona'] = perJson
+                    
+                arrayUser.append(useJson)
+            
+            #return render_template('', peronas=peronas, activos = True)
+            return make_response(jsonify(arrayUser), 200)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+
+@empleadoRutas.route('/addEmpleado', methods=['GET', 'POST'])
+@login_required
+@roles_accepted('admin')
+def addEmpleado():
     try:
         if request.method == 'POST':
           nombre_ = Validator.sanitizarNombre(request.form['nombre'])
@@ -124,23 +163,20 @@ def addCliente():
           db.session.commit()
           idPers=objPersona.id 
           
-          objCliente = cliente(idPersona=idPers)
-          db.session.add(objCliente)
-          db.session.commit()
           
-          result = {"id": objCliente.id}
+          result = {"id": idPers}
           
-          return jsonify(result)
+          return make_response(jsonify(result),200)
       
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return make_response(jsonify(message), 400)
-      
-@clienteRutas.route('/updateCliente', methods=['GET', 'POST'])
+ 
+@empleadoRutas.route('/updateEmpleado', methods=['GET', 'POST'])
 @login_required
-@roles_accepted('admin','vendedor')
-def updateCliente():
+@roles_accepted('admin')
+def updateEmpleado():
     try:
         if request.method == 'POST':
          
@@ -186,17 +222,18 @@ def updateCliente():
         
           result = {"id": persona_upd.id}
           
-          return jsonify(result)
+          return make_response(jsonify(result),200)
       
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
-        return make_response(jsonify(message), 400)
-    
-@clienteRutas.route('/deleteCliente', methods=['GET', 'POST'])
+        return make_response(jsonify(message), 400)    
+
+
+@empleadoRutas.route('/deleteEmpleado', methods=['GET', 'POST'])
 @login_required
-@roles_accepted('admin','vendedor')
-def deleteCliente():
+@roles_accepted('admin')
+def deleteEmpleado():
     try:
         if request.method == 'POST':
          
@@ -206,11 +243,9 @@ def deleteCliente():
           persona_upd.estatus='Inactivo'
         
           db.session.commit()
-        
           result = {"id": persona_upd.id}
           
-          return jsonify(result)
-      
+          return make_response(jsonify(result),200)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
