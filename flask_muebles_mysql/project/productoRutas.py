@@ -132,12 +132,12 @@ def addProducto():
             try:
                 modelo_ = Validator.sanitizarNombre(request.form['modelo'])
                 descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
-                img_ = request.file['img']
+                img_ = request.form['img']
                 
 
-                filename = img_.filename
-                if filename != None and filename != "":
-                    img_.save(os.path.join(FOLDER, filename))
+                #filename = img_.filename
+                #if filename != None and filename != "":
+                    #img_.save(os.path.join(FOLDER, filename))
                 
                 
                 peso_ = Validator.validarDecimal(request.form['peso'])
@@ -154,7 +154,7 @@ def addProducto():
                 
                 prod = producto(modelo = modelo_,
                                 descripcion = descripcion_,
-                                img = filename,
+                                img = img_,
                                 peso = peso_,
                                 color = color_,
                                 alto = alto_,
@@ -188,9 +188,9 @@ def updateProducto():
             descripcion_ = Validator.sanitizarNombre(request.form['descripcion'])
             img_ = request.form['img']
             
-            filename = img_.filename
-            if filename != None and filename != "":
-                img_.save(os.path.join(FOLDER, filename))
+            #filename = img_.filename
+            #if filename != None and filename != "":
+                #img_.save(os.path.join(FOLDER, filename))
             
             
             peso_ =Validator.validarDecimal(request.form['peso'])
@@ -206,7 +206,7 @@ def updateProducto():
             c = db.session.query(categoria).filter(categoria.id == idCategoria_).first()
             p.modelo = modelo_
             p.descripcion = descripcion_
-            p.img = filename
+            p.img = img_
             p.peso = peso_
             p.color = color_
             p.alto = alto_
