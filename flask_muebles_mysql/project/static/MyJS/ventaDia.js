@@ -2,6 +2,17 @@ var productos = [];
 var productos_envio = [];
 var cliente = "";
 
+function ValidarCantidad(){
+    var cantidad_v = parseInt($('#txtCantidadProducto').val());
+
+    if(cantidad_v <= 0){
+        showNotification("bg-red", "Por favor, ingresa una cantidad mayor a 0", "bottom", "right", "", "");
+        return false;
+    }
+
+    $('#modalProductoV').modal('show');
+}
+
 function seleccionarCliente(idC) {
     var data = {
         idCliente: idC

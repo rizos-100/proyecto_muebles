@@ -127,6 +127,7 @@ function detalleEmpleado(idP) {
         .done(
             function (data) {
                 persona = data;
+                console.log(persona);
                 $('#txtNombreE').val(persona.nombre);
                 $('#txtApellidoPaternoE').val(persona.apellidoP);
                 $('#txtApellidoMaternoE').val(persona.apellidoM);

@@ -1,6 +1,23 @@
 var proveedor = "";
 materiales=[];
 
+function ValidarCantidadSubtotal(){
+    var cantidad_v = parseInt($('#txtCantidadMaterialOV').val());
+    var subtotal_ = parseFloat($('#txtSubtotalMaterialOV').val());
+
+    if(cantidad_v <= 0){
+        showNotification("bg-red", "Por favor, ingresa una cantidad mayor a 0", "bottom", "right", "", "");
+        return false;
+    }
+
+    if(subtotal_ <= 0){
+        showNotification("bg-red", "Por favor, ingresa un subtotal mayor a 0", "bottom", "right", "", "");
+        return flase;
+    }
+
+    $('#modalMaterialOV').modal('show');
+}
+
 function detalleOrden(idO) {
     var data = {
         idOrden: idO
@@ -101,6 +118,7 @@ function seleccionarProveedor(idP) {
 }
 
 function seleccionarMaterial(idM) {
+
     var data = {
         id: idM
     };
