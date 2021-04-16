@@ -1,0 +1,370 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3>
+                    Productos
+                </h3>
+                <p>¡Buen día! En esta pantalla podrás visualizar los productos de la empresa. </p>
+                <ul class="header-dropdown m-r--5">
+                    <li>
+                        <button onclick="llenarCategorias()" type="button" class="btn bg-brown waves-effect" data-toggle="modal" data-target="#modalAgregarProductos">
+                            <i class="material-icons">playlist_add</i>
+                            <span>Agregar Producto</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#modalAgregarStock">
+                            <i class="material-icons">playlist_add</i>
+                            <span>Agregar Stock</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                            <thead>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Categoría</th>
+                                    <th>Modelo</th>
+                                    <th>Descripción</th>
+                                    <th>Información</th>
+                                    <th>Precio</th>
+                                    {%if activos == True%}
+                                    <th>Materiales</th>
+                                    <th>Modificar</th>
+                                    <th>Eliminar</th>
+                                    {%endif%}
+                                </tr>
+                            </thead>
+                            <tfoot>
+                                <tr>
+                                    <th>Imagen</th>
+                                    <th>Categoría</th>
+                                    <th>Modelo</th>
+                                    <th>Descripción</th>
+                                    <th>Información</th>
+                                    <th>Precio</th>
+                                    {%if activos == True%}
+                                    <th>Materiales</th>
+                                    <th>Modificar</th>
+                                    <th>Eliminar</th>
+                                    {%endif%}
+                                </tr>
+                            </tfoot>
+                            <tbody id="tbProductoVenta">
+                                {%for p in productos%}
+                                <tr>
+                                    <td class="text-center"><img class="mb-4" src="{{p.img}}" alt="" width="120" height="95"></td>
+                                    <td>{{p.categoria.nombre}}</td>
+                                    <td>{{p.modelo}}</td>
+                                    <td>{{p.descripcion}}</td>
+                                    <td><b>Cantidad:</b> {{p.cantidad}} pz<br><b>Alto: </b>{{p.alto}} m<br> <b>Largo: </b>{{p.largo}} m<br> <b>Ancho:
+                                        </b>{{p.ancho}} m<br> <b>Peso: </b>{{p.peso}} kg<br> <b>Color:</b> {{p.color}}
+                                    </td>
+                                    <td>$ {{p.precio}} </td>
+                                    {%if activos == True%}
+                                    <td class="text-center">
+                                        <button type="button" class="btn bg-deep-orange waves-effect" onclick="mostrarDetalleProductoMaterial({{p.idProducto}}, 0)">
+                                            <i class="material-icons">zoom_in</i>
+                                        </button>
+                                    </td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn bg-primary waves-effect"
+                                            onclick="mostrarProductos({{p.idProducto}})">
+                                            <i class="material-icons">mode_edit</i>
+                                        </button>
+                                    </td>
+                                    <td class="text-center">
+                                        <button type="button" class="btn btn-danger waves-effect"
+                                            onclick="eliminarProducto({{p.idProducto}})">
+                                            <i class="material-icons">delete</i>
+                                        </button>
+                                    </td>
+                                    {%endif%}
+                                </tr>
+                                {%endfor%}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAgregarProductos" style="overflow-y: scroll" data-backdrop="static" tabindex="-1" role="dialog"
+    style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="limpiarModalProductor()">&times;</button>
+                <h4 class="modal-title" id="defaultModalLabel">Formulario para la gestión de productos. </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>Datos del producto</h4>
+                        <hr />
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Modelo <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="text" id="txtModeloP" class="form-control" placeholder="Modelo" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Categoria <font color="red">*</font></b>
+                            <select id="lstCategoriasP" class="form-control">
+                                <option value="-1" selected disabled>-- Seleccion una categoria --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Alto <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="number" id="txtAltoP" class="form-control" placeholder="Alto metros" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Largo <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="number" id="txtLargoP" class="form-control" placeholder="Largo metros" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Ancho <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="number" id="txtAnchoP" class="form-control" placeholder="Ancho metros" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Peso <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="number" id="txtPesoP" class="form-control" placeholder="Peso kilos" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Color <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="text" id="txtColorP" class="form-control" placeholder="Color" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Cantidad minima en stock <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="number" id="txtCantidadMinimaP" class="form-control" placeholder="Cantidad" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Precio <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="number" id="txtPrecioP" class="form-control" placeholder="Precio de venta" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Imagen <font color="red">*</font></b>
+                            <div class="input-group">
+                                <div class="form-line">
+                                    <img id="imgFoto" src="../static/images/default.png" width="300" height="300">
+                                    <input type="file" name="txtFoto" id="txtFoto" class="form-control" onchange="cargarFoto();"/>
+                                    <textarea style="display:none;" hidden="true" class="form-control text-black" name="txtBase64" id="txtBase64"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Descripción <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <textArea type="text" id="txtDescProducto" class="form-control"
+                                        placeholder="Descripción del producto..."></textArea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <input type="hidden" id="txtIdProducto" class="form-control" placeholder="id">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info waves-effect"
+                        onclick="decidirProducto()">Guardar</button>
+                <button type="button" class="btn waves-effect" data-dismiss="modal" onclick="limpiarModalProductor()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalDetalleProductoMaterial" data-backdrop="static" tabindex="-1" role="dialog"
+    style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="reiniciarProductoMaterial(), reiniciarPagina()">&times;</button>
+                <h4 class="modal-title" id="defaultModalLabel">Materiales con los que se realiza el producto. </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12" id="lstMaterialDiv" style="display: none;">
+                        <div class="form-group">
+                            <b>Material <font color="red">*</font></b>
+                            <select id="lstMaterialMate" class="form-control" onchange="tipoMaterial()">
+                                <option value="-1" selected disabled>-- Seleccion un Material --</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12" id="cantidadUsadaDiv" style="display: none;">
+                        <div class="form-group">
+                            <b>Cantidad usada <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="number" id="txtCantidadMate" class="form-control" placeholder="Cantidad"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="divAltoAnchoMate" style="display: none;">
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Alto <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="number" id="txtAltoMate" class="form-control" placeholder="Alto usado"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Ancho <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="number" id="txtAnchoMate" class="form-control" placeholder="Ancho usado"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" id="divBotones" style="display: none;">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <button type="button" class="btn btn-success waves-effect float-right" onclick="reiniciarProductoMaterial()">Nuevo</button>
+                        <button type="button" class="btn btn-info waves-effect float-right" onclick="guardarMaterialP()">Guardar</button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table id="tbDetalleMaterialProducto"
+                        class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Material</th>
+                                <th>Cantidad usada</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyDetalleMaterialProducto">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <input type="hidden"  id="txtIdProductoMa" class="form-control" placeholder="id">
+                <input type="hidden" value="0" id="txtIdDetalleProductoMa" class="form-control" placeholder="id">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn waves-effect" data-dismiss="modal" onclick="reiniciarProductoMaterial(), reiniciarPagina()">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

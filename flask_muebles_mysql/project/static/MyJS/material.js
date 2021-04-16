@@ -220,7 +220,7 @@ function eliminarSobrante(idS) {
             );
     });
 
-}s
+}
 
 function validarMaterial() {
     console.log($('#lstTipoM').val())
