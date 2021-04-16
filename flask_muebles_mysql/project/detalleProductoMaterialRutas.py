@@ -17,7 +17,7 @@ def getAllDetalleProductosMaterial():
         try:
             idProducto_ = request.args.get("idProducto", "No contiene el nombre")
             dtmp = db.session.query(detalle_producto_material, material).join(detalle_producto_material.material).filter(detalle_producto_material.idProducto == idProducto_).all()
-          
+            
             arrayDPM = list()
             for i in dtmp:
                 dtmpObj ={
@@ -39,7 +39,7 @@ def getAllDetalleProductosMaterial():
                         }
                     }
                 arrayDPM.append(dtmpObj) 
-            return render_template("", dtmp = arrayDPM)
+            return jsonify(arrayDPM)
         except Exception as inst:
             message = {"result":"error"}
             logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')

@@ -152,10 +152,18 @@
                     {% endif %}
                     {% if current_user.is_authenticated  %}
                         <li>
-                            <a href="pages/helper-classes.html">
+                            <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons">weekend</i>
                                 <span>Productos</span>
                             </a>
+                            <ul class="ml-menu">
+                                <li>
+                                    <a href="/getAllProductosActivos">Activos</a>
+                                </li>
+                                <li>
+                                    <a href="/getAllProductosInactivos">Inactivos</a>
+                                </li>
+                            </ul>
                         </li>
                     {% endif %}
                     {% if current_user.is_authenticated %}
@@ -1143,6 +1151,7 @@
     <script src="../static/MyJS/venta.js"></script>
     <script src="../static/MyJS/ordenCompra.js"></script>
     <script src="../static/MyJS/empleado.js"></script>
+    <script src="../static/MyJS/producto.js"></script>
     <script src="../static/js/script.js"></script>
 
     <!--Mensajes de Flask security-->

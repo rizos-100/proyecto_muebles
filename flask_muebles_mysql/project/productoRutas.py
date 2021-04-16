@@ -93,7 +93,7 @@ def getAllProductosPorId():
     try:
         arrayProductos = list()
         id_ = request.args.get("id", "No contiene el nombre")
-        productos = db.session.query(producto, categoria).join(producto.categoria).filter(producto.id == id_, producto.estatus == 'Inactivo').all()
+        productos = db.session.query(producto, categoria).join(producto.categoria).filter(producto.id == id_, producto.estatus == 'Activo').all()
         
         for i in productos:
             productoObj ={
@@ -118,7 +118,7 @@ def getAllProductosPorId():
                 }
             }
             arrayProductos.append(productoObj) 
-        return render_template("", productos = arrayProductos, activos = True)
+        return jsonify(arrayProductos)
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
