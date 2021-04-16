@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, redirect, url_for, request, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_security import login_required
-from flask_security.utils import login_user, logout_user
+from flask_security.utils import login_user, logout_user,get_hmac
 from . models import User
 from . import db, userDataStore
 import logging
@@ -28,8 +28,8 @@ def login_post():
 
         #Consultamos si existe un usuario ya registrado con el email.
         user = User.query.filter_by(email=email).first()
-        print(user)
-        if not user or not check_password_hash(user.password, password):
+
+        if not user or not user.check_password(password):
             flash('El usuario y/o la contraseña son incorrectos')
             return redirect(url_for('auth.login')) 
         

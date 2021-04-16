@@ -32,8 +32,8 @@ def create_app():
     app.config['SECRET_KEY'] = os.urandom(24)
     #Usar en caso de que no se tenga algun acceso a la principal
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u512768467_user_producci2:7=Vhafn^K9@31.170.161.1/u512768467_muebleria2'
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@127.0.0.1/muebleria'
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u512768467_user_produccio:7=Vhafn^K9@31.170.161.1/u512768467_muebleria'
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@127.0.0.1/muebleria'
     app.config['SECURITY_PASSWORD_SALT'] = 'thisissecretsalt'
 
     db.init_app(app)
@@ -46,23 +46,13 @@ def create_app():
             userDataStore.find_or_create_role(name='vendedor', description='Vendedor')
             userDataStore.find_or_create_role(name='almacenista', description='Almacenista')
 
-            encrypted_password = generate_password_hash('password', method='sha512') #utils.encrypt_password('password')
-            if not userDataStore.get_user('vendedor@example.com'):
-                    userDataStore.create_user(email='vendedor@example.com', password=encrypted_password,
-                                            numero_empleado=232,nivel_escolar='Telesecundaria',profesion='Ama de casa',
-                                            observaciones='Es a toda madre',idPersona=7,estatus=1)
-                    db.session.commit()
-            if not userDataStore.get_user('admin@example.com'):
-                userDataStore.create_user(email='admin@example.com', password=encrypted_password,
-                                            numero_empleado=32,nivel_escolar='Telesecundaria',profesion='Ama de casa',
-                                            observaciones='Es a toda madre',idPersona=5,estatus=1)
-                db.session.commit()
-            if not userDataStore.get_user('almacenista@example.com'):
-                userDataStore.create_user(email='almacenista@example.com', password=encrypted_password,
-                                            numero_empleado=2132,nivel_escolar='Telesecundaria',profesion='Ama de casa',
-                                            observaciones='Es a toda madre',idPersona=6,estatus=1)
-                db.session.commit()
+            encrypted_password = '$2b$12$BxitjT6pN2mCXMsgT4dH8OXVrKs7qL7FroLqzrZ6mAHVu7zbfmNL6'
 
+            if not userDataStore.get_user('admin@delvalle.com'):
+                userDataStore.create_user(email='admin@delvalle.com', password=encrypted_password,
+                                            numero_empleado=1001,nivel_escolar='Universidad',profesion='Ing. En sistemas',
+                                            observaciones='S/C',idPersona=5,estatus=1)
+                db.session.commit()
             # Commit any database changes; the User and Roles must exist before we can add a Role to the User
             
         except Exception as inst:

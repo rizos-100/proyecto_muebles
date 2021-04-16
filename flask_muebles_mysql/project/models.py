@@ -8,6 +8,8 @@ from flask_admin.contrib  import sqla
 import datetime
 from wtforms.fields import PasswordField
 
+from .utils import verify_password
+
 
 #db = SQLAlchemy()
 ma = Marshmallow()
@@ -56,6 +58,9 @@ class User(UserMixin, db.Model):
     
     
     personaForeign = db.relationship('persona')
+
+    def check_password(self, password):
+        return verify_password(password, self.password)
     
 class UserSchema(ma.Schema):
     class Meta:
