@@ -247,7 +247,7 @@ class producto (db.Model):
     id=db.Column(db.Integer,primary_key=True)
     modelo = db.Column(db.String(255), nullable=False)
     descripcion = db.Column(db.String(255), nullable=False)
-    img = db.Column(db.Text(4294000000), nullable=False)
+    img = db.Column(db.Longtext(), nullable=False)
     peso = db.Column(db.Float,nullable=False)
     color = db.Column(db.String(100), nullable=False)
     alto = db.Column(db.Float,nullable=False)
