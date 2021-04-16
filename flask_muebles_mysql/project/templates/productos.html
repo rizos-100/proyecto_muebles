@@ -147,7 +147,7 @@
                                 </span>
 
                                 <div class="form-line">
-                                    <input type="number" id="txtAltoP" class="form-control" placeholder="Alto metros" maxlength="100" data-length="100" />
+                                    <input type="number" id="txtAltoP" min="0" class="form-control" placeholder="Alto metros" maxlength="100" data-length="100" />
                                 </div>
                             </div>
                         </div>
@@ -161,7 +161,7 @@
                                 </span>
 
                                 <div class="form-line">
-                                    <input type="number" id="txtLargoP" class="form-control" placeholder="Largo metros" maxlength="100" data-length="100" />
+                                    <input type="number" id="txtLargoP" min="0" class="form-control" placeholder="Largo metros" maxlength="100" data-length="100" />
                                 </div>
                             </div>
                         </div>
@@ -175,7 +175,7 @@
                                 </span>
 
                                 <div class="form-line">
-                                    <input type="number" id="txtAnchoP" class="form-control" placeholder="Ancho metros" maxlength="100" data-length="100" />
+                                    <input type="number" id="txtAnchoP" min="0" class="form-control" placeholder="Ancho metros" maxlength="100" data-length="100" />
                                 </div>
                             </div>
                         </div>
@@ -189,7 +189,7 @@
                                 </span>
 
                                 <div class="form-line">
-                                    <input type="number" id="txtPesoP" class="form-control" placeholder="Peso kilos" maxlength="100" data-length="100" />
+                                    <input type="number" id="txtPesoP" min="0" class="form-control" placeholder="Peso kilos" maxlength="100" data-length="100" />
                                 </div>
                             </div>
                         </div>
@@ -217,7 +217,7 @@
                                 </span>
 
                                 <div class="form-line">
-                                    <input type="number" id="txtCantidadMinimaP" class="form-control" placeholder="Cantidad" maxlength="100" data-length="100" />
+                                    <input type="number" id="txtCantidadMinimaP" min="0" class="form-control" placeholder="Cantidad" maxlength="100" data-length="100" />
                                 </div>
                             </div>
                         </div>
@@ -231,7 +231,7 @@
                                 </span>
 
                                 <div class="form-line">
-                                    <input type="number" id="txtPrecioP" class="form-control" placeholder="Precio de venta" maxlength="100" data-length="100" />
+                                    <input type="number" id="txtPrecioP" min="0" class="form-control" placeholder="Precio de venta" maxlength="100" data-length="100" />
                                 </div>
                             </div>
                         </div>
@@ -301,7 +301,7 @@
                                 </span>
 
                                 <div class="form-line">
-                                    <input type="number" id="txtCantidadMate" class="form-control" placeholder="Cantidad"/>
+                                    <input type="number" min="0" id="txtCantidadMate" class="form-control" placeholder="Cantidad"/>
                                 </div>
                             </div>
                         </div>
@@ -317,7 +317,7 @@
                                 </span>
 
                                 <div class="form-line">
-                                    <input type="number" id="txtAltoMate" class="form-control" placeholder="Alto usado"/>
+                                    <input type="number" min="0" id="txtAltoMate" class="form-control" placeholder="Alto usado"/>
                                 </div>
                             </div>
                         </div>
@@ -331,7 +331,7 @@
                                 </span>
 
                                 <div class="form-line">
-                                    <input type="number" id="txtAnchoMate" class="form-control" placeholder="Ancho usado"/>
+                                    <input type="number" min="0" id="txtAnchoMate" class="form-control" placeholder="Ancho usado"/>
                                 </div>
                             </div>
                         </div>
@@ -339,11 +339,11 @@
                 </div>
                 <div class="row" id="divBotones" style="display: none;">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <button type="button" class="btn btn-success waves-effect float-right" onclick="reiniciarProductoMaterial()">Nuevo</button>
+                        <button type="button" class="btn btn-success waves-effect float-right m-r-10" onclick="reiniciarProductoMaterial()">Nuevo</button>
                         <button type="button" class="btn btn-info waves-effect float-right" onclick="guardarMaterialP()">Guardar</button>
                     </div>
                 </div>
-                <div class="table-responsive">
+                <div class="table-responsive m-t-30">
                     <table id="tbDetalleMaterialProducto"
                         class="table table-bordered table-striped table-hover">
                         <thead>

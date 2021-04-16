@@ -124,7 +124,7 @@ function agregarProducto() {
                         productoInsertado = data.id
                         swal("Correcto", "Producto guardado con exíto. ", "success");
                         $('#modalAgregarProductos').modal('hide');
-                        setTimeout(function () {mostrarDetalleProductoMaterial(productoInsertado.id, 1);}, 2000)
+                        setTimeout(function () {mostrarDetalleProductoMaterial(productoInsertado, 1);}, 2000)
                         
                     }
                 );
@@ -139,6 +139,10 @@ function agregarProducto() {
 function modificarProducto() {
     var err = validarProducto();
     if (err == "ok") {
+        img = $('#txtBase64').val()
+        if(img.substring(0,13) != "data:;base64,"){
+            img = 'data:;base64,'+$('#txtBase64').val();
+        }
         var data = {
             modelo:$('#txtModeloP').val(),
             alto:$('#txtAltoP').val(),
@@ -149,7 +153,7 @@ function modificarProducto() {
             cantidad:0,
             cantidad_minima:$('#txtCantidadMinimaP').val(),
             precio:$('#txtPrecioP').val(),
-            img:'data:;base64,'+$('#txtBase64').val(),
+            img: img,
             descripcion:$('#txtDescProducto').val(),
             idCategoria:categorias[$('#lstCategoriasP').val()].id,
             idProducto:$('#txtIdProducto').val()
@@ -179,7 +183,7 @@ function modificarProducto() {
                         productoInsertado = data.id
                         swal("Correcto", "Producto modificado con exíto. ", "success");
                         $('#modalAgregarProductos').modal('hide');
-                        setTimeout(function () {location.href = "/getAllProductosInactivos";}, 2000)
+                        setTimeout(function () {location.href = "/getAllProductosActivos";}, 2000)
                         
                     }
                 );
@@ -195,9 +199,17 @@ function modificarProducto() {
 function guardarMaterialP() {
     var err = validarProductoMaterial();
     if (err == "ok") {
+        var alto = 0;
+        var ancho = 0;
+        if($('#txtAltoMate').val() != ""){
+            alto = $('#txtAltoMate').val();
+        }
+        if($('#txtAnchoMate').val() != ""){
+            ancho = $('#txtAnchoMate').val();
+        }
         var data = {
-            alto:$('#txtAltoMate').val(),
-            ancho:$('#txtAnchoMate').val(),
+            alto:alto,
+            ancho:ancho,
             cantidad:$('#txtCantidadMate').val(),
             idProducto:$('#txtIdProductoMa').val(),
             idMaterial:materiales[$('#lstMaterialMate').val()].id
@@ -269,8 +281,13 @@ function reiniciarPagina(){
 
 function reiniciarProductoMaterial(){
     llenarMaterialesProducto($('#txtIdProductoMa').val());
+    llenarListaMateriales();
     $('#divAltoAnchoMate').hide();
     $('#divBotones').hide();
+    $('#txtAltoMate').val("");
+    $('#txtAnchoMate').val("");
+    $('#txtCantidadMate').val("");
+
 }
 
 function llenarMaterialesProducto(idP){
@@ -297,7 +314,7 @@ function llenarMaterialesProducto(idP){
                     if(materialesPro[i].material.tipo != 'Tabla'){
                         str = '<tr><td><b>' + materialesPro[i].material.nombre + ' </b><br>';
                         if(materialesPro[i].material.tipo == 'Pintura'){
-                            str += '<b>Color: </b>' + materialesPro[i].material.color + ' m';
+                            str += '<b>Color: </b>' + materialesPro[i].material.color;
                         }
                         str += '</td><td class="text-centers">' + materialesPro[i].cantidad + '</td></tr>';
                     }
@@ -441,7 +458,7 @@ function mostrarProductos(idP){
 
 function eliminarProducto(idP) {
     var data = {
-        idVenta: idP
+        idProducto: idP
     };
     swal({
         title: "¿Deseas continuar?",
