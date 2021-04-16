@@ -159,7 +159,7 @@ def updateCliente():
           numero_exterior_ = Validator.validarNumDireccion(request.form['numero_exterior'])
           estado_ = Validator.sanitizarNombre(request.form['estado'])
           municipio_ = Validator.sanitizarNombre(request.form['municipio'])
-          cp_ = Validator.sanitizarNombre(request.form['cp'])
+          cp_ = request.form['cp']
           referencias_ = Validator.sanitizarNombre(request.form['referencias'])
           
           domicilio_upd = db.session.query(domicilio).filter(domicilio.id == idDom).first()
