@@ -53,7 +53,7 @@ function seleccionarProducto(idP) {
             function (data) {
                 producto = data;
                 var cantidad = parseInt($('#txtCantidadProducto').val());
-                //console.log(producto);
+                console.log(producto);
                 if (cantidad <= parseInt(producto.cantidad)) {
                     swal({
                         title: "¿Deseas continuar?",

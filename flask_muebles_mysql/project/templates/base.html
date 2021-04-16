@@ -168,10 +168,24 @@
                     {% endif %}
                     {% if current_user.has_role('admin') %}
                     <li>
-                        <a href="pages/typography.html">
+                        <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">account_box</i>
                             <span>Empleados</span>
                         </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="/getAllEmpleadosSinAsignar">Empleados sin asignar</a>
+                            </li>
+                            <li>
+                                <a href="/getAllEmpleadosActivos">Activos</a>
+                            </li>
+                            <li>
+                                <a href="/getAllEmpleadosInactivos">Inactivos</a>
+                            </li>
+                            <li>
+                                <a href="/getAllEmpleadosInactivos">Flask admin</a>
+                            </li>
+                        </ul>
                     </li>
                     {% endif %}
                     {% if (current_user.has_role('admin') or current_user.has_role('vendedor')) %}
@@ -965,7 +979,6 @@
         </div>
     </div>
 
-
     <div class="modal fade" id="modalInformacionEmpresarial" data-backdrop="static" tabindex="-1" role="dialog"
         style="display: none;">
         <div class="modal-dialog modal-md">
@@ -1129,6 +1142,7 @@
     <script src="../static/MyJS/ventaDia.js"></script>
     <script src="../static/MyJS/venta.js"></script>
     <script src="../static/MyJS/ordenCompra.js"></script>
+    <script src="../static/MyJS/empleado.js"></script>
     <script src="../static/js/script.js"></script>
 
     <!--Mensajes de Flask security-->

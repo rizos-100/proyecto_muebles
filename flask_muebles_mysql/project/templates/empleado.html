@@ -1,0 +1,334 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h3>
+                    Empleados {%if activos == True%} activos {%else%} inactivos {%endif%}
+                </h3>
+                {%if activos == True%}
+                <p>¡Buen día! En esta pantalla podrás registrar los empleados de la empresa.</p>
+                {%else%} <p>¡Buen día! En esta pantalla podrás visualizar los empleados inactivos.</p>
+                {%endif%}
+            </div>
+            <div class="body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                        <thead>
+                            <tr>
+                                <th>Número empleado</th>
+                                <th>Nombre</th>
+                                <th>Número celular</th>
+                                <th>Email</th>
+                                <th>RFC</th>
+                                <th>Role</th>
+                                <th>Dirección</th>
+                                <th>Entidad federativa</th>
+                                {%if activos == True%}
+                                <th>Modificar</th>
+                                <th>Eliminar</th>
+                                {%endif%}
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th>Número empleado</th>
+                                <th>Nombre</th>
+                                <th>Número celular</th>
+                                <th>Email</th>
+                                <th>RFC</th>
+                                <th>Role</th>
+                                <th>Dirección</th>
+                                <th>Entidad federativa</th>
+                                {%if activos == True%}
+                                <th>Modificar</th>
+                                <th>Eliminar</th>
+                                {%endif%}
+                            </tr>
+                        </tfoot>
+                        <tbody id="tbEmpleados">
+                            {%for obj in empleados%}
+                            <tr>
+                                <td>{{obj.numero_empleado}}</td>
+                                <td>{{obj.idPersona.nombre}} {{obj.idPersona.apellidoP}} {{obj.idPersona.apellidoM}}
+                                </td>
+                                <td>{{obj.idPersona.celular}}</td>
+                                <td>{{obj.email}}</td>
+                                <td>{{obj.idPersona.rfc}}</td>
+                                <td>{{obj.role.name}}</td>
+                                <td><b>Calle: </b>{{obj.idPersona.domicilio.calle}}, #
+                                    {{obj.idPersona.domicilio.numero_exterior}} Int.
+                                    {{obj.idPersona.domicilio.numero_interior}} <br> <b>Colonia:
+                                    </b>{{obj.idPersona.domicilio.colonia}}<br> </td>
+                                <td>{{obj.idPersona.domicilio.municipio}}, {{obj.idPersona.domicilio.estado}} </td>
+                                {%if activos == True%}
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-primary waves-effect"
+                                        onclick="detalleEmpleadoModificar({{obj.idPersona.id}})">
+                                        <i class="material-icons">mode_edit</i>
+                                    </button>
+                                </td>
+                                <td class="text-center">
+                                    <button type="button" class="btn btn-danger waves-effect"
+                                        onclick="eliminarEmpleadoModificar({{obj.idPersona.id}})">
+                                        <i class="material-icons">delete</i>
+                                    </button>
+                                </td>
+                                {%endif%}
+                            </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalEmpleadoModificar" data-backdrop="static" tabindex="-1" role="dialog" style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" onclick="limpiarEmpleado()">&times;</button>
+                <h4 class="modal-title" id="defaultModalLabel">Formulario para la gestión de empleados. </h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>Datos Generales</h4>
+                        <hr />
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Nombre <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="text" id="txtNombreE" class="form-control" placeholder="Nombre"
+                                        maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Apellido paterno <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="text" id="txtApellidoPaternoE" class="form-control"
+                                        placeholder="Apellido paterno" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Apellido materno <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="text" id="txtApellidoMaternoE" class="form-control"
+                                        placeholder="Apellido materno" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>RFC <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="text" id="txtRFCE" class="form-control" placeholder="RFC"
+                                        maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Número fijo <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="text" id="txtNumeroFijoE" class="form-control" placeholder="Número fijo"
+                                        maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Número celular <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="text" id="txtNumeroCelularE" class="form-control"
+                                        placeholder="Número celular" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <h4>Domicilio</h4>
+                        <hr />
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Calle <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="text" id="txtCalleE" class="form-control" placeholder="Calle"
+                                        maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Número exterior <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="text" id="txtNumeroExteriorE" class="form-control"
+                                        placeholder="Número exterior" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Número interior <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="text" id="txtNumeroInteriorE" class="form-control"
+                                        placeholder="Número interior" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Colonia <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="text" id="txtColoniaE" class="form-control" placeholder="Colonia"
+                                        maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Código postal <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="text" id="txtCPE" class="form-control" placeholder="Código Postal"
+                                        maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Municipio <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="text" id="txtMunicipioE" class="form-control" placeholder="Municipio"
+                                        maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Estado <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+                                <div class="form-line">
+                                    <input type="text" id="txtEstadoE" class="form-control" placeholder="Estado"
+                                        maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                        <div class="form-group">
+                            <b>Referencias <font color="red">*</font></b>
+                            <div class="input-group">
+                                <span class="input-group-addon">
+                                    <i class="material-icons">rate_review</i>
+                                </span>
+
+                                <div class="form-line">
+                                    <input type="text" id="txtReferenciasE" class="form-control"
+                                        placeholder="Referencias" maxlength="100" data-length="100" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input type="hidden" id="txtIdPersonaE" class="form-control" placeholder="id">
+                    <input type="hidden" id="txtIdDomicilioE" class="form-control" placeholder="id">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info waves-effect" onclick="modificarEmpleadoModificar()">Guardar</button>
+                <button type="button" class="btn btn-danger waves-effect" data-dismiss="modal"
+                    onclick="limpiarEmpleado()">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
