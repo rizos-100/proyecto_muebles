@@ -38,8 +38,8 @@ def getAllEmpleadosSinAsignar():
         return render_template('error.html')
 
 @empleadoRutas.route('/getAllEmpleadosActivos',methods=['GET','POST'])
-#@login_required
-#@roles_accepted('admin')
+@login_required
+@roles_accepted('admin')
 def getAllEmpleadosActivos():
     try:
         arrayUser = list()

@@ -8,3 +8,4 @@ flask-marshmallow
 bcrypt
 marshmallow-sqlalchemy
 datetime
+flask-login

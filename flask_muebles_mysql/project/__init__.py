@@ -25,6 +25,7 @@ LOG_FILENAME = UPLOAD_TMP+'/errores_'+fechaHoy+'.log'
 def create_app():
     #Creamos una instancia del flask
     logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+    
     app = Flask(__name__)
 
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -35,7 +36,7 @@ def create_app():
     #app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://u512768467_user_produccio:7=Vhafn^K9@31.170.161.1/u512768467_muebleria'
     app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@127.0.0.1/muebleria'
     app.config['SECURITY_PASSWORD_SALT'] = 'thisissecretsalt'
-
+    
     db.init_app(app)
     @app.before_first_request
     def create_all():
@@ -77,14 +78,6 @@ def create_app():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
     
-    @app.route('/login',methods=['GET','POST'])
-    def index_login_fail():
-   
-        if request.method == 'POST' and request.form['email']:
-            return render_template('security/login.html')
-            print(request.form.get('next'))
-        else:
-            return render_template('security/login.html')
     try:
         #Registramos el blueprint para el resto de la aplicación
         from .main import main as main_blueprint
@@ -128,6 +121,10 @@ def create_app():
     logging.info('Incio de la aplicacion ['+str(datetime.now())+']')
     
     register_error_handlers(app)
+
+    @security.login_manager.unauthorized_handler
+    def unauthorized():
+        return render_template('/security/login.html')
     
     return app
 
