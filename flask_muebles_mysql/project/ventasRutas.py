@@ -198,9 +198,9 @@ def addVenta():
             db.session.add(objVent)
             db.session.commit()
             db.session.refresh(objVent)
-            print(objVent.id)
+            #print(objVent.id)
             detalleVen = json.loads(request.form['detalleVenta'])
-            print(objVent.id)
+            #print(objVent.id)
             for i in detalleVen:
                 idProd = int(i['producto'])
                 producto_upd = db.session.query(producto).filter(producto.id == idProd).first()
@@ -233,6 +233,14 @@ def deleteVenta():
             ventaDel = db.session.query(venta).filter(venta.id == idVent).first()
             ventaDel.estatus='Inactivo'
             db.session.commit()
+            
+            detalleVen = db.session.query(detalle_venta).filter(detalle_venta.venta == idVent).all()
+            for i in detalleVen:
+                idProd = i.producto
+                producto_upd = db.session.query(producto).filter(producto.id == idProd).first()
+                producto_upd.cantidad = producto_upd.cantidad + i.cantidad
+                
+                db.session.commit() 
 
             result = {"id": idVent}
           
