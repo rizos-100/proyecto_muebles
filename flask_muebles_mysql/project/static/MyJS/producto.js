@@ -369,21 +369,45 @@ function validarProducto() {
     }
     if ($('#txtAltoP').val() == "") {
         return "Por favor, indica el alto. ";;
+    }else{
+        if($('#txtAltoP').val() <= 0){
+            return "El alto tiene que ser mayor a 0. ";
+        }
     }
     if ($('#txtLargoP').val() == "") {
         return "Por favor, indica el largo. ";
+    }else{
+        if($('#txtLargoP').val() <= 0){
+            return "El largo tiene que ser mayor a 0. ";
+        }
     }
     if ($('#txtAnchoP').val() == "") {
         return "Por favor, indica el ancho. ";
+    }else{
+        if($('#txtAnchoP').val() <= 0){
+            return "El ancho tiene que ser mayor a 0. ";
+        }
     }
     if ($('#txtPesoP').val() == "") {
         return "Por favor, indica el peso. ";
+    }else{
+        if($('#txtPesoP').val() <= 0){
+            return "El peso tiene que ser mayor a 0. ";
+        }
     }
     if ($('#txtCantidadMinimaP').val() == "") {
         return "Por favor, indica la cantidad minima. ";
+    }else{
+        if($('#txtCantidadMinimaP').val() <= 0){
+            return "La cantidad minima tiene que ser mayor a 0. ";
+        }
     }
     if ($('#txtPrecioP').val() == "") {
         return "Por favor, indica el precio. ";
+    }else{
+        if($('#txtPrecioP').val() <= 0){
+            return "El precio tiene que ser mayor a 0. ";
+        }
     }
     if ($('#txtBase64').val() == "") {
         return "Por favor, selecciona una imagen para el producto. ";
@@ -403,12 +427,24 @@ function validarProductoMaterial() {
     if(materiales[$('#lstMaterialMate').val()].tipo == "Tabla"){
         if ($('#txtCantidadMate').val() == "") {
             return "Por favor, indica la cantidad. ";;
+        }else{
+            if($('#txtCantidadMate').val() <= 0){
+                return "La cantidad tiene que ser mayor a 0. ";
+            }
         }
         if ($('#txtAltoMate').val() == "") {
             return "Por favor, indica el alto. ";;
+        }else{
+            if($('#txtAltoMate').val() <= 0){
+                return "El alto tiene que ser mayor a 0. ";
+            }
         }
         if ($('#txtAnchoMate').val() == "") {
             return "Por favor, indica el ancho. ";
+        }else{
+            if($('#txtAnchoMate').val() <= 0){
+                return "El alto tiene que ser mayor a 0. ";
+            }
         }
         if ($('#lstMaterialMate').val() == null) {
             return "Por favor, indica el material. ";
@@ -416,6 +452,10 @@ function validarProductoMaterial() {
     }else{
         if ($('#txtCantidadMate').val() == "") {
             return "Por favor, indica la cantidad. ";;
+        }else{
+            if($('#txtCantidadMate').val() <= 0){
+                return "La cantidad tiene que ser mayor a 0. ";
+            }
         }
         if ($('#lstMaterialMate').val() == null) {
             return "Por favor, indica el material. ";
@@ -430,6 +470,10 @@ function validarProductoMaterial() {
 function validarStock() {
     if ($('#txtCantidadAumento').val() == "") {
         return "Por favor, indica la cantidad. ";;
+    }else{
+        if($('#txtCantidadAumento').val() >= 1){
+            return "La cantidad tiene que ser mayor a 0. ";
+        }
     }
     return "ok";
 }

@@ -235,31 +235,59 @@ function validarMaterial() {
         }
         if ($('#txtCantidadMaterial').val() == "") {
             return "Por favor, indica la cantidad. ";
+        }else{
+            if($('#txtCantidadMaterial').val() <= 0){
+                return "La cantidad tiene que ser mayor a 0. ";
+            }
         }
         if ($('#lstTipoM').val() == "Tabla") {
             if ($('#txtAltoMaterial').val() == "") {
                 return "Por favor, indica el alto. ";
+            }else{
+                if($('#txtAltoMaterial').val() <= 0){
+                    return "El alto tiene que ser mayor a 0. ";
+                }
             }
             if ($('#txtAnchoMaterial').val() == "") {
                 return "Por favor, indica el ancho. ";;
+            }else{
+                if($('#txtAnchoMaterial').val() <= 0){
+                    return "El ancho tiene que ser mayor a 0. ";
+                }
             }
             if ($('#txtGrosorMaterial').val() == "") {
                 return "Por favor, indica el grosor. ";
+            }else{
+                if($('#txtGrosorMaterial').val() <= 0){
+                    return "El grosor tiene que ser mayor a 0. ";
+                }
             }
         }
         if ($('#lstTipoM').val() == "Tornillo") {
             if ($('#txtAltoMaterial').val() == "") {
                 return "Por favor, indica el alto. ";
+            }else{
+                if($('#txtAltoMaterial').val() <= 0){
+                    return "El alto tiene que ser mayor a 0. ";
+                }
             }
         }
         if ($('#lstTipoM').val() == "Clavo") {
             if ($('#txtAltoMaterial').val() == "") {
                 return "Por favor, indica el alto. ";
+            }else{
+                if($('#txtAltoMaterial').val() <= 0){
+                    return "El alto tiene que ser mayor a 0. ";
+                }
             }
         }
         if ($('#lstTipoM').val() == "Riel") {
             if ($('#txtAnchoMaterial').val() == "") {
                 return "Por favor, indica el ancho. ";
+            }else{
+                if($('#txtAnchoMaterial').val() <= 0){
+                    return "El ancho tiene que ser mayor a 0. ";
+                }
             }
         }
         if ($('#lstTipoM').val() == "Pintura") {
@@ -270,14 +298,26 @@ function validarMaterial() {
         if ($('#lstTipoM').val() == "Agarradera") {
             if ($('#txtAnchoMaterial').val() == "") {
                 return "Por favor, indica el ancho. ";;
+            }else{
+                if($('#txtAnchoMaterial').val() <= 0){
+                    return "El ancho tiene que ser mayor a 0. ";
+                }
             }
         }
         if ($('#lstTipoM').val() == "Escuadra") {
             if ($('#txtAltoMaterial').val() == "") {
                 return "Por favor, indica el alto. ";
+            }else{
+                if($('#txtAltoMaterial').val() <= 0){
+                    return "El ancho tiene que ser mayor a 0. ";
+                }
             }
             if ($('#txtAnchoMaterial').val() == "") {
                 return "Por favor, indica el ancho. ";;
+            }else{
+                if($('#txtAnchoMaterial').val() <= 0){
+                    return "El ancho tiene que ser mayor a 0. ";
+                }
             }
         }
     }
