@@ -86,10 +86,10 @@ def getAllProductosInactivos():
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
 
-@productoRutas.route('/getAllProductosPorId', methods=['GET','POST'])
+@productoRutas.route('/getAllProductosPorIdPro', methods=['GET','POST'])
 @login_required
 @roles_accepted('admin','almacenista')
-def getAllProductosPorId():
+def getAllProductosPorIdPro():
     try:
         arrayProductos = list()
         id_ = request.args.get("id", "No contiene el nombre")
@@ -119,6 +119,42 @@ def getAllProductosPorId():
             }
             arrayProductos.append(productoObj) 
         return jsonify(arrayProductos)
+    except Exception as inst:
+        message = {"result":"error"}
+        logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
+        return render_template('error.html')
+
+@productoRutas.route('/getAllProductosPorId', methods=['GET','POST'])
+@login_required
+@roles_accepted('admin','almacenista')
+def getAllProductosPorId():
+    try:
+        #arrayProductos = list()
+        id_ = request.args.get("id", "No contiene el nombre")
+        i = db.session.query(producto, categoria).join(producto.categoria).filter(producto.id == id_, producto.estatus == 'Activo').first()
+        
+        productoObj ={
+            'idProducto': i.producto.id,
+            'modelo': i.producto.modelo,
+            'descripcion': i.producto.descripcion,
+            'img': i.producto.img,
+            'peso': i.producto.peso,
+            'color': i.producto.color,
+            'alto': i.producto.alto,
+            'ancho': i.producto.ancho,
+            'largo': i.producto.largo,
+            'cantidad': i.producto.cantidad,
+            'cantidad_minima': i.producto.cantidad_minima,
+            'precio': i.producto.precio,
+            'estatus': i.producto.estatus,
+            'categoria':{
+                'id':i.categoria.id,
+                'nombre':i.categoria.nombre,
+                'descripcion':i.categoria.descripcion,
+                'estatus':i.categoria.estatus,
+            }
+        }
+        return productoObj
     except Exception as inst:
         message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')

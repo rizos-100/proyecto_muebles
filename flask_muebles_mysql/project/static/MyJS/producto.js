@@ -442,7 +442,7 @@ function mostrarProductos(idP){
     $.ajax(
         {
             type: "GET",
-            url: "/getAllProductosPorId",
+            url: "/getAllProductosPorIdPro",
             async: true,
             data: data
         })
