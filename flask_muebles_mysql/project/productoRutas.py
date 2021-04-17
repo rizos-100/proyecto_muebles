@@ -126,7 +126,7 @@ def getAllProductosPorIdPro():
 
 @productoRutas.route('/getAllProductosPorId', methods=['GET','POST'])
 @login_required
-@roles_accepted('admin','almacenista')
+@roles_accepted('admin','almacenista','vendedor')
 def getAllProductosPorId():
     try:
         #arrayProductos = list()
@@ -156,7 +156,6 @@ def getAllProductosPorId():
         }
         return productoObj
     except Exception as inst:
-        message = {"result":"error"}
         logging.error(str(type(inst))+'\n Tipo de error: '+str(inst)+ '['+str(datetime.now())+']')
         return render_template('error.html')
 
