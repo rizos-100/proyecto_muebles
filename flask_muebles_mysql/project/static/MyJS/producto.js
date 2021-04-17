@@ -471,7 +471,7 @@ function validarStock() {
     if ($('#txtCantidadAumento').val() == "") {
         return "Por favor, indica la cantidad. ";;
     }else{
-        if($('#txtCantidadAumento').val() >= 1){
+        if($('#txtCantidadAumento').val() <= 0){
             return "La cantidad tiene que ser mayor a 0. ";
         }
     }
