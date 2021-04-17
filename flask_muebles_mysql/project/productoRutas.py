@@ -304,7 +304,7 @@ def updateStockProducto():
                     db.session.commit()
                 db.session.commit()
             else:
-                result = {"error": "El material con id: " + str(m.id) + " no es suficiente y no se realizo ningun cambio"}
+                result = {"error": "No hay material suficiente para esa cantidad y no se realizo ningun cambio"}
 
             return jsonify(result)
         except Exception as inst:

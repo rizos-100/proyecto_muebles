@@ -18,7 +18,7 @@
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn bg-green waves-effect" data-toggle="modal" data-target="#modalAgregarStock">
+                        <button type="button" class="btn bg-blue waves-effect" data-toggle="modal" data-target="#modalAumentarStock">
                             <i class="material-icons">playlist_add</i>
                             <span>Agregar Stock</span>
                         </button>
@@ -366,5 +366,93 @@
         </div>
     </div>
 </div>
+ 
+<div class="modal fade" id="modalAumentarStock" data-backdrop="static" tabindex="-1" role="dialog"
+    style="display: none;">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="defaultModalLabel">Formulario para aumentar el stock </h4>
+            </div>
+            <div class="modal-body">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="form-group">
+                        <b>Cantidad <font color="red">*</font></b>
+                        <div class="input-group">
+                            <span class="input-group-addon">
+                                <i class="material-icons">rate_review</i>
+                            </span>
+                            <div class="form-line">
+                                <input type="number" min="0" id="txtCantidadAumento" class="form-control" placeholder="Aumento de stock"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="table-responsive">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover dataTable js-exportable">
+                                <thead>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Categoría</th>
+                                        <th>Modelo</th>
+                                        <th>Descripción</th>
+                                        <th>Información</th>
+                                        <th>Precio</th>
+                                        {%if activos == True%}
+                                        <th>Seleccionar</th>
+                                        {%endif%}
+                                    </tr>
+                                </thead>
+                                <tfoot>
+                                    <tr>
+                                        <th>Imagen</th>
+                                        <th>Categoría</th>
+                                        <th>Modelo</th>
+                                        <th>Descripción</th>
+                                        <th>Información</th>
+                                        <th>Precio</th>
+                                        {%if activos == True%}
+                                        <th>Seleecionar</th>
+                                        {%endif%}
+                                    </tr>
+                                </tfoot>
+                                <tbody id="tbProductoStock">
+                                    {%for p in productos%}
+                                    <tr>
+                                        <td class="text-center"><img class="mb-4" src="{{p.img}}" alt="" width="120" height="95"></td>
+                                        <td>{{p.categoria.nombre}}</td>
+                                        <td>{{p.modelo}}</td>
+                                        <td>{{p.descripcion}}</td>
+                                        <td><b>Cantidad:</b> {{p.cantidad}} pz<br><b>Alto: </b>{{p.alto}} m<br> <b>Largo: </b>{{p.largo}} m<br> <b>Ancho:
+                                            </b>{{p.ancho}} m<br> <b>Peso: </b>{{p.peso}} kg<br> <b>Color:</b> {{p.color}}
+                                        </td>
+                                        <td>$ {{p.precio}} </td>
+                                        {%if activos == True%}
+                                        <td class="text-center">
+                                            <button type="button" class="btn bg-primary waves-effect"
+                                                onclick="seleccionarProducto({{p.idProducto}})">
+                                                <i class="material-icons">check</i>
+                                            </button>
+                                        </td>
+                                        {%endif%}
+                                    </tr>
+                                    {%endfor%}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn waves-effect" data-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 {% endblock %}

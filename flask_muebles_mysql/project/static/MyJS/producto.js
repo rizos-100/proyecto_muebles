@@ -32,38 +32,51 @@ function decidirProducto() {
 }
 
 function seleccionarProducto(idP) {
-    var data = {
-        idProducto: idC
-    };
-    $.ajax(
-        {
-            type: "GET",
-            url: "/getAllProductosById",
-            async: true,
-            data: data
-        })
-        .done(
-            function (data) {
-                Producto = data;
-                swal({
-                    title: "¿Deseas continuar?",
-                    text: "Por favor, confirma que deseas agregar el Producto a la venta.",
-                    type: "info",
-                    showCancelButton: true,
-                    cancelButtonText: 'Cancelar',
-                    confirmButtonColor: "#4caf50",
-                    confirmButtonText: "Si, agregar",
-                    closeOnConfirm: false,
-                    showLoaderOnConfirm: false
-                }, function () {
-                    swal("Correcto", "Producto agregado a la venta. ", "success");
-                    $('#txtNombreProductoVenta').text(Producto.persona.nombre + ' ' + Producto.persona.apellidoP + ' ' + Producto.persona.apellidoM);
-                    $('#txtIdProductoAV').val(Producto.idProducto);
-                    $('#modalProductoV').modal('hide');
-                });
+    var err = validarStock()
 
-            }
-        );
+    var data = {
+        idProducto: idP,
+        cantidad: $('#txtCantidadAumento').val()
+    };
+
+    if (err == "ok" && data.cantidad != 0) {
+        swal({
+            title: "¿Estas seguro?",
+            text: 'Por favor, confirma que deseas agregar '+$('#txtCantidadAumento').val()+' al inventario.',
+            type: "info",
+            showCancelButton: true,
+            cancelButtonText: 'Cancelar',
+            confirmButtonColor: "#4caf50",
+            confirmButtonText: "Si, agregar",
+            closeOnConfirm: false,
+            showLoaderOnConfirm: false
+        }, function () {
+            $.ajax(
+                {
+                    type: "POST",
+                    url: "/updateStockProducto",
+                    async: true,
+                    data: data
+                })
+                .done(
+                    function (data) {
+                        if ($.isEmptyObject(data.error))
+                            {
+                                id = data.id;
+                                swal("Correcto", "Stock aumentado. ", "success");
+                                $('#modalAumentarStock').modal('hide');
+                                setTimeout(function () { location.href = "/getAllProductosActivos"; }, 2000)
+                            } else
+                            {
+                                showNotification("bg-red", data.error, "bottom", "right", "", "");
+                            }
+                    }
+                );
+        });
+    } else {
+        //Swal.fire('Ha ocurrido un error', 'No debes dejar campos de la categoria vacios', 'error');
+        showNotification("bg-red", err, "bottom", "right", "", "");
+    }
 
 }
 
@@ -309,10 +322,10 @@ function llenarMaterialesProducto(idP){
                 console.log(materialesPro)
                 for (var i = 0; i < materialesPro.length; i++) {
                     if(materialesPro[i].material.tipo == 'Tabla'){
-                        str = '<tr><td><b>' + materialesPro[i].material.nombre + ' </b> <br><b>Alto usado: </b>' + materialesPro[i].alto + ' m <br><b>Ancho usado: </b>' + materialesPro[i].ancho + ' m</td><td>' + materialesPro[i].cantidad + '</td></tr>'
+                        str += '<tr><td><b>' + materialesPro[i].material.nombre + ' </b> <br><b>Alto usado: </b>' + materialesPro[i].alto + ' m <br><b>Ancho usado: </b>' + materialesPro[i].ancho + ' m</td><td>' + materialesPro[i].cantidad + '</td></tr>'
                     }
                     if(materialesPro[i].material.tipo != 'Tabla'){
-                        str = '<tr><td><b>' + materialesPro[i].material.nombre + ' </b><br>';
+                        str += '<tr><td><b>' + materialesPro[i].material.nombre + ' </b><br>';
                         if(materialesPro[i].material.tipo == 'Pintura'){
                             str += '<b>Color: </b>' + materialesPro[i].material.color;
                         }
@@ -411,6 +424,13 @@ function validarProductoMaterial() {
     
     
 
+    return "ok";
+}
+
+function validarStock() {
+    if ($('#txtCantidadAumento').val() == "") {
+        return "Por favor, indica la cantidad. ";;
+    }
     return "ok";
 }
 
@@ -529,7 +549,7 @@ function showNotification(colorName, text, placementFrom, placementAlign, animat
             allow_dismiss: allowDismiss,
             newest_on_top: true,
             timer: 1000,
-            z_index: 1500,
+            z_index: 3000,
             placement: {
                 from: placementFrom,
                 align: placementAlign
