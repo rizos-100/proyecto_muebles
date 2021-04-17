@@ -286,7 +286,7 @@ function validarMaterial() {
 }
 
 function limpiarMaterial() {
-    $('#lstTipoM').prop('selectedIndex',-1);
+    $('#lstTipoM').prop('selectedIndex',0);
     $('#txtIdMaterial').val('');
     $('#txtNombreMaterial').val('');
     $('#txtDescripcionMaterial').val('');
