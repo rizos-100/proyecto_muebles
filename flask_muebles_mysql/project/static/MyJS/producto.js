@@ -31,7 +31,7 @@ function decidirProducto() {
     }
 }
 
-function seleccionarProducto(idP) {
+function seleccionarProductoMate(idP) {
     var err = validarStock()
 
     var data = {
